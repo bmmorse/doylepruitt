@@ -19,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
     margin: 0;
+    font-size: 20px;
     padding: 0;
 
   }
@@ -26,7 +27,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     color: ${VAR.dark};
     font-family: ${VAR.lato};
-    font-size: 20px;
   }
 
   a,a:visited {
