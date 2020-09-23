@@ -29,6 +29,27 @@ import {
   ContactItem,
 } from './components/Home';
 
+const ContactFunc = () => {
+  return (
+    <Contact>
+      <ContactItem>
+        <img src={images.phone} alt='' />
+        <h3>585.314-0321</h3>
+      </ContactItem>
+      <ContactItem>
+        <img src={images.mail} alt='' />
+        <h3>contact@drdoylepruitt.com</h3>
+      </ContactItem>
+      <ContactItem>
+        <img src={images.marker} alt='' />
+        <h3>
+          243 Center Street<br></br>Canandaigua, New York
+        </h3>
+      </ContactItem>
+    </Contact>
+  );
+};
+
 class App extends React.Component {
   state = {
     isHidden: true,
@@ -113,15 +134,17 @@ class App extends React.Component {
                   <Text>
                     <h2>Finger Lakes Therapy</h2>
                     <p>
-                      Thank you for being here. I’m a trauma and grief therapist
-                      with over 15 years of clinical experience.
+                      I’m a trauma and child therapist with over 15 years of
+                      clinical experience.
                     </p>
                     <p>
                       At my private practice in Canandaigua, NY, I work with
-                      adults suffering from trauma and loss, and families
-                      managing juvenile delinquency and the treatment of
-                      children who cause sexual harm.
+                      individuals of all ages who are facing trauma, adversity,
+                      and loss, family systems navigating interpersonal stress
+                      and changes, and folks seeking more fulfillment in their
+                      lives.
                     </p>
+
                     <p>
                       I believe my clients are the experts of their own lives,
                       and my role is to partner with them to discover the
@@ -132,46 +155,19 @@ class App extends React.Component {
                     <img src={images.office} alt='' />
                     <img src={images.porter} alt='' />
                   </IntroImages>
-                  <Contact>
-                    <ContactItem>
-                      <img src={images.phone} alt='' />
-                      <h3>585-905-4552</h3>
-                    </ContactItem>
-                    <ContactItem>
-                      <img src={images.mail} alt='' />
-                      <h3>contact@doylepruitt.com</h3>
-                    </ContactItem>
-                    <ContactItem>
-                      <img src={images.marker} alt='' />
-                      <h3>
-                        5209 Crescent HL<br></br>Canandaigua, New York
-                      </h3>
-                    </ContactItem>
-                  </Contact>
+                  <ContactFunc />
                 </Route>
                 <Route exact path='/bio'>
                   <Text>
                     <h2>Bio</h2>
                     <p>
-                      I graduated in 2001 from Nazareth College with dual
-                      Bachelor of Science degrees in Psychology and Social Work,
-                      and then from Syracuse University in 2002, where I earned
-                      an MSW degree.
-                    </p>
-                    <p>
-                      In 2012, I successfully passed New York State’s licensing
-                      exams and met the criteria needed to earn the coveted
-                      LCSW-R, and in 2013, I earned a Doctorate of Philosophy in
-                      Social Welfare University at Buffalo.
-                    </p>
-                    <p>
-                      The culmination of my formal education and direct practice
-                      experience has allowed me to engage in meaningful and
-                      applicable scholarship. I have presented at national and
-                      international conferences, published peer reviewed papers
-                      in reputable professional journals, authored a book,
-                      served as a consultant, provided expert testimony, and
-                      supervised graduate-level clinicians and students.
+                      In 2001 I earned a Bachelor of Science degree in both
+                      Psychology and Social Work from Nazareth College. I
+                      graduated from Syracuse University in 2002 with an MSW
+                      degree. In 2012, I successfully passed New York State’s
+                      licensing exams and met the criteria needed to earn the
+                      coveted LCSW-R. In 2013, I earned a PhD from the
+                      University at Buffalo.
                     </p>
                   </Text>
                 </Route>
@@ -441,22 +437,7 @@ class App extends React.Component {
                   </Text>
                 </Route>
                 <Route exact path='/contact'>
-                  <Contact>
-                    <ContactItem>
-                      <img src={images.phone} alt='' />
-                      <h3>585-905-4552</h3>
-                    </ContactItem>
-                    <ContactItem>
-                      <img src={images.mail} alt='' />
-                      <h3>contact@doylepruitt.com</h3>
-                    </ContactItem>
-                    <ContactItem>
-                      <img src={images.marker} alt='' />
-                      <h3>
-                        5209 Crescent HL<br></br>Canandaigua, New York
-                      </h3>
-                    </ContactItem>
-                  </Contact>
+                  <ContactFunc />
                 </Route>
               </Inner>
             </Outer>
