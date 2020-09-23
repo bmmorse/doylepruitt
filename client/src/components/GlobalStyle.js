@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     color: ${VAR.dark};
     font-family: ${VAR.lato};
-    font-size: 16px;
+    font-size: 20px;
   }
 
   a,a:visited {
