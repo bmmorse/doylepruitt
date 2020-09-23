@@ -26,9 +26,7 @@ const HiddenMenu = styled.div`
   height: calc(100vh - 3rem);
   width: 100%;
   top: 3rem;
-  justify-content: center;
   left: 0;
-
   display: ${(props) => (props.isHidden ? 'none' : 'flex')};
 `;
 
@@ -40,7 +38,12 @@ const HiddenMenuLinks = styled.div`
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    margin: 6rem 0 0 2rem;
+    margin: 2rem 0 0 2rem;
+
+    a {
+      font-size: 1.5rem;
+      padding-bottom: 1rem;
+    }
   }
 `;
 

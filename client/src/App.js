@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import styled, { keyframes } from 'styled-components';
 import { useInView } from 'react-intersection-observer';
 import {
   BrowserRouter as Router,
@@ -68,12 +69,20 @@ class App extends React.Component {
     const handleClick = (e) => {
       this.setState({ isHidden: !this.state.isHidden });
     };
+
+    const StyledApp = styled.div`
+      position: relative;
+      width: 100%;
+      overflow: ${!this.state.isHidden ? 'hidden' : 'auto'};
+      height: ${!this.state.isHidden ? '100vh' : 'auto'};
+    `;
+
     return (
       <Router>
         <ScrollToTop />
         <GlobalStyle />
         <Switch>
-          <div className='App'>
+          <StyledApp>
             <Outer>
               <Menu>
                 <Link to='/'>Home</Link>
@@ -441,7 +450,7 @@ class App extends React.Component {
                 </Route>
               </Inner>
             </Outer>
-          </div>
+          </StyledApp>
         </Switch>
       </Router>
     );
