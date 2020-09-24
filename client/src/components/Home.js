@@ -44,7 +44,7 @@ const HiddenMenuLinks = styled.div`
     margin: 2rem 0 0 2rem;
 
     a {
-      font-size: 1.5rem;
+      font-size: 1rem;
       padding-bottom: 1rem;
     }
   }
@@ -171,6 +171,9 @@ const Text = styled.div`
 
   ul {
     padding: 0 0 0 3rem;
+    li {
+      padding-bottom: 1rem;
+    }
   }
 
   p {
