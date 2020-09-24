@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
     margin: 0;
-    font-size: 20px;
+    font-size: 24px;
     padding: 0;
 
   }
