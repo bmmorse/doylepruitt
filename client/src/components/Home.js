@@ -28,6 +28,9 @@ const HiddenMenu = styled.div`
   top: 3rem;
   left: 0;
   display: ${(props) => (props.isHidden ? 'none' : 'flex')};
+  @media (min-width: 1000px) {
+    justify-content: center;
+  }
 `;
 
 const HiddenMenuLinks = styled.div`
