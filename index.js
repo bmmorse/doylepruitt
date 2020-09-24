@@ -1,7 +1,13 @@
 const express = require('express');
 const path = require('path');
+const enforce = require('express-sslify');
 
 const app = express();
+
+// always force https in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(enforce.HTTPS({ trustProtoHeader: true }));
+}
 
 // static assets
 app.use(express.static(path.join(__dirname, 'client/build')));
