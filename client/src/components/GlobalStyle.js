@@ -2,36 +2,40 @@ import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
 const VAR = {
-  text: 'hsla(206, 68%, 6%, 1)',
-  textLight: 'hsla(206, 68%, 32%, 1)',
-
-  lightRed: 'hsla(360, 100%,90%,0.7)',
-  dark: '#333333',
-  blue: 'hsla(200, 100%, 90%, 1)',
-  linearBlue: 'linear-gradient(180deg, #CCEEFF 0%, #FFFFFF 100%)',
   lato: `'Lato', sans-serif`,
   playfair: `'Playfair Display', serif`,
+
+  // Colors
+  dark_1: 'hsla(0, 0%, 16%, 1)',
+  color_1: 'hsla(182, 62%, 90%, 1)',
+
+  // Media queries
+  mediaXL: '64rem', // 1024px
+  mediaM: '40rem', // 640px
 };
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
 
   * {
     box-sizing: border-box;
     margin: 0;
-    font-size: 24px;
+    font-size: 16px;
     padding: 0;
 
   }
 
   body {
-    color: ${VAR.dark};
+    color: ${VAR.dark_1};
     font-family: ${VAR.lato};
   }
 
   a,a:visited {
-    color: ${VAR.dark};
+    color: ${VAR.dark_1};
     text-decoration: none;
+  }
+
+  p {
+    font-family ${VAR.playfair};
   }
 
   .App {

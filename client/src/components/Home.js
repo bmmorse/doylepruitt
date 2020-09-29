@@ -9,7 +9,7 @@ import {
   Link,
 } from 'react-router-dom';
 import { VAR } from './GlobalStyle';
-import images from '../_images';
+import images from './_images';
 
 const Outer = styled.div`
   display: flex;
@@ -17,57 +17,6 @@ const Outer = styled.div`
   width: 100%;
   @media (min-width: 1000px) {
     width: 1000px;
-  }
-`;
-
-const HiddenMenu = styled.div`
-  background-color: white;
-  position: fixed;
-  height: calc(100vh - 3rem);
-  width: 100%;
-  top: 3rem;
-  left: 0;
-  display: ${(props) => (props.isHidden ? 'none' : 'flex')};
-  @media (min-width: 1000px) {
-    justify-content: center;
-  }
-`;
-
-const HiddenMenuLinks = styled.div`
-  display: flex;
-  justify-content: flex-start;
-
-  ul {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    margin: 2rem 0 0 2rem;
-
-    a {
-      font-size: 1rem;
-      padding-bottom: 1rem;
-    }
-  }
-`;
-
-const Menu = styled.div`
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  padding: 6rem 0 0 6rem;
-  // position: -webkit-sticky;
-  position: sticky;
-  align-self: flex-start;
-  top: 0;
-  height: auto;
-  display: none;
-  @media (max-width: 1000px) {
-    display: none;
-  }
-
-  a {
-    align-self: flex-start;
-    height: auto;
   }
 `;
 
@@ -120,35 +69,7 @@ const NamePhd = styled.div`
 
   span {
     font-size: 1rem;
-
     padding: 0;
-  }
-`;
-
-const MenuButtonAnimation = keyframes`
-  0%{background-position: 0% 0%;}
-  0%{background-position: -1000px 500px;}
-`;
-
-const MenuButton = styled.div`
-  animation: ${MenuButtonAnimation} 20s linear infinite;
-  background: url('${images.lines500x500}') repeat;
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 100%;
-  height: 3rem;
-  background-color: ${VAR.blue};
-  border-radius: 0.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: ${VAR.text};
-  font-size: 10px;
-
-  a {
-    display: block;
-    text-decoration: none;
   }
 `;
 
@@ -235,7 +156,6 @@ const ContactItem = styled.div`
 export {
   Outer,
   HiddenMenu,
-  Menu,
   Inner,
   Header,
   NamePhd,
