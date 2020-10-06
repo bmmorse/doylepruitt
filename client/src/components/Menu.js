@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
-import { VAR } from './GlobalStyle';
+import VAR from './VAR';
 import layout from './_layout';
 
 const FullWidth = styled(layout.full)``;
 
 const Menu = styled.div`
   height: 4rem;
-  max-width: ${VAR.mediaXL};
+  max-width: ${VAR.media1024};
   width: 100%;
 
   ul {
@@ -31,7 +31,7 @@ const Menu = styled.div`
       }
     }
 
-    @media (min-width: ${VAR.mediaM}) {
+    @media (min-width: ${VAR.media640}) {
       display: flex;
     }
   }
@@ -57,7 +57,7 @@ const MobileButton = styled.div`
     text-decoration: none;
   }
 
-  @media (min-width: ${VAR.mediaM}) {
+  @media (min-width: ${VAR.media640}) {
     display: none;
   }
 `;

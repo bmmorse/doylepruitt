@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
-import { VAR } from '../components/GlobalStyle';
+import VAR from '../components/VAR';
 
 const FullWidth = styled.div`
   display: flex;
@@ -10,11 +10,11 @@ const FullWidth = styled.div`
 `;
 
 const Container = styled.div`
-  max-width: ${VAR.mediaXL};
+  max-width: ${VAR.media1024};
   padding: 0 1rem;
   width: 100%;
 
-  @media (min-width: ${VAR.mediaM}) {
+  @media (min-width: ${VAR.media640}) {
     padding: 0 4rem;
   }
 `;

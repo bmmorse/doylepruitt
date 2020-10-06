@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { VAR } from '../GlobalStyle';
+import VAR from '../VAR';
 import layout from '../_layout';
 import images from '../_images';
 
@@ -13,7 +13,7 @@ const Container = styled(layout.container)`
   align-items: flex-end;
   display: flex;
   height: 12rem;
-  max-width: ${VAR.mediaM};
+  max-width: ${VAR.media640};
 
   h1 {
     color: white;
@@ -21,7 +21,7 @@ const Container = styled(layout.container)`
     padding: 0 0 2rem 0;
   }
 
-  @media (min-width: ${VAR.mediaM}) {
+  @media (min-width: ${VAR.media640}) {
     padding: 0;
   }
 `;

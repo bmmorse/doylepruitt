@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import images from '../_images';
-import { VAR } from '../GlobalStyle';
+import VAR from '../VAR';
 import layout from '../_layout';
 
 const FullWidth = styled(layout.full)``;
@@ -12,7 +12,7 @@ const Container = styled(layout.container)`
   grid-template-columns: 1fr;
   padding: 12rem 2rem 0 2rem;
 
-  @media (min-width: ${VAR.mediaM}) {
+  @media (min-width: ${VAR.media640}) {
     font-size: 1.5rem;
     gap: 0 4rem;
     grid-template-columns: auto minmax(16rem, 1fr);
@@ -41,10 +41,10 @@ const Text = styled.div`
     font-size: 1rem;
     line-height: 2rem;
     margin-bottom: 1.5rem;
-    max-width: ${VAR.mediaM};
+    max-width: ${VAR.media640};
     width: 100%;
 
-    @media (min-width: ${VAR.mediaXL}) {
+    @media (min-width: ${VAR.media1024}) {
       font-size: 1.5rem;
       line-height: 2.4rem;
     }

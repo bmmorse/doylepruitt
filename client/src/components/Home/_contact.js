@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import images from '../_images';
-import { VAR } from '../GlobalStyle';
+import VAR from '../VAR';
 import layout from '../_layout';
 
 const FullWidth = styled(layout.full)`
-  background: ${(props) => (props.color ? VAR.color_1 : '')};
   padding: 12rem 0 8rem 0;
-  font-family: ${VAR.playfair};
+  font-family: ${VAR.lato};
 
   h2 {
     font-size: 2rem;
@@ -15,11 +14,18 @@ const FullWidth = styled(layout.full)`
   }
 `;
 
+const Container = styled(layout.container)`
+  display: flex;
+  flex-direction: column;
+`;
+
+const ContactHeader = styled.div``;
+
 const ContactList = styled.ul`
   list-style-type: none;
   padding: 0 1rem;
 
-  @media (min-width: ${VAR.mediaM}) {
+  @media (min-width: ${VAR.media640}) {
     padding: 0;
   }
 
@@ -29,7 +35,7 @@ const ContactList = styled.ul`
     flex-direction: column;
     margin: 0 0 8rem 0;
 
-    @media (min-width: ${VAR.mediaM}) {
+    @media (min-width: ${VAR.media640}) {
       flex-direction: row;
     }
   }
@@ -46,12 +52,11 @@ const ContactText = styled.div`
   flex-direction: column;
   padding: 2rem 0 0 0;
 
-  @media (min-width: ${VAR.mediaM}) {
+  @media (min-width: ${VAR.media640}) {
     padding: 0 0 0 4rem;
   }
 
   span {
-    font-family: ${VAR.playfair};
     display: block;
 
     &:nth-child(2) {
@@ -59,8 +64,7 @@ const ContactText = styled.div`
       font-weight: 700;
       line-height: 1.4rem;
 
-      @media (min-width: ${VAR.mediaM}) {
-        font-family: ${VAR.playfair};
+      @media (min-width: ${VAR.media640}) {
         font-size: 2rem;
         line-height: 2rem;
       }
@@ -70,8 +74,16 @@ const ContactText = styled.div`
 
 const Contact = () => {
   return (
-    <>
-      <FullWidth color>
+    <FullWidth>
+      <Container>
+        <ContactHeader>
+          <h3>Contact</h3>
+          <p>
+            I am currently accepting new patients, and would appreciate the
+            opportunity to help you.
+          </p>
+        </ContactHeader>
+
         <ContactList>
           <li>
             <img src={images.phone} />
@@ -99,8 +111,8 @@ const Contact = () => {
             </ContactText>
           </li>
         </ContactList>
-      </FullWidth>
-    </>
+      </Container>
+    </FullWidth>
   );
 };
 

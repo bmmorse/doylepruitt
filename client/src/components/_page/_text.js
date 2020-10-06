@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { VAR } from '../GlobalStyle';
+import VAR from '../VAR';
 import layout from '../_layout';
 
 const FullWidth = styled(layout.full)``;
@@ -15,7 +15,7 @@ const Container = styled(layout.container)`
     font-size: 1.25rem;
     line-height: 2rem;
     margin: 0 0 2rem 0;
-    max-width: ${VAR.mediaM};
+    max-width: ${VAR.media640};
     width: 100%;
   }
 

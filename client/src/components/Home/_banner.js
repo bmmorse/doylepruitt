@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import images from '../_images';
-import { VAR } from '../GlobalStyle';
+import VAR from '../VAR';
 import layout from '../_layout';
 
 const FullWidth = styled(layout.full)`
@@ -27,7 +27,7 @@ const DoylePruitt = styled.div`
     font-size: 2rem;
     line-height: 2rem;
 
-    @media (min-width: ${VAR.mediaM}) {
+    @media (min-width: ${VAR.media640}) {
       font-size: 4rem;
       line-height: 4rem;
     }
@@ -57,7 +57,7 @@ const BannerText = styled.div`
       padding: 0 0.5rem;
     }
 
-    @media (min-width: ${VAR.mediaM}) {
+    @media (min-width: ${VAR.media640}) {
       font-size: 2rem;
       line-height: 2rem;
     }

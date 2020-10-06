@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import images from '../_images';
-import { VAR } from '../GlobalStyle';
+import VAR from '../VAR';
 
 const Images = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   margin: 12rem 0 0 0;
 
-  @media (min-width: ${VAR.mediaM}) {
+  @media (min-width: ${VAR.media640}) {
     grid-template-columns: 1fr 1fr;
   }
 `;
@@ -22,7 +22,7 @@ const ImageWrap = styled.div`
     width: 100%;
   }
 
-  @media (min-width: ${VAR.mediaM}) {
+  @media (min-width: ${VAR.media640}) {
     padding: 0;
     // padding: 1rem;
     // padding-right: 0.5rem; // the left image

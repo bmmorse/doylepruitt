@@ -12,7 +12,7 @@ import {
 
 // Components
 import images from './components/_images';
-import { GlobalStyle, VAR } from './components/GlobalStyle';
+import GlobalStyle from './components/GlobalStyle';
 import Menu from './components/Menu';
 import Home from './components/Home/index';
 
