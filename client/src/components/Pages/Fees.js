@@ -12,6 +12,7 @@ const Fees = () => {
     <>
       <Banner>Fees</Banner>
       <PageText>
+        <h2>Fees</h2>
         <p>Individual therapy: $120/therapy hour</p>
         <p>Court appearances: $400/hour minimum two hours</p>
         <p>Clinical Supervision: $100/hour </p>

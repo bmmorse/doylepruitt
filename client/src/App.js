@@ -13,7 +13,7 @@ import {
 // Components
 import images from './components/_images';
 import GlobalStyle from './components/GlobalStyle';
-import Menu from './components/Menu';
+import Menu from './components/Menu/index';
 import Home from './components/Home/index';
 
 // Page Components

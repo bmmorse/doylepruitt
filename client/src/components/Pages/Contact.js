@@ -11,8 +11,15 @@ import PageText from '../_page/_text';
 const Contact = () => {
   return (
     <>
-      <Banner>Contact</Banner>
-      <HomeContact></HomeContact>
+      <>
+        <Banner></Banner>
+        <PageText>
+          <h2>Contact</h2>
+          <p>585.314.0321</p>
+          <p>contact@drdoylepruitt.com</p>
+          <p>243 Center Street, Canandaigua, New York</p>
+        </PageText>
+      </>
     </>
   );
 };

@@ -6,7 +6,6 @@ import VAR from '../VAR';
 const Images = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  margin: 12rem 0 0 0;
 
   @media (min-width: ${VAR.media640}) {
     grid-template-columns: 1fr 1fr;

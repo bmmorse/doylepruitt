@@ -10,19 +10,24 @@ const FullWidth = styled(layout.full)`
 `;
 
 const Container = styled(layout.container)`
-  align-items: flex-end;
+  align-items: center;
+  color: white;
   display: flex;
-  height: 12rem;
+  flex-direction: column;
+  font-family: ${VAR.playfair};
+  height: 8rem;
+  justify-content: center;
   max-width: ${VAR.media640};
 
-  h1 {
-    color: white;
-    font-size: 3rem;
-    padding: 0 0 2rem 0;
+  .doyle {
+    font-size: 2rem;
+    line-height: 2rem;
   }
 
-  @media (min-width: ${VAR.media640}) {
-    padding: 0;
+  .phd {
+    font-size: 1rem;
+    line-height: 1rem;
+    padding: 0.5rem 0 0 0;
   }
 `;
 
@@ -30,7 +35,8 @@ const Banner = (props) => {
   return (
     <FullWidth>
       <Container>
-        <h1>{props.children}</h1>
+        <span className='doyle'>Doyle Pruitt</span>
+        <span className='phd'>Ph.D. LCSW-R</span>
       </Container>
     </FullWidth>
   );

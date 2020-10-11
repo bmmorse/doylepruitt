@@ -12,6 +12,7 @@ const Scholarship = () => {
     <>
       <Banner>Scholarship</Banner>
       <PageText>
+        <h2>Scholarship</h2>
         <p>Coming soon!</p>
       </PageText>
     </>

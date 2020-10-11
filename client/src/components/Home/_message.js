@@ -10,15 +10,13 @@ const Container = styled(layout.container)`
   display: grid;
   gap: 4rem;
   grid-template-columns: 1fr;
-  padding: 12rem 2rem 0 2rem;
+  padding: 12rem 1rem;
 
   @media (min-width: ${VAR.media640}) {
     font-size: 1.5rem;
     gap: 0 4rem;
     grid-template-columns: auto minmax(16rem, 1fr);
-
     line-height: 2.4rem;
-    padding: 12rem 4rem 0 4rem;
   }
 `;
 
@@ -35,25 +33,6 @@ const Text = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-
-  h2,
-  p {
-    font-size: 1rem;
-    line-height: 2rem;
-    margin-bottom: 1.5rem;
-    max-width: ${VAR.media640};
-    width: 100%;
-
-    @media (min-width: ${VAR.media1024}) {
-      font-size: 1.5rem;
-      line-height: 2.4rem;
-    }
-  }
-
-  p {
-    font-family: ${VAR.playfair};
-    font-weight: 400;
-  }
 `;
 
 const Content = () => {

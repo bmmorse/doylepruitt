@@ -12,6 +12,7 @@ const Blog = () => {
     <>
       <Banner>Blog</Banner>
       <PageText>
+        <h2>Blog</h2>
         <p>Coming soon!</p>
       </PageText>
     </>

@@ -6,8 +6,8 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
-    margin: 0;
     font-size: 16px;
+    margin: 0;
     padding: 0;
 
   }
@@ -22,8 +22,18 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
+  h2,
   p {
-    font-family ${VAR.playfair};
+    font-size: 1.25rem;
+    line-height: 2rem;
+    margin-bottom: 1.5rem;
+    max-width: ${VAR.media640};
+    width: 100%;
+  }
+
+  p {
+    font-family: ${VAR.lato};
+    font-weight: 400;
   }
 
   .App {

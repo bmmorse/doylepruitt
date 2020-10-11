@@ -13,7 +13,7 @@ const Container = styled(layout.container)`
   h2,
   p {
     font-size: 1.25rem;
-    line-height: 2rem;
+    line-height: 2.5rem;
     margin: 0 0 2rem 0;
     max-width: ${VAR.media640};
     width: 100%;
@@ -21,6 +21,10 @@ const Container = styled(layout.container)`
 
   ul {
     padding-left: 2rem;
+    li {
+      font-size: 1.25rem;
+      line-height: 2.5rem;
+    }
   }
 `;
 

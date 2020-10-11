@@ -13,6 +13,7 @@ const Bio = () => {
     <>
       <Banner>Bio</Banner>
       <PageText>
+        <h2>Bio</h2>
         <p>
           In 2001 I earned a Bachelor of Science degree in both Psychology and
           Social Work from Nazareth College. I graduated from Syracuse

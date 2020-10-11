@@ -11,12 +11,7 @@ const FullWidth = styled.div`
 
 const Container = styled.div`
   max-width: ${VAR.media1024};
-  padding: 0 1rem;
   width: 100%;
-
-  @media (min-width: ${VAR.media640}) {
-    padding: 0 4rem;
-  }
 `;
 
 const layout = {

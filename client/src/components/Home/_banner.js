@@ -24,8 +24,8 @@ const DoylePruitt = styled.div`
 
   h1 {
     font-weight: 400;
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 3rem;
+    line-height: 3rem;
 
     @media (min-width: ${VAR.media640}) {
       font-size: 4rem;
@@ -35,7 +35,7 @@ const DoylePruitt = styled.div`
 
   span {
     font-size: 1rem;
-    padding: 0;
+    padding: 0.5rem 0 0 0;
   }
 `;
 
@@ -54,7 +54,7 @@ const BannerText = styled.div`
     line-height: 1rem;
 
     &:nth-child(2) {
-      padding: 0 0.5rem;
+      padding: 0 1rem;
     }
 
     @media (min-width: ${VAR.media640}) {
