@@ -14,10 +14,12 @@ const Services = () => {
       <PageText>
         <h2>Services</h2>
         <p>
-          While I primarily provide services to children and families, I also
-          have experience working with adults coping with loss, trauma, anxiety,
-          and relationship strains. I am an expert in trauma therapy, treatment
-          of children and youth who cause sexual harm, and juvenile delinquency.
+          I have extensive experience working with individuals and families
+          coping with trauma, adversity, disturbance, and the stressors of daily
+          life. This can be the result of the stressor as an isolated event such
+          as a break-up, failure, accident, death, etc. or an ongoing experience
+          like family discord, mental illness, interpersonal abuse or neglect,
+          oppression, or discrimination.
         </p>
         <p>
           My clinical practice has included work with individuals coping with:
@@ -27,16 +29,20 @@ const Services = () => {
           <ul>
             <li>Trauma</li>
             <li>Adverse life experiences</li>
+            <li>Grief and loss</li>
             <li>Anxiety</li>
             <li>Depression</li>
-            <li>Grief and loss</li>
-            <li>Academic struggles and performance anxiety</li>
             <li>
-              Family transitions (i.e. divorce, remarriage, moves, additions to
-              family composition)
+              Academic struggles (e.g. performance, relationships, stress)
             </li>
-            <li>Attention Deficit Hyperactivity Disorder</li>
-            <li>Oppositional Defiant Disorder and Conduct Disorder</li>
+            <li>Performance anxiety</li>
+            <li>
+              Family transitions (e.g. endings, blendings, transitions,
+              additions and loss, changes in roles)
+            </li>
+            <li>Disruptive behaviors</li>
+            <li>Relationship discord</li>
+            <li>LGBTQ+</li>
           </ul>
         </p>
 
@@ -53,7 +59,9 @@ const Services = () => {
         <p>
           <ul>
             <li>Heal from traumatic experiences</li>
-            <li>Extinguish maladaptive and destructive behaviors</li>
+            <li>
+              Change destructive behaviors into healthy, helpful behaviors
+            </li>
             <li>Navigate transitions in life and normal development</li>
             <li>Develop or enhance coping skills</li>
             <li>

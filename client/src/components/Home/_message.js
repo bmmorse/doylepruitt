@@ -43,20 +43,16 @@ const Content = () => {
         <Text>
           <h2>Finger Lakes Therapy</h2>
           <p>
-            I’m a trauma and child therapist with over 15 years of clinical
-            experience.
-          </p>
-          <p>
-            At my private practice in Canandaigua, NY, I work with individuals
-            of all ages who are facing trauma, adversity, and loss, family
-            systems navigating interpersonal stress and changes, and folks
-            seeking more fulfillment in their lives.
-          </p>
-
-          <p>
             I believe my clients are the experts of their own lives, and my role
-            is to partner with them to discover the answers needed to begin
-            healing.
+            is to partner with them to discover what it is they need to heal,
+            grow, and achieve the life they imagined.
+          </p>
+          <p>
+            Since 2002 I have been a practicing therapist. At my private
+            practice in Canandaigua, NY, I work with individuals of all ages who
+            are looking to improve their lives and/or relationships and folks
+            seeking more fulfillment. I specialize in the treatment of trauma
+            across the lifespan, delinquency, and youth in general.
           </p>
         </Text>
       </Container>

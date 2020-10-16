@@ -48,27 +48,22 @@ const HiddenMenu = (props) => {
     <HiddenMenuWrap className={props.isHidden ? 'hidden' : 'visible'}>
       <div className='links'>
         <ul>
-          <Link to='/' onClick={props.handleClick}>
-            Home
-          </Link>
-          <Link to='/bio' onClick={props.handleClick}>
-            Bio
-          </Link>
-          <Link to='/services' onClick={props.handleClick}>
-            Services
-          </Link>
-          <Link to='/scholarship' onClick={props.handleClick}>
-            Scholarship
-          </Link>
-          <Link to='/blog' onClick={props.handleClick}>
-            Blog
-          </Link>
-          <Link to='/fees' onClick={props.handleClick}>
-            Fees
-          </Link>
-          <Link to='/contact' onClick={props.handleClick}>
-            Contact
-          </Link>
+          {
+            /**
+             * VAR.routes is an array of route names, e.g. '/bio'
+             * VAR.formatRouteName removes the leading '/' and capitalizes first char
+             *
+             * this lets us only write <Link>...</Link> once
+             *
+             */
+            VAR.routes.map((e) => {
+              return (
+                <Link to={e} onClick={props.handleClick}>
+                  {VAR.formatRouteName(e)}
+                </Link>
+              );
+            })
+          }
         </ul>
       </div>
     </HiddenMenuWrap>

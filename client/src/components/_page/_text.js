@@ -11,12 +11,25 @@ const Container = styled(layout.container)`
   padding: 4rem 1rem;
 
   h2,
-  p {
+  h3,
+  p,
+  ul {
     font-size: 1.25rem;
     line-height: 2.5rem;
     margin: 0 0 2rem 0;
     max-width: ${VAR.media640};
     width: 100%;
+  }
+
+  h3 {
+    color: ${VAR.color_1};
+    font-size: 2rem;
+    line-height: 2rem;
+    margin: 0 0 6rem 0;
+  }
+
+  section {
+    margin: 0 0 6rem 0;
   }
 
   ul {

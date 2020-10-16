@@ -7,19 +7,29 @@ import HomeContact from '../Home/_contact';
 
 import Banner from '../_page/_banner';
 import PageText from '../_page/_text';
+import List from '../_page/_List';
 
 const Contact = () => {
   return (
     <>
-      <>
-        <Banner></Banner>
-        <PageText>
-          <h2>Contact</h2>
-          <p>585.314.0321</p>
-          <p>contact@drdoylepruitt.com</p>
-          <p>243 Center Street, Canandaigua, New York</p>
-        </PageText>
-      </>
+      <Banner />
+      <PageText>
+        <h2>Contact</h2>
+        <List.color>
+          <li>
+            <span>phone</span>
+            <span>585.314.0321</span>
+          </li>
+          <li>
+            <span>email</span>
+            <span>contact@drdoylepruitt.com</span>
+          </li>
+          <li>
+            <span>address</span>
+            <span>243 Center Street, Canandaigua, New York</span>
+          </li>
+        </List.color>
+      </PageText>
     </>
   );
 };

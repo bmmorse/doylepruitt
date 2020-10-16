@@ -80,8 +80,8 @@ const Contact = () => {
         <ContactHeader>
           <h2>Contact</h2>
           <p>
-            I am currently accepting new patients, and would appreciate the
-            opportunity to help you.
+            I invite you to contact me to see if my approach to care is
+            something that would be of benefit to you.
           </p>
         </ContactHeader>
 
