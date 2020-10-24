@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import images from '../_images';
 import VAR from '../VAR';
 import layout from '../_layout';
 
 const FullWidth = styled(layout.full)`
-  background: url(${images.homeImage}) no-repeat;
+  background: url(${VAR.images.homeImage}) no-repeat;
   background-size: cover;
 `;
 
@@ -66,6 +65,11 @@ const BannerText = styled.div`
       font-size: 1.5rem;
       line-height: 1.5rem;
     }
+
+    @media (min-width: ${VAR.media1024}) {
+      font-size: 2.5rem;
+      line-height: 2.5rem;
+    }
   }
 `;
 const Banner = () => {
@@ -77,7 +81,7 @@ const Banner = () => {
           <span>LCSW-R</span>
         </DoylePruitt>
         <BannerText>
-          <h2>Psychotherapy grounded in hope, growth, and resilience.</h2>
+          <h2>Hope. Growth. Resilience.</h2>
         </BannerText>
       </Container>
     </FullWidth>

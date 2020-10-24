@@ -1,17 +1,15 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { useInView } from 'react-intersection-observer';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect,
   useLocation,
-  Link,
 } from 'react-router-dom';
 
+import VAR from './components/VAR';
+
 // Components
-import images from './components/_images';
 import GlobalStyle from './components/GlobalStyle';
 import Menu from './components/Menu/index';
 import Home from './components/Home/index';
@@ -24,43 +22,41 @@ import Fees from './components/Pages/Fees';
 import Blog from './components/Pages/Blog';
 import Contact from './components/Pages/Contact';
 
-class App extends React.Component {
-  state = {
-    isHidden: true,
-  };
+function ScrollToTop() {
+  const { pathname } = useLocation();
 
-  handleClick = (e) => {
-    this.setState({ isHidden: !this.state.isHidden });
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      mobileMenu: false,
+    };
+  }
+
+  toggleMenu = (e) => {
+    this.setState({ mobileMenu: !this.state.mobileMenu });
   };
 
   render() {
-    function ScrollToTop() {
-      const { pathname } = useLocation();
-
-      useEffect(() => {
-        window.scrollTo(0, 0);
-      }, [pathname]);
-
-      return null;
-    }
-
-    const APP = styled.div`
-      height: ${!this.state.isHidden ? '100vh' : 'auto'};
-      overflow: ${!this.state.isHidden ? 'hidden' : 'auto'};
-      position: relative;
-      width: 100%;
-    `;
-
     return (
       <Router>
         <ScrollToTop />
         <GlobalStyle />
         <Switch>
-          {/* APP */}
-          <APP>
+          {/* The App */}
+          <div
+            className={`App ${this.state.mobileMenu ? 'freeze' : 'unfreeze'}`}
+          >
             <Menu
-              isHidden={this.state.isHidden}
-              handleClick={this.handleClick}
+              mobileMenu={this.state.mobileMenu}
+              toggleMenu={this.toggleMenu}
             />
 
             <Route exact path='/'>
@@ -90,7 +86,7 @@ class App extends React.Component {
             <Route exact path='/contact'>
               <Contact />
             </Route>
-          </APP>
+          </div>
         </Switch>
       </Router>
     );

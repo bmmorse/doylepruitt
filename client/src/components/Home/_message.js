@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import images from '../_images';
 import VAR from '../VAR';
 import layout from '../_layout';
 
@@ -39,9 +38,9 @@ const Content = () => {
   return (
     <FullWidth>
       <Container>
-        <DoyleImg src={images.doyle}></DoyleImg>
+        <DoyleImg src={VAR.images.doyle}></DoyleImg>
         <Text>
-          <h2>Finger Lakes Therapy</h2>
+          <h2>Psychotherapy grounded in hope, growth, and resilience.</h2>
           <p>
             I believe my clients are the experts of their own lives, and my role
             is to partner with them to discover what it is they need to heal,

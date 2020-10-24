@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import images from '../_images';
 import VAR from '../VAR';
 import layout from '../_layout';
 

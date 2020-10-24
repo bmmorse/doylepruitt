@@ -35,7 +35,7 @@ const Bio = () => {
       <PageText>
         <h2>Bio</h2>
         <section>
-          <p style={{ margin: 0 }}>
+          <p style={{ margin: '0' }}>
             In 2001 I earned a Bachelor of Science degree in both Psychology and
             Social Work from Nazareth College. I graduated from Syracuse
             University in 2002 with an MSW degree. In 2012, I successfully
@@ -45,7 +45,9 @@ const Bio = () => {
           </p>
         </section>
         <section>
-          <h3>15+ years of clinical experience</h3>
+          <h3>Trauma Expert</h3>
+        </section>
+        <section>
           <p>
             My work with trauma survivors is grounded in Attachment Theory. In
             this perspective, the therapist-client relationship is understood to
@@ -55,7 +57,7 @@ const Bio = () => {
             of modalities: sensorimotor psychotherapy, EMDR, TF-CBT,
             psychodynamic psychotherapy, and play.
           </p>
-          <p>
+          <p style={{ margin: '0' }}>
             My goal with the client is to first establish safety and
             stabilization. Once this is achieved we can move towards exploring
             and understanding their trauma. This does NOT mean clients must
@@ -67,6 +69,10 @@ const Bio = () => {
             their belief system, and take control over their life.
           </p>
         </section>
+        <section>
+          <h3>15+ years of clinical experience</h3>
+        </section>
+
         <section>
           <h2>Advanced Trainings</h2>
           <AdvancedTrainings>

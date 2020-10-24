@@ -62,6 +62,10 @@ const MobileButton = styled.div`
   }
 `;
 
+/**
+ * @props toggleMenu | function
+ *   this.toggleMenu, function that changes mobileMenu
+ */
 const VisibleMenu = (props) => {
   return (
     <FullWidth>
@@ -90,7 +94,7 @@ const VisibleMenu = (props) => {
           </li>
         </ul>
 
-        <MobileButton onClick={props.handleClick}>Menu</MobileButton>
+        <MobileButton onClick={props.toggleMenu}>Menu</MobileButton>
       </Menu>
     </FullWidth>
   );

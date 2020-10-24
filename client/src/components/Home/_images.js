@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import images from '../_images';
 import VAR from '../VAR';
 
 const Images = styled.div`
@@ -37,10 +36,10 @@ const ImageFunc = () => {
   return (
     <Images>
       <ImageWrap>
-        <img src={images.office} alt='' />
+        <img src={VAR.images.office} alt='' />
       </ImageWrap>
       <ImageWrap>
-        <img src={images.porter} alt='' />
+        <img src={VAR.images.porter} alt='' />
       </ImageWrap>
     </Images>
   );

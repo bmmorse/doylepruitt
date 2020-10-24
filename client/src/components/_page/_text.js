@@ -25,7 +25,7 @@ const Container = styled(layout.container)`
     color: ${VAR.color_1};
     font-size: 2rem;
     line-height: 2rem;
-    margin: 0 0 6rem 0;
+    margin: 0;
   }
 
   section {

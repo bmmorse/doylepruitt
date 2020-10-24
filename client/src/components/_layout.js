@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { Link } from 'react-router-dom';
-import VAR from '../components/VAR';
+import VAR from './VAR';
 
 const FullWidth = styled.div`
   display: flex;

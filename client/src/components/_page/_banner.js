@@ -2,10 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import VAR from '../VAR';
 import layout from '../_layout';
-import images from '../_images';
 
 const FullWidth = styled(layout.full)`
-  background: url(${images.homeImage}) no-repeat;
+  background: url(${VAR.images.homeImage}) no-repeat;
   background-size: cover;
 `;
 

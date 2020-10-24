@@ -4,13 +4,17 @@ import { Link } from 'react-router-dom';
 import VAR from '../VAR';
 import layout from '../_layout';
 
-const HiddenMenuWrap = styled.div`
+const HiddenMenu = styled.div`
+  align-items: center;
   background-color: white;
-  position: fixed;
+  display: flex;
+  flex-direction: column;
   height: calc(100vh - 3rem);
+  left: 0;
+  padding: 1rem 0 0 0;
+  position: fixed;
   width: 100%;
   top: 3rem;
-  left: 0;
   z-index: 999;
 
   &.visible {
@@ -21,21 +25,11 @@ const HiddenMenuWrap = styled.div`
     display: none;
   }
 
-  .links {
-    display: flex;
-    justify-content: flex-start;
-
-    ul {
-      align-items: flex-start;
-      display: flex;
-      flex-direction: column;
-      margin: 2rem 0 0 2rem;
-
-      a {
-        font-size: 1rem;
-        padding-bottom: 1rem;
-      }
-    }
+  a {
+    font-size: 2rem;
+    padding: 1rem 0;
+    text-align: center;
+    width: 100%;
   }
 
   @media (min-width: 1000px) {
@@ -43,31 +37,25 @@ const HiddenMenuWrap = styled.div`
   }
 `;
 
-const HiddenMenu = (props) => {
+/**
+ * @props mobileMenu | boolean
+ *   this.state.mobileMenu, defaults to false
+ *
+ * @props toggleMenu | function
+ *   this.toggleMenu, function that changes mobileMenu
+ */
+const HiddenMenuFunc = (props) => {
   return (
-    <HiddenMenuWrap className={props.isHidden ? 'hidden' : 'visible'}>
-      <div className='links'>
-        <ul>
-          {
-            /**
-             * VAR.routes is an array of route names, e.g. '/bio'
-             * VAR.formatRouteName removes the leading '/' and capitalizes first char
-             *
-             * this lets us only write <Link>...</Link> once
-             *
-             */
-            VAR.routes.map((e) => {
-              return (
-                <Link to={e} onClick={props.handleClick}>
-                  {VAR.formatRouteName(e)}
-                </Link>
-              );
-            })
-          }
-        </ul>
-      </div>
-    </HiddenMenuWrap>
+    <HiddenMenu className={props.mobileMenu ? 'visible' : 'hidden'}>
+      {VAR.routes.map((e) => {
+        return (
+          <Link to={e.path} onClick={props.toggleMenu}>
+            {e.name}
+          </Link>
+        );
+      })}
+    </HiddenMenu>
   );
 };
 
-export default HiddenMenu;
+export default HiddenMenuFunc;

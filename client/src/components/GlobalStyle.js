@@ -39,7 +39,19 @@ const GlobalStyle = createGlobalStyle`
   .App {
     position: relative;
     width: 100%;
+
+    &.freeze {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    &.unfreeze {
+      height: auto;
+      overflow: auto;
+    }
   }
+
+  
 `;
 
 export default GlobalStyle;

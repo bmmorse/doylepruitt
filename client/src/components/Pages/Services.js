@@ -75,12 +75,13 @@ const Services = () => {
               destructive ones)
             </li>
             <li>Recognize their inner strength, potential, and worth</li>
+            <li>Discover their true self</li>
           </ul>
         </p>
         <p>
           All behavior serves a purpose. Only when we understand what that
-          purpose is can we work towards modifying or extinguishing the
-          behavior. This often requires the circumstances or individuals
+          purpose is can we work towards accepting, modifying, or extinguishing
+          the behavior. This often requires the circumstances or individuals
           contributing to the development of the behavior to also change. That
           is why family participation in treatment (especially with children and
           adolescents) is critical.
