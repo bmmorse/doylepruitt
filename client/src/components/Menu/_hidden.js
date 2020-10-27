@@ -4,29 +4,40 @@ import { Link } from 'react-router-dom';
 import VAR from '../VAR';
 import layout from '../_layout';
 
+const fadein = keyframes`
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+`;
+
+const fadeout = keyframes`
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+`;
+
 const HiddenMenu = styled.div`
   align-items: center;
   background-color: white;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 3rem);
+  height: calc(100vh - 4rem);
   left: 0;
   padding: 1rem 0 0 0;
   position: fixed;
   width: 100%;
-  top: 3rem;
+  top: 4rem;
   z-index: 999;
 
   &.visible {
-    display: flex;
+    animation: ${fadein} 400ms ease;
   }
 
   &.hidden {
+    animation: ${fadeout} 400ms ease;
     display: none;
   }
 
   a {
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 1rem 0;
     text-align: center;
     width: 100%;

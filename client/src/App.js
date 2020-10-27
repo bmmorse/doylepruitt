@@ -7,7 +7,12 @@ import {
   useLocation,
 } from 'react-router-dom';
 
-import VAR from './components/VAR';
+// Body Scroll Lock
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from 'body-scroll-lock';
 
 // Components
 import GlobalStyle from './components/GlobalStyle';
@@ -41,6 +46,8 @@ class App extends React.Component {
   }
 
   toggleMenu = (e) => {
+    disableBodyScroll();
+
     this.setState({ mobileMenu: !this.state.mobileMenu });
   };
 
