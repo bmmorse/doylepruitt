@@ -1,8 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import VAR from '../VAR';
+import { useInView } from 'react-intersection-observer';
 
-const Images = styled.div`
+// the most outer wrapping container
+const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
 
@@ -10,39 +12,79 @@ const Images = styled.div`
     grid-template-columns: 1fr 1fr;
   }
 `;
-const ImageWrap = styled.div`
+
+// div that wraps each image
+const ImageDiv = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
   padding: 1rem;
-
-  img {
-    width: 100%;
-  }
+  position: relative;
 
   @media (min-width: ${VAR.media640}) {
     padding: 0;
-    // padding: 1rem;
-    // padding-right: 0.5rem; // the left image
-
-    &:nth-child(2) {
-      // padding: 1rem;
-      // padding-left: 0.5rem; // the right image
-    }
   }
 `;
 
-const ImageFunc = () => {
+// the <img>
+const ImageImg = styled.img`
+  opacity: 0;
+  position: relative;
+  width: 100%;
+
+  @keyframes imagesAnimation {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  &.imagesAnimation {
+    animation: imagesAnimation 1s ease;
+    opacity: 1;
+  }
+`;
+
+/**
+ * Image Component - returns image inside a div wrapper
+ * with intersection observer
+ *
+ * <Image src={VAR.images.office} />
+ *
+ * @props src
+ *   link to the image, from VAR
+ */
+
+const Image = (props) => {
+  const { ref, inView, entry } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
   return (
-    <Images>
-      <ImageWrap>
-        <img src={VAR.images.office} alt='' />
-      </ImageWrap>
-      <ImageWrap>
-        <img src={VAR.images.porter} alt='' />
-      </ImageWrap>
-    </Images>
+    <ImageDiv>
+      <ImageImg
+        ref={ref}
+        className={inView ? 'imagesAnimation' : ''}
+        src={props.src}
+        alt=''
+      />
+    </ImageDiv>
   );
 };
 
-export default ImageFunc;
+/**
+ * The master component
+ */
+const ImagesFunc = () => {
+  return (
+    <Container>
+      <Image src={VAR.images.office} />
+      <Image src={VAR.images.porter} />
+    </Container>
+  );
+};
+
+export default ImagesFunc;
