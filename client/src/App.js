@@ -56,16 +56,14 @@ class App extends React.Component {
       <Router>
         <ScrollToTop />
         <GlobalStyle />
-        <Switch>
-          {/* The App */}
-          <div
-            className={`App ${this.state.mobileMenu ? 'freeze' : 'unfreeze'}`}
-          >
-            <Menu
-              mobileMenu={this.state.mobileMenu}
-              toggleMenu={this.toggleMenu}
-            />
 
+        {/* The App */}
+        <div className={`App ${this.state.mobileMenu ? 'freeze' : 'unfreeze'}`}>
+          <Menu
+            mobileMenu={this.state.mobileMenu}
+            toggleMenu={this.toggleMenu}
+          />
+          <Switch>
             <Route exact path='/'>
               <Home />
             </Route>
@@ -93,8 +91,8 @@ class App extends React.Component {
             <Route exact path='/contact'>
               <Contact />
             </Route>
-          </div>
-        </Switch>
+          </Switch>
+        </div>
       </Router>
     );
   }

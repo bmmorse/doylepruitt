@@ -1,8 +1,4 @@
-import React, { useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
-import { Link } from 'react-router-dom';
-import VAR from '../VAR';
-import layout from '../_layout';
+import React from 'react';
 
 import Banner from '../_page/_banner';
 import PageText from '../_page/_text';
@@ -25,26 +21,22 @@ const Services = () => {
           My clinical practice has included work with individuals coping with:
         </p>
 
-        <p>
-          <ul>
-            <li>Trauma</li>
-            <li>Adverse life experiences</li>
-            <li>Grief and loss</li>
-            <li>Anxiety</li>
-            <li>Depression</li>
-            <li>
-              Academic struggles (e.g. performance, relationships, stress)
-            </li>
-            <li>Performance anxiety</li>
-            <li>
-              Family transitions (e.g. endings, blendings, transitions,
-              additions and loss, changes in roles)
-            </li>
-            <li>Disruptive behaviors</li>
-            <li>Relationship discord</li>
-            <li>LGBTQ+</li>
-          </ul>
-        </p>
+        <ul>
+          <li>Trauma</li>
+          <li>Adverse life experiences</li>
+          <li>Grief and loss</li>
+          <li>Anxiety</li>
+          <li>Depression</li>
+          <li>Academic struggles (e.g. performance, relationships, stress)</li>
+          <li>Performance anxiety</li>
+          <li>
+            Family transitions (e.g. endings, blendings, transitions, additions
+            and loss, changes in roles)
+          </li>
+          <li>Disruptive behaviors</li>
+          <li>Relationship discord</li>
+          <li>LGBTQ+</li>
+        </ul>
 
         <p>
           My approach is client-centered and humanistic. My experience has shown
@@ -56,28 +48,26 @@ const Services = () => {
         </p>
 
         <p>I have helped clients:</p>
-        <p>
-          <ul>
-            <li>Heal from traumatic experiences</li>
-            <li>
-              Change destructive behaviors into healthy, helpful behaviors
-            </li>
-            <li>Navigate transitions in life and normal development</li>
-            <li>Develop or enhance coping skills</li>
-            <li>
-              Establish and enforce boundaries in their personal and
-              professional relationships
-            </li>
-            <li>Improve communication skills</li>
-            <li>Develop more effective parenting practices</li>
-            <li>
-              Foster deeper, more meaningful relationships (and let go of
-              destructive ones)
-            </li>
-            <li>Recognize their inner strength, potential, and worth</li>
-            <li>Discover their true self</li>
-          </ul>
-        </p>
+
+        <ul>
+          <li>Heal from traumatic experiences</li>
+          <li>Change destructive behaviors into healthy, helpful behaviors</li>
+          <li>Navigate transitions in life and normal development</li>
+          <li>Develop or enhance coping skills</li>
+          <li>
+            Establish and enforce boundaries in their personal and professional
+            relationships
+          </li>
+          <li>Improve communication skills</li>
+          <li>Develop more effective parenting practices</li>
+          <li>
+            Foster deeper, more meaningful relationships (and let go of
+            destructive ones)
+          </li>
+          <li>Recognize their inner strength, potential, and worth</li>
+          <li>Discover their true self</li>
+        </ul>
+
         <p>
           All behavior serves a purpose. Only when we understand what that
           purpose is can we work towards accepting, modifying, or extinguishing

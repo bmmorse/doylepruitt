@@ -14,8 +14,8 @@ const Container = styled(layout.container)`
   h3,
   p,
   ul {
-    font-size: 1.25rem;
-    line-height: 2.5rem;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
     margin: 0 0 2rem 0;
     max-width: ${VAR.media640};
     width: 100%;

@@ -60,7 +60,7 @@ const HiddenMenuFunc = (props) => {
     <HiddenMenu className={props.mobileMenu ? 'visible' : 'hidden'}>
       {VAR.routes.map((e) => {
         return (
-          <Link to={e.path} onClick={props.toggleMenu}>
+          <Link to={e.path} key={e.path} onClick={props.toggleMenu}>
             {e.name}
           </Link>
         );

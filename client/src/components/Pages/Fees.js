@@ -1,8 +1,4 @@
-import React, { useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
-import { Link } from 'react-router-dom';
-import VAR from '../VAR';
-import layout from '../_layout';
+import React from 'react';
 
 import Banner from '../_page/_banner';
 import PageText from '../_page/_text';
@@ -49,9 +45,13 @@ const Fees = () => {
         </List.color>
         <h2>Insurance</h2>
         <p>
-          I accept Excellus Blue Cross Blue Shied, Fidelis, and Independent
-          Health insurance. Please contact your insurance company directly to
-          ensure I am an in-network provider for them.
+          I accept Excellus Blue Cross Blue Shied, MVP, Fidelis, and Independent
+          Health insurance.
+        </p>
+
+        <p>
+          Please contact your insurance company directly to ensure I am an
+          in-network provider for them.
         </p>
       </PageText>
     </>

@@ -72,6 +72,7 @@ const BannerText = styled.div`
     }
   }
 `;
+
 const Banner = () => {
   return (
     <FullWidth>
