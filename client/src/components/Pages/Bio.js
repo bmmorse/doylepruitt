@@ -1,32 +1,12 @@
-import React, { useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
-import { Link } from 'react-router-dom';
-import VAR from '../VAR';
-import layout from '../_layout';
-import Contact from '../Home/_contact';
+import React from 'react';
+import styled from 'styled-components';
+import VAR from '../../helpers/VAR';
 
 import Banner from '../_page/_banner';
 import PageText from '../_page/_text';
+import List from '../_page/_List';
 
-const AdvancedTrainings = styled.ul`
-  padding-left: 0 !important;
-
-  li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 0 2rem 0;
-
-    span {
-      font-size: 1.25rem;
-      line-height: 1.5rem;
-
-      &:nth-child(1) {
-        color: ${VAR.color_1};
-      }
-    }
-  }
-`;
+const AdvancedTrainings = List.color;
 
 const Bio = () => {
   return (

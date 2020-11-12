@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import VAR from '../VAR';
+import VAR from '../../helpers/VAR';
 import layout from '../_layout';
 
 const FullWidth = styled(layout.full)`
@@ -34,6 +34,9 @@ const ContactList = styled.ul`
 
     span {
       display: block;
+      &:nth-child(1) {
+        color: ${VAR.color_1};
+      }
 
       &:nth-child(2) {
         font-size: 1.5rem;

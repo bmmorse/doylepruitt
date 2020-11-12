@@ -1,7 +1,7 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import styled, { keyframes, css } from 'styled-components';
-import VAR from '../VAR';
+import VAR from '../../helpers/VAR';
 import layout from '../_layout';
 
 /**

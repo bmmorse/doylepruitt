@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
-import VAR from './VAR';
+import VAR from '../helpers/VAR';
 
 const FullWidth = styled.div`
   display: flex;

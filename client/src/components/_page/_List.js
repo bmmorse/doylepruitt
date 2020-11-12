@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import VAR from '../VAR';
+import VAR from '../../helpers/VAR';
 
 const BulletList = styled.ul`
   padding-left: 2rem;
@@ -22,9 +22,12 @@ const ColorList = styled.ul`
     span {
       font-size: 1.25rem;
       line-height: 1.5rem;
+      padding: 0 0 0.25rem 0;
 
       &:nth-child(1) {
         color: ${VAR.color_1};
+        font-size: 1rem;
+        line-height: 1rem;
       }
     }
   }

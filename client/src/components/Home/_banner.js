@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import VAR from '../VAR';
+import VAR from '../../helpers/VAR';
 import layout from '../_layout';
 
 const FullWidth = styled(layout.full)`

@@ -1,8 +1,7 @@
-import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import VAR from './VAR';
 
-const GlobalStyle = createGlobalStyle`
+const GlobalCSS = createGlobalStyle`
 
   * {
     box-sizing: border-box;
@@ -51,4 +50,4 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export default GlobalStyle;
+export default GlobalCSS;

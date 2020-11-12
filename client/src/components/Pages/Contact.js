@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
-import VAR from '../VAR';
+import VAR from '../../helpers/VAR';
 import layout from '../_layout';
 import HomeContact from '../Home/_contact';
 

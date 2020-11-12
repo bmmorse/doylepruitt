@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import VAR from '../VAR';
+import VAR from '../../helpers/VAR';
 import { useInView } from 'react-intersection-observer';
 
 // the most outer wrapping container
