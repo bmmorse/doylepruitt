@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import VAR from '../../helpers/VAR';
 import layout from '../_layout';
 
+// import routes
+import routes from '../../helpers/routes';
+
 const fadein = keyframes`
   0% { opacity: 0; }
   100% { opacity: 1; }
@@ -58,7 +61,7 @@ const HiddenMenu = styled.div`
 const HiddenMenuFunc = (props) => {
   return (
     <HiddenMenu className={props.mobileMenu ? 'visible' : 'hidden'}>
-      {VAR.routes.map((e) => {
+      {routes.map((e) => {
         return (
           <Link to={e.path} key={e.path} onClick={props.toggleMenu}>
             {e.name}

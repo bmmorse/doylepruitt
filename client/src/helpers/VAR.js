@@ -1,36 +1,4 @@
 const VAR = {
-  // Routes Array
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-    },
-    {
-      path: '/bio',
-      name: 'Bio',
-    },
-    {
-      path: '/services',
-      name: 'Services',
-    },
-    {
-      path: '/scholarship',
-      name: 'Scholarship',
-    },
-    {
-      path: '/blog',
-      name: 'Blog',
-    },
-    {
-      path: '/fees',
-      name: 'Fees',
-    },
-    {
-      path: '/contact',
-      name: 'Contact',
-    },
-  ],
-
   // Fonts
   lato: `'Lato', sans-serif`,
   playfair: `'Playfair Display', serif`,

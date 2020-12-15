@@ -9,17 +9,9 @@ import {
 import GlobalCSS from './helpers/GlobalCSS';
 import { ScrollToTop } from './helpers/functions';
 
-// Components
+// Site Nav
+import routes from './helpers/routes';
 import Menu from './components/Menu/index';
-import Home from './components/Home/index';
-
-// Page Components
-import Bio from './components/Pages/Bio';
-import Services from './components/Pages/Services';
-import Scholarship from './components/Pages/Scholarship';
-import Fees from './components/Pages/Fees';
-import Blog from './components/Pages/Blog';
-import Contact from './components/Pages/Contact';
 
 class App extends React.Component {
   constructor(props) {
@@ -34,43 +26,6 @@ class App extends React.Component {
   };
 
   render() {
-    const routes = [
-      {
-        name: 'Home',
-        path: '/',
-        component: Home,
-      },
-      {
-        name: 'Bio',
-        path: '/bio',
-        component: Bio,
-      },
-      {
-        name: 'Services',
-        path: '/services',
-        component: Services,
-      },
-      {
-        name: 'Scholarship',
-        path: '/scholarship',
-        component: Scholarship,
-      },
-      {
-        name: 'Blog',
-        path: '/blog',
-        component: Blog,
-      },
-      {
-        name: 'Fees',
-        path: '/Fees',
-        component: Fees,
-      },
-      {
-        name: 'Contact',
-        path: '/contact',
-        component: Contact,
-      },
-    ];
     return (
       <Router>
         <ScrollToTop />
@@ -84,7 +39,7 @@ class App extends React.Component {
           />
           <Switch>
             {routes.map((e) => (
-              <Route exact path={e.path}>
+              <Route key={e.name} exact path={e.path}>
                 {e.component}
               </Route>
             ))}
