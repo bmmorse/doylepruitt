@@ -1,5 +1,18 @@
-import styled, { createGlobalStyle } from 'styled-components';
-import VAR from './VAR';
+import React from 'react';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components';
+import VAR from './variables';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 const GlobalCSS = createGlobalStyle`
 
@@ -8,11 +21,14 @@ const GlobalCSS = createGlobalStyle`
     font-size: 16px;
     margin: 0;
     padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
     color: ${VAR.dark_1};
     font-family: ${VAR.lato};
+    // font-display: swap
   }
 
   a,a:visited {
@@ -50,4 +66,13 @@ const GlobalCSS = createGlobalStyle`
   }
 `;
 
-export default GlobalCSS;
+export default class Globals extends React.Component {
+  render() {
+    return (
+      <>
+        <ScrollToTop />
+        <GlobalCSS />
+      </>
+    );
+  }
+}

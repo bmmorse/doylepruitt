@@ -1,14 +1,12 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import VAR from '../../helpers/VAR';
 import { useInView } from 'react-intersection-observer';
 
 // the most outer wrapping container
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-
-  @media (min-width: ${VAR.media640}) {
+  @media (min-width: 640px) {
     grid-template-columns: 1fr 1fr;
   }
 `;
@@ -20,8 +18,7 @@ const ImageDiv = styled.div`
   justify-content: center;
   padding: 1rem;
   position: relative;
-
-  @media (min-width: ${VAR.media640}) {
+  @media (min-width: 640px) {
     padding: 0;
   }
 `;
@@ -31,36 +28,23 @@ const ImageImg = styled.img`
   opacity: 0;
   position: relative;
   width: 100%;
-
   @keyframes imagesAnimation {
     0% {
       opacity: 0;
     }
-
     100% {
       opacity: 1;
     }
   }
-
   &.imagesAnimation {
     animation: imagesAnimation 1s ease;
     opacity: 1;
   }
 `;
 
-/**
- * Image Component - returns image inside a div wrapper
- * with intersection observer
- *
- * <Image src={VAR.images.office} />
- *
- * @props src
- *   link to the image, from VAR
- */
-
 const Image = (props) => {
   const { ref, inView, entry } = useInView({
-    threshold: 0.5,
+    threshold: 0.2,
     triggerOnce: true,
   });
   return (
@@ -81,8 +65,8 @@ const Image = (props) => {
 const ImagesFunc = () => {
   return (
     <Container>
-      <Image src={VAR.images.office} />
-      <Image src={VAR.images.porter} />
+      <Image src='https://doylepruitt.s3.us-east-2.amazonaws.com/office.jpg' />
+      <Image src='https://doylepruitt.s3.us-east-2.amazonaws.com/porter.jpg' />
     </Container>
   );
 };
