@@ -6,7 +6,7 @@ import address from './address.svg';
 
 const DIV_FULL = styled.div`
   align-items: center;
-  background-image: linear-gradient(180deg, #00969b 0%, #96f4f8 100%);
+  background: #7acacb;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -27,7 +27,7 @@ const DIV_CONTAINER = styled.div`
 
   h3 {
     font-size: 32px;
-    color: #e7f6f8;
+    color: #0c5052;
     letter-spacing: 0;
     line-height: 32px;
     margin: 0 0 72px 0;
@@ -35,7 +35,7 @@ const DIV_CONTAINER = styled.div`
 
   p {
     font-size: 24px;
-    color: #e7f6f8;
+    color: #00969b;
     text-align: center;
     line-height: 1.2;
     margin: 0 0 72px 0;
@@ -70,7 +70,7 @@ const DIV_CONTACT_ITEM = styled.div`
 `;
 
 const DIV_BOTTOM = styled.div`
-  border-top: solid 1px #73faff;
+  border-top: solid 1px #00969b;
   display: flex;
   justify-content: center;
   padding: 0.5rem 0;

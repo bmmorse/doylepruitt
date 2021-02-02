@@ -4,7 +4,7 @@ import heart from './heart.svg';
 import tree from './tree.svg';
 
 const DIV_FULL = styled.div`
-  background-image: linear-gradient(180deg, #78cacb 0%, #008887 100%);
+  background: #7acacb;
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -57,7 +57,7 @@ const DIV_LOGOWRAP = styled.div`
     margin: 4rem 0 0 0;
     text-align: center;
     font-size: 2rem;
-    color: #d8d8d8;
+    color: #00969b;
   }
 `;
 
