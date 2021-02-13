@@ -1,12 +1,12 @@
 const VAR = {
+  // Colors
+  green: '#5eb2bc',
+  darkblue: '#00284',
+  greengradient: 'linear-gradient(180deg, #98d5da 0%, #5eb2bc 100%)',
+
   // Fonts
   lato: `'Lato', sans-serif`,
   playfair: `'Playfair Display', serif`,
-
-  // Colors
-  dark_1: 'hsla(0, 0%, 16%, 1)',
-  grey_1: 'hsla(0, 0%, 56%, 1)',
-  color_1: 'hsla(182, 62%, 32%, 1)',
 
   // Image List
   images: {

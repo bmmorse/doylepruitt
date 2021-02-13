@@ -2,28 +2,34 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { useInView } from 'react-intersection-observer';
 
-// the most outer wrapping container
-const Container = styled.div`
+const DIV_FULL = styled.div`
+  background: #5eb2bc;
+  background-image: linear-gradient(180deg, #98d5da 0%, #5eb2bc 100%);
   display: grid;
+  gap: 2rem;
   grid-template-columns: 1fr;
+  padding: 5rem 1rem;
+
   @media (min-width: 640px) {
+    padding: 5rem 3rem;
+  }
+
+  @media (min-width: 1024px) {
     grid-template-columns: 1fr 1fr;
+    padding: 10rem 2rem;
   }
 `;
 
-// div that wraps each image
 const ImageDiv = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
   padding: 1rem;
   position: relative;
-  @media (min-width: 640px) {
-    padding: 0;
-  }
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
 `;
 
-// the <img>
 const ImageImg = styled.img`
   opacity: 0;
   position: relative;
@@ -64,10 +70,10 @@ const Image = (props) => {
  */
 const ImagesFunc = () => {
   return (
-    <Container>
+    <DIV_FULL>
       <Image src='https://doylepruitt.s3.us-east-2.amazonaws.com/office.jpg' />
       <Image src='https://doylepruitt.s3.us-east-2.amazonaws.com/porter.jpg' />
-    </Container>
+    </DIV_FULL>
   );
 };
 

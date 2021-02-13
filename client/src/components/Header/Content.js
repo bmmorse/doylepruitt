@@ -9,8 +9,6 @@ const DIV_TEXT = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  position: absolute;
-  // bottom: ${(props) => (!props.home_page ? '2rem' : '')};
   z-index: 0;
   opacity: 0;
 
@@ -26,13 +24,24 @@ const DIV_TEXT = styled.div`
 
   span.lcsw {
     font-size: 1rem;
-    color: #ffffff;
-    line-height: 1.5;
+    font-weight: 300;
+    line-height: 1;
     margin: 1rem 0 0 0;
 
     @media (min-width: 640px) {
       font-size: 1.5rem;
-      margin: 1rem 0 0 0;
+      margin: 20px 0 0 0;
+    }
+  }
+
+  p {
+    color: white;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1;
+
+    @media (min-width: 640px) {
+      font-size: 24px;
     }
   }
 
@@ -52,7 +61,7 @@ const DIV_TEXT = styled.div`
 const DIV_DIVIDER_WRAPPER = styled.div`
   background: none;
   height: 1px;
-  margin: ${(props) => (props.home_page ? '1.5rem 0' : '1rem 0')};
+  margin: ${(props) => (props.home_page ? '21px 0 27px 0' : '1rem 0')};
   max-width: 12rem;
   width: 100%;
 `;

@@ -16,9 +16,9 @@ const DIV_FULL = styled.div`
       ? 'url("https://doylepruitt.s3.us-east-2.amazonaws.com/homeImage.jpg") no-repeat'
       : ''};
   background-size: cover;
-  height: ${(props) => (props.home_page ? '88vh' : '200px')};
+  height: ${(props) => (props.home_page ? '100vh' : '200px')};
   width: 100%;
-  // z-index: -1;
+  z-index: 1;
 `;
 
 const KEYFRAMES_FADE = keyframes`

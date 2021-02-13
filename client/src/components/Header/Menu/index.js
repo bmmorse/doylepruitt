@@ -14,6 +14,7 @@ const DIV_FULL = styled.div`
 
   &.white {
     background: white;
+    box-shadow: 0px 2px 8px rgb(0 0 0 / 10%);
   }
 
   &.transparent {

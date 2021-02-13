@@ -1,8 +1,7 @@
 import React from 'react';
 import Header from '../Header/index';
 import IntroText from './IntroText';
-import LogoText from './LogoText';
-import HelpClients from './HelpClients';
+import HelpClients from './Help Clients/index';
 import ImageBar from './ImageBar';
 import ContactFooter from '../Footer/ContactFooter';
 
@@ -12,9 +11,9 @@ export default class Home extends React.Component {
       <>
         <Header home_page={true} />
         <IntroText />
-        <LogoText />
-        <HelpClients />
         <ImageBar />
+        {/* <LogoText /> */}
+        <HelpClients />
         <ContactFooter />
       </>
     );
