@@ -61,6 +61,7 @@ const DIV_TEXT = styled.div`
     font-size: 18px;
     font-weight: 400;
     line-height: 32px;
+    margin-bottom: 1rem;
   }
 `;
 

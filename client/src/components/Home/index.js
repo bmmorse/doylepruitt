@@ -4,12 +4,14 @@ import IntroText from './IntroText';
 import HelpClients from './Help Clients/index';
 import ImageBar from './ImageBar';
 import ContactFooter from '../Footer/ContactFooter';
+import Menu from '../Menu/index';
 
 export default class Home extends React.Component {
   render() {
     return (
       <>
-        <Header home_page={true} />
+        <Menu />
+        <Header height='100vh' />
         <IntroText />
         <ImageBar />
         {/* <LogoText /> */}

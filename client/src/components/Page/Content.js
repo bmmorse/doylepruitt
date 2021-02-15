@@ -51,10 +51,10 @@ const DIV_TEXT = styled.div`
   }
 
   p {
-    font-size: 19px;
+    font-size: 18px;
     color: #4e4e4e;
     letter-spacing: 0;
-    line-height: 1.45;
+    line-height: 2rem;
     margin: 0 0 24px 0;
   }
 `;

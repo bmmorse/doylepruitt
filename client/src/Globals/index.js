@@ -26,43 +26,16 @@ const GlobalCSS = createGlobalStyle`
   }
 
   body {
-    color: ${VAR.dark_1};
-    font-family: ${VAR.lato};
-    // font-display: swap
+    font-family: 'Lato', sans-serif;
   }
 
   a,a:visited {
-    color: ${VAR.dark_1};
     text-decoration: none;
-  }
-
-  h2,
-  p {
-    font-size: 1.25rem;
-    line-height: 2rem;
-    margin-bottom: 1.5rem;
-    max-width: ${VAR.media640};
-    width: 100%;
-  }
-
-  p {
-    font-family: ${VAR.lato};
-    font-weight: 400;
   }
 
   .App {
     position: relative;
     width: 100%;
-  }  
-
-  .freeze {
-    height: 0vh;
-    overflow: hidden; 
-  }
-  
-  .unfreeze {
-    height: auto;
-    overflow: auto;
   }
 `;
 

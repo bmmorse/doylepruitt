@@ -18,6 +18,7 @@ const DIV_HEADER = styled.div`
     font-weight: 700;
     line-height: 1;
     width: auto;
+    margin: 0 0 4rem 0;
   }
 
   p {

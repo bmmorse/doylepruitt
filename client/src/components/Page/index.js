@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../Header/index';
 import Content from './Content';
 import Footer from '../Footer/ContactFooter';
+import Menu from '../Menu/index';
 
 export default class Page extends React.Component {
   constructor(props) {
@@ -11,7 +12,8 @@ export default class Page extends React.Component {
   render() {
     return (
       <>
-        <Header path={this.props.path} home_page={false}></Header>
+        <Menu />
+        <Header height='80px'></Header>
         {!this.props.path.includes('contact') && (
           <Content path={this.props.path} />
         )}
