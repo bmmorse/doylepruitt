@@ -102,7 +102,6 @@ const UL_MOBILE = styled.ul`
   li {
     border-radius: 8px;
     margin: 0 0 1rem 0;
-    padding: 1rem;
 
     background: #ffd1a8;
 
@@ -112,6 +111,7 @@ const UL_MOBILE = styled.ul`
       font-size: 1rem;
       text-align: center;
       width: 100%;
+      padding: 1rem;
     }
   }
 `;
