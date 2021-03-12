@@ -23,14 +23,6 @@ export default class Routes extends React.Component {
             <Page path='/services' />
           </Route>
 
-          <Route exact path='/scholarship'>
-            <Page path='/scholarship' />
-          </Route>
-
-          <Route exact path='/blog'>
-            <Page path='/blog' />
-          </Route>
-
           <Route exact path='/fees'>
             <Page path='/fees' />
           </Route>

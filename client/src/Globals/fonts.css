@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'NHRegular';
+  src: url('./fonts/HaasRegular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NHMedium';
+  src: url('./fonts/HaasMedium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NHLight';
+  src: url('./fonts/HaasLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Garamond';
+  src: url('./fonts/EBGaramond-Regular.woff') format('woff');
+}

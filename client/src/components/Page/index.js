@@ -12,11 +12,11 @@ export default class Page extends React.Component {
   render() {
     return (
       <>
-        <Menu />
-        <Header height='80px'></Header>
-        {!this.props.path.includes('contact') && (
-          <Content path={this.props.path} />
-        )}
+        <Menu onHomepage={false} />
+        {/* <Header height='80px'></Header> */}
+
+        <Content path={this.props.path} />
+
         <Footer />
       </>
     );

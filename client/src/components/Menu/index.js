@@ -12,12 +12,24 @@ const DIV_FULL = styled.div`
   z-index: 90;
   transition: background 1s ease;
 
-  &.white {
-    background: white;
+  &.page-top {
+    background: linear-gradient(
+        180deg,
+        rgba(136, 249, 255, 0.22) 0%,
+        rgba(0, 82, 85, 0.37) 100%
+      ),
+      url('https://doylepruitt.s3.us-east-2.amazonaws.com/homeImage.jpg')
+        no-repeat;
+    background-size: cover;
+    background-position: 10% 10%;
+  }
+
+  &.scroll {
+    background: rgba(255, 255, 255, 0.9);
     box-shadow: 0px 2px 8px rgb(0 0 0 / 10%);
   }
 
-  &.transparent {
+  &.home-top {
     background: linear-gradient(
       180deg,
       rgba(136, 249, 255, 0.22) 0%,
@@ -43,19 +55,18 @@ const UL_NAV = styled.ul`
 
     a {
       display: block;
-      font-size: 0.75rem; // 12px
-      line-height: 1rem;
+      font-size: 12px;
       width: 100%;
       text-align: center;
       transition: all 1s ease;
 
       &.white {
-        color: black;
-        padding: 1rem 0;
+        color: #242729;
+        padding: 2rem 0;
       }
 
       &.transparent {
-        color: white;
+        color: rgba(255, 255, 255, 0.8);
         padding: 2rem 0;
       }
     }
@@ -66,11 +77,14 @@ const UL_NAV = styled.ul`
   }
 `;
 
+/**
+ * @prop {boolean} onHomepage | true, if on the homepage
+ */
 export default class Menu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      menu_is_white: false,
+      isScrolling: false,
     };
 
     this.routes = [
@@ -86,14 +100,6 @@ export default class Menu extends React.Component {
         name: 'Services',
         path: '/services',
       },
-      // {
-      //   name: 'Scholarship',
-      //   path: '/scholarship',
-      // },
-      // {
-      //   name: 'Blog',
-      //   path: '/blog',
-      // },
       {
         name: 'Fees',
         path: '/fees',
@@ -107,9 +113,9 @@ export default class Menu extends React.Component {
 
   changeMenuColor = (e) => {
     if (window.scrollY > 0) {
-      this.setState({ menu_is_white: true });
+      this.setState({ isScrolling: true });
     } else {
-      this.setState({ menu_is_white: false });
+      this.setState({ isScrolling: false });
     }
   };
 
@@ -118,15 +124,31 @@ export default class Menu extends React.Component {
   }
 
   render() {
+    const { isScrolling } = this.state;
+    const { onHomepage } = this.props;
+    const getClassName = () => {
+      if (onHomepage && !isScrolling) {
+        return 'home-top';
+      }
+      if (onHomepage && isScrolling) {
+        return 'scroll';
+      }
+      if (!onHomepage && !isScrolling) {
+        return 'page-top';
+      }
+      if (!onHomepage && isScrolling) {
+        return 'scroll';
+      }
+    };
     return (
-      <DIV_FULL className={this.state.menu_is_white ? 'white' : 'transparent'}>
+      <DIV_FULL className={getClassName()}>
         <UL_NAV>
           {this.routes.map((e) => {
             return (
               <li>
                 <Link
                   to={e.path}
-                  className={this.state.menu_is_white ? 'white' : 'transparent'}
+                  className={isScrolling ? 'white' : 'transparent'}
                 >
                   {e.name}
                 </Link>

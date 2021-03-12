@@ -6,35 +6,26 @@ const DIV_FULL = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-`;
-
-const DIV_TOP_COLOR = styled.div`
-  background: #ffead6;
-  height: 2rem;
-  width: 100%;
-  border-radius: 8px 8px 0 0;
+  margin: 78px 0 0 0;
 `;
 
 const DIV_INNER = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 1rem;
   max-width: 720px;
   width: 100%;
-  box-shadow: 0 -1px 16px -2px rgba(255, 255, 255, 0.5),
-    0 32px 72px -8px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
+`;
 
-  @media (min-width: 640px) {
-    margin: 4rem;
-  }
+const H2_HEADING = styled.h2`
+  margin: 4rem 0 2rem 1rem;
+  display: ${(props) => (props.heading == '/contact' ? 'none' : 'block')};
 `;
 
 const DIV_TEXT = styled.div`
-  padding: 2rem 1rem;
+  padding: 0 1rem;
 
-  @media (min-width: 640px) {
-    padding: 3rem 4rem;
+  h2 {
+    margin: 4rem 0 2rem 0;
   }
 
   ul {
@@ -52,9 +43,7 @@ const DIV_TEXT = styled.div`
 
   p {
     font-size: 18px;
-    color: #4e4e4e;
     letter-spacing: 0;
-    line-height: 2rem;
     margin: 0 0 24px 0;
   }
 `;
@@ -64,30 +53,36 @@ export default class Content extends React.Component {
     super(props);
   }
 
-  getData = (path) => {
-    if (path.includes('bio')) {
-      return data.bio;
-    }
-
-    if (path.includes('fees')) {
-      return data.fees;
-    }
-
-    if (path.includes('services')) {
-      return data.services;
-    }
-  };
-
   render() {
+    const PATH = this.props.path;
+
+    const getData = (path) => {
+      if (path.includes('bio')) {
+        return data.bio;
+      }
+
+      if (path.includes('fees')) {
+        return data.fees;
+      }
+
+      if (path.includes('services')) {
+        return data.services;
+      }
+    };
+
+    const getHeader = (str) => {
+      // remove first char
+      const sub = str.slice(1);
+      return sub.charAt(0).toUpperCase() + sub.slice(1);
+    };
+
     return (
-      <>
-        <DIV_FULL>
-          <DIV_INNER>
-            <DIV_TOP_COLOR />
-            <DIV_TEXT>{this.getData(this.props.path)}</DIV_TEXT>
-          </DIV_INNER>
-        </DIV_FULL>
-      </>
+      <DIV_FULL>
+        <DIV_INNER>
+          <H2_HEADING heading={PATH}>{getHeader(PATH)}</H2_HEADING>
+          <DIV_TEXT>{getData(PATH)}</DIV_TEXT>
+        </DIV_INNER>
+      </DIV_FULL>
     );
   }
 }

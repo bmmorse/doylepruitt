@@ -13,7 +13,6 @@ const DIV_CARD = styled.div`
     border-top: solid 2px #5eb2bc;
     padding: 46px 0 0 0;
     width: 100%;
-    font-weight: 400;
     color: #eefdff;
   }
 `;

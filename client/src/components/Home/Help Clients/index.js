@@ -12,7 +12,6 @@ const DIV_FULL = styled.div`
   h2 {
     color: #eefdff;
     font-size: 64px;
-    font-weight: 700;
     line-height: 1;
     padding: 0 0 5rem 5%;
     width: auto;

@@ -4,10 +4,6 @@ const VAR = {
   darkblue: '#00284',
   greengradient: 'linear-gradient(180deg, #98d5da 0%, #5eb2bc 100%)',
 
-  // Fonts
-  lato: `'Lato', sans-serif`,
-  playfair: `'Playfair Display', serif`,
-
   // Image List
   images: {
     doyle: 'https://doylepruitt.s3.us-east-2.amazonaws.com/doyle.jpg',

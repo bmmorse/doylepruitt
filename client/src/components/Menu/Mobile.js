@@ -32,15 +32,16 @@ function transition(name) {
 const DIV_MOBILE_MENU = styled.div`
   color: ${(props) => (props.menu_is_white ? 'black' : 'white')};
   display: flex;
-  padding: 1rem 0;
+  padding: 2rem 0;
   position: relative;
   justify-content: center;
   transition: color 200ms ease;
   width: 100%;
 
   span {
-    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1;
+    font-size: 12px;
   }
 
   @media (min-width: 640px) {
@@ -53,12 +54,9 @@ const DIV_HIDDEN = styled.div`
   display: none;
   padding: 0 1rem;
   position: absolute;
-  top: 48px;
+  top: 76px;
   width: 100%;
   ${transition('show')}
-
-  
-  }
 `;
 
 const UL_MOBILE = styled.ul`
@@ -109,6 +107,7 @@ const UL_MOBILE = styled.ul`
     background: #ffd1a8;
 
     a {
+      color: #242729;
       display: block;
       font-size: 1rem;
       text-align: center;

@@ -10,7 +10,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <>
-        <Menu />
+        <Menu onHomepage={true} />
         <Header height='100vh' />
         <IntroText />
         <ImageBar />

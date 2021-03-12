@@ -3,10 +3,6 @@ import styled, { css, keyframes } from 'styled-components';
 
 const DIV_FULL = styled.div`
   align-items: center;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  width: 100%;
   animation: ${(props) => (props.background_is_loaded ? keyframes_mixin : '')};
   background: white;
   background: ${(props) =>
@@ -14,9 +10,12 @@ const DIV_FULL = styled.div`
       ? 'url("https://doylepruitt.s3.us-east-2.amazonaws.com/homeImage.jpg") no-repeat'
       : ''};
   background-size: cover;
+  color: hsla(168, 100%, 98%, 1);
+  display: flex;
   height: ${(props) => props.height || '100vh'};
+  justify-content: center;
+  position: relative;
   width: 100%;
-  z-index: 1;
 `;
 
 const KEYFRAMES_FADE = keyframes`
@@ -36,7 +35,7 @@ const keyframes_mixin = css`
 const DIV_TEXT = styled.div`
   align-items: center;
   animation: fade 500ms ease forwards 500ms;
-  color: white;
+  color: rgba(255, 255, 255, 0.9);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -62,9 +61,9 @@ const DIV_TEXT = styled.div`
 
   span.lcsw {
     font-size: 1rem;
-    font-weight: 300;
     line-height: 1;
     margin: 1rem 0 0 0;
+    color: inherit;
 
     @media (min-width: 640px) {
       font-size: 1.5rem;
@@ -75,8 +74,8 @@ const DIV_TEXT = styled.div`
   p {
     color: white;
     font-size: 16px;
-    font-weight: 900;
     line-height: 1;
+    font-family: 'NHRegular';
 
     @media (min-width: 640px) {
       font-size: 24px;
@@ -84,9 +83,8 @@ const DIV_TEXT = styled.div`
   }
 
   h1 {
-    padding: 0;
-    font-size: 2.4rem;
-    line-height: 1;
+    color: inherit;
+    font-size: 3rem;
   }
 
   @media (min-width: 640px) {
@@ -134,24 +132,19 @@ export default class Header extends React.Component {
   }
 
   render() {
-    const HomeText = (
-      <DIV_TEXT>
-        <h1>Dr. Doyle Pruitt</h1>
-        <span className='lcsw'>LCSW-R</span>
-        <DIV_DIVIDER_WRAPPER>
-          <DIV_DIVIDER slide={this.state.background_is_loaded} />
-        </DIV_DIVIDER_WRAPPER>
-        <p>Hope. Growth. Resilience.</p>
-      </DIV_TEXT>
-    );
-
     return (
       <DIV_FULL
         className='HEADER'
         background_is_loaded={this.state.background_is_loaded}
-        height={this.props.height}
       >
-        {this.props.height == '100vh' && HomeText}
+        <DIV_TEXT>
+          <h1>Dr. Doyle Pruitt</h1>
+          <span className='lcsw'>LCSW-R</span>
+          <DIV_DIVIDER_WRAPPER>
+            <DIV_DIVIDER slide={this.state.background_is_loaded} />
+          </DIV_DIVIDER_WRAPPER>
+          <p>Hope. Growth. Resilience.</p>
+        </DIV_TEXT>
       </DIV_FULL>
     );
   }

@@ -28,34 +28,34 @@ const ImageDiv = styled.div`
   position: relative;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 8px;
-`;
 
-const ImageImg = styled.img`
-  opacity: 0;
-  position: relative;
-  width: 100%;
-  @keyframes imagesAnimation {
-    0% {
-      opacity: 0;
+  img {
+    opacity: 0;
+    position: relative;
+    width: 100%;
+    @keyframes imagesAnimation {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
     }
-    100% {
+    &.imagesAnimation {
+      animation: imagesAnimation 1s ease;
       opacity: 1;
     }
-  }
-  &.imagesAnimation {
-    animation: imagesAnimation 1s ease;
-    opacity: 1;
   }
 `;
 
 const Image = (props) => {
   const { ref, inView, entry } = useInView({
-    threshold: 0.2,
+    threshold: 0.4,
     triggerOnce: true,
   });
   return (
     <ImageDiv>
-      <ImageImg
+      <img
         ref={ref}
         className={inView ? 'imagesAnimation' : ''}
         src={props.src}

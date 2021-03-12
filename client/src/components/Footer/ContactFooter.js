@@ -9,19 +9,21 @@ const DIV_FULL = styled.div`
 `;
 
 const DIV_HEADER = styled.div`
-  padding: 10rem 10% 5rem 10%;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  padding: 10rem 1rem 5rem 1rem;
   width: 100%;
 
   h2 {
     color: #00284;
-    font-size: 64px;
-    font-weight: 700;
-    line-height: 1;
     width: auto;
     margin: 0 0 4rem 0;
   }
 
   p {
+    max-width: 480px;
+    text-align: center;
   }
 `;
 
@@ -29,7 +31,7 @@ const DIV_CONTACT_LIST = styled.div`
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr;
-  padding: 4rem 5%;
+  padding: 5rem 0;
   width: 100%;
 
   @media (min-width: 820px) {
@@ -39,12 +41,22 @@ const DIV_CONTACT_LIST = styled.div`
 
 const DIV_CONTACT_ITEM = styled.div`
   align-items: center;
-  background: linear-gradient(180deg, #98d5da 0%, #5eb2bc 100%);
   border-radius: 6px;
   display: flex;
   flex-direction: column;
-  padding: 4rem 5%;
   width: 100%;
+  position: relative;
+  bottom: 0;
+  transition: bottom 500ms ease;
+  padding: 0 0 4rem 0;
+  @media (min-width: 820px) {
+  }
+
+  &:hover {
+    @media (min-width: 820px) {
+      bottom: 1rem;
+    }
+  }
 
   img {
     width: 2rem;
@@ -52,12 +64,11 @@ const DIV_CONTACT_ITEM = styled.div`
   }
 
   h4 {
-    color: #eefdff;
+    // color: #eefdff;
     font-size: 24px;
-    font-weight: bold;
-    line-height: 24px;
     padding: 2rem 0 0 0;
     text-align: center;
+    font-family: 'NHRegular';
 
     @media (min-width: 720px) {
       font-size: 20px;
@@ -70,10 +81,10 @@ const DIV_CONTACT_ITEM = styled.div`
 `;
 
 const DIV_BOTTOM = styled.div`
-  border-top: solid 1px #00969b;
+  border-top: solid 1px #eefdff;
   display: flex;
   justify-content: center;
-  padding: 0.5rem 0;
+  padding: 1rem 0 0.8rem 0;
   width: 100%;
 
   p {
