@@ -30,6 +30,7 @@ const DIV_FULL = styled.div`
   flex-direction: column;
   padding: 10rem 2rem;
   position: relative;
+  overflow: hidden;
   width: 100%;
 
   @media (min-width: 1024px) {

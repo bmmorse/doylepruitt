@@ -39,7 +39,7 @@ const DIV_MOBILE_MENU = styled.div`
   width: 100%;
 
   span {
-    color: rgba(255, 255, 255, 0.9);
+    color: #5eb2bc;
     line-height: 1;
     font-size: 12px;
   }
