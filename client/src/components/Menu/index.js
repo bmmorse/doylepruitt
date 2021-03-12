@@ -156,7 +156,7 @@ export default class Menu extends React.Component {
             );
           })}
         </UL_NAV>
-        <Mobile routes={this.routes} menu_is_white={this.state.menu_is_white} />
+        <Mobile routes={this.routes} menu_is_white={this.state.isScrolling} />
       </DIV_FULL>
     );
   }

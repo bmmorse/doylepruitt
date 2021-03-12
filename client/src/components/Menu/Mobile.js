@@ -39,9 +39,14 @@ const DIV_MOBILE_MENU = styled.div`
   width: 100%;
 
   span {
-    color: #5eb2bc;
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1;
     font-size: 12px;
+    transition: color 500ms ease;
+
+    &.color {
+      color: #5eb2bc;
+    }
   }
 
   @media (min-width: 640px) {
@@ -140,12 +145,10 @@ export default class MobileMenu extends React.Component {
   };
 
   render() {
+    const menu_is_white = this.props.menu_is_white;
     return (
-      <DIV_MOBILE_MENU
-        onClick={this.handleClick}
-        menu_is_white={this.props.menu_is_white}
-      >
-        <span>Menu</span>
+      <DIV_MOBILE_MENU onClick={this.handleClick} menu_is_white={menu_is_white}>
+        <span className={menu_is_white ? 'color' : ''}>Menu</span>
         <CSSTransition
           in={this.state.dropdown_is_displayed}
           timeout={600}
