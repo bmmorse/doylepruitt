@@ -127,7 +127,9 @@ export default class Header extends React.Component {
     const img = new Image();
     img.src = 'https://doylepruitt.s3.us-east-2.amazonaws.com/homeImage.jpg';
     img.onload = () => {
-      this.setState({ background_is_loaded: true });
+      document.fonts.ready.then(() => {
+        this.setState({ background_is_loaded: true });
+      });
     };
   }
 
