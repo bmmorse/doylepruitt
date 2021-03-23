@@ -71,7 +71,7 @@ export default class HelpClients extends React.Component {
           }
         }, 500);
       });
-    }, 1000);
+    }, 3500);
   }
 
   componentWillUnmount() {
