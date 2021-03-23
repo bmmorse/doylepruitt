@@ -36,7 +36,7 @@ const DIV_CARDS = styled.div`
     transform: translateX(-100%);
     transition: transform 500ms ease;
 
-    @media (min-width: 720px) {
+    @media (min-width: 800px) {
       transform: translateX(-50%);
     }
   }
@@ -49,29 +49,7 @@ export default class HelpClients extends React.Component {
       slide: 0,
       sliding: false,
     };
-    this.slide = React.createRef();
-  }
-
-  componentDidMount() {
-    this.timer = setInterval(() => {
-      this.setState({ sliding: true }, () => {
-        setTimeout(() => {
-          if (this.state.slide === 5) {
-            this.setState({ slide: 0, sliding: false });
-          } else {
-            this.setState({ slide: this.state.slide + 1, sliding: false });
-          }
-        }, 500);
-      });
-    }, 4000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timer);
-  }
-
-  render() {
-    const list = [
+    this.quotes = [
       'Heal from traumatic experiences',
       'Change destructive behaviors into healthy, helpful behaviors',
       'Navigate transitions in life and normal development',
@@ -79,28 +57,49 @@ export default class HelpClients extends React.Component {
       'Discover their true self',
       'Establish and enforce boundaries in their personal and professional relationships',
     ];
+    this.slideRef = React.createRef();
+  }
 
+  componentDidMount() {
+    this.timer = setInterval(() => {
+      this.setState({ sliding: true }, () => {
+        setTimeout(() => {
+          if (this.state.slide === this.quotes.length - 1) {
+            this.setState({ slide: 0, sliding: false });
+          } else {
+            this.setState({ slide: this.state.slide + 1, sliding: false });
+          }
+        }, 500);
+      });
+    }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
+
+  render() {
+    const { slide, sliding } = this.state;
+    const quotes = this.quotes;
     return (
       <DIV_FULL>
         <h2>I have helped my clients</h2>
         <DIV_WINDOW>
           <DIV_CARDS
-            ref={this.slide}
-            slide={this.state.slide}
-            className={this.state.sliding ? 'slide' : ''}
+            ref={this.slideRef}
+            slide={slide}
+            className={sliding ? 'slide' : ''}
           >
-            <Quote text={list[this.state.slide]} />
-            <Quote
-              text={list[this.state.slide == 5 ? 0 : this.state.slide + 1]}
-            />
+            <Quote text={quotes[slide]} />
+            <Quote text={quotes[slide == quotes.length - 1 ? 0 : slide + 1]} />
             <Quote
               text={
-                list[
-                  this.state.slide == 5
+                quotes[
+                  slide == quotes.length - 1
                     ? 1
-                    : this.state.slide == 4
+                    : slide == quotes.length - 2
                     ? 0
-                    : this.state.slide + 2
+                    : slide + 2
                 ]
               }
             />

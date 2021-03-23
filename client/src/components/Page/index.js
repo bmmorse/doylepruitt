@@ -13,10 +13,7 @@ export default class Page extends React.Component {
     return (
       <>
         <Menu onHomepage={false} />
-        {/* <Header height='80px'></Header> */}
-
         <Content path={this.props.path} />
-
         <Footer />
       </>
     );
