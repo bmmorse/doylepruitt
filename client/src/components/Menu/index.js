@@ -32,8 +32,8 @@ const DIV_FULL = styled.div`
   &.home-top {
     background: linear-gradient(
       180deg,
-      rgba(136, 249, 255, 0.22) 0%,
-      rgba(0, 82, 85, 0.37) 100%
+      rgb(27 149 156 / 56%) 0%,
+      rgb(2 37 38 / 47%) 100%
     );
   }
 `;
@@ -43,6 +43,10 @@ const UL_NAV = styled.ul`
   justify-content: center;
   max-width: 960px;
   width: 100%;
+
+  &:hover a {
+    color: rgba(255, 255, 255, 0.2) !important;
+  }
 
   li {
     align-items: baseline;
@@ -55,19 +59,26 @@ const UL_NAV = styled.ul`
 
     a {
       display: block;
-      font-size: 12px;
+      font-size: 15px;
       width: 100%;
       text-align: center;
       transition: all 1s ease;
+      color: rgba(255, 255, 255, 0.8);
 
       &.white {
         color: #242729;
         padding: 2rem 0;
+        &:hover {
+          color: #242729 !important;
+        }
       }
 
       &.transparent {
         color: rgba(255, 255, 255, 0.8);
         padding: 2rem 0;
+        &:hover {
+          color: rgba(255, 255, 255, 0.8) !important;
+        }
       }
     }
   }

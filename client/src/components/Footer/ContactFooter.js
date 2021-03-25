@@ -36,6 +36,11 @@ const DIV_CONTACT_LIST = styled.div`
 
   @media (min-width: 820px) {
     grid-template-columns: 1fr 1fr 1fr;
+    padding: 5rem 4%;
+  }
+
+  @media (min-width: 1280px) {
+    padding: 5rem 12%;
   }
 `;
 
