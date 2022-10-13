@@ -121,9 +121,9 @@ const DIV_TEXT = styled.div`
  */
 
 export default function IntroText() {
-  const { ref, inView, entry } = useInView({
+  const { ref, inView } = useInView({
     threshold: 0.5,
-    triggerOnce: true,
+    triggerOnce: false,
   });
   return (
     <DIV_FULL>
@@ -131,6 +131,7 @@ export default function IntroText() {
         ref={ref}
         className={inView ? 'fade' : ''}
         src='https://doylepruitt.s3.us-east-2.amazonaws.com/doyle.jpg'
+        alt=''
       />
 
       <DIV_TEXT>

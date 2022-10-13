@@ -134,6 +134,12 @@ export default class Menu extends React.Component {
     window.addEventListener('scroll', this.changeMenuColor);
   }
 
+  componentWillUnmount() {
+    // must unmount to prevent "Can't perform a React state update on an
+    // unmounted component" error
+    window.removeEventListener('scroll', this.changeMenuColor);
+  }
+
   render() {
     const { isScrolling } = this.state;
     const { onHomepage } = this.props;
@@ -156,7 +162,7 @@ export default class Menu extends React.Component {
         <UL_NAV>
           {this.routes.map((e) => {
             return (
-              <li>
+              <li key={e.path}>
                 <Link
                   to={e.path}
                   className={isScrolling ? 'white' : 'transparent'}

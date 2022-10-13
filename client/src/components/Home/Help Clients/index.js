@@ -48,6 +48,7 @@ export default class HelpClients extends React.Component {
     this.state = {
       slide: 0,
       sliding: false,
+      interval: '',
     };
     this.quotes = [
       'Heal from traumatic experiences',
@@ -61,7 +62,7 @@ export default class HelpClients extends React.Component {
   }
 
   componentDidMount() {
-    this.timer = setInterval(() => {
+    const intervalID = setInterval(() => {
       this.setState({ sliding: true }, () => {
         setTimeout(() => {
           if (this.state.slide === this.quotes.length - 1) {
@@ -72,10 +73,11 @@ export default class HelpClients extends React.Component {
         }, 500);
       });
     }, 3500);
+    this.setState({ interval: intervalID });
   }
 
   componentWillUnmount() {
-    clearInterval(this.timer);
+    clearInterval(this.state.interval);
   }
 
   render() {
@@ -91,13 +93,13 @@ export default class HelpClients extends React.Component {
             className={sliding ? 'slide' : ''}
           >
             <Quote text={quotes[slide]} />
-            <Quote text={quotes[slide == quotes.length - 1 ? 0 : slide + 1]} />
+            <Quote text={quotes[slide === quotes.length - 1 ? 0 : slide + 1]} />
             <Quote
               text={
                 quotes[
-                  slide == quotes.length - 1
+                  slide === quotes.length - 1
                     ? 1
-                    : slide == quotes.length - 2
+                    : slide === quotes.length - 2
                     ? 0
                     : slide + 2
                 ]

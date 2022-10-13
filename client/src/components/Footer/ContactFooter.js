@@ -127,7 +127,7 @@ export default class ContactFooter extends React.Component {
         <DIV_CONTACT_LIST>
           {ContactInfo.map((e) => {
             return (
-              <DIV_CONTACT_ITEM>
+              <DIV_CONTACT_ITEM key={e.value}>
                 <img src={e.svg} alt='' />
                 <h4>{e.value}</h4>
               </DIV_CONTACT_ITEM>

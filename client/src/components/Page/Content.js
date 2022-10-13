@@ -18,7 +18,7 @@ const DIV_INNER = styled.div`
 
 const H2_HEADING = styled.h2`
   margin: 4rem 0 2rem 1rem;
-  display: ${(props) => (props.heading == '/contact' ? 'none' : 'block')};
+  display: ${(props) => (props.heading === '/contact' ? 'none' : 'block')};
 `;
 
 const DIV_TEXT = styled.div`
@@ -49,9 +49,9 @@ const DIV_TEXT = styled.div`
 `;
 
 export default class Content extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     const PATH = this.props.path;

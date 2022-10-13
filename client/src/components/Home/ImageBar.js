@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer';
 
 const DIV_FULL = styled.div`
@@ -49,7 +49,7 @@ const ImageDiv = styled.div`
 `;
 
 const Image = (props) => {
-  const { ref, inView, entry } = useInView({
+  const { ref, inView } = useInView({
     threshold: 0.4,
     triggerOnce: true,
   });
