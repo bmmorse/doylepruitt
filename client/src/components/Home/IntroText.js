@@ -123,7 +123,7 @@ const DIV_TEXT = styled.div`
 export default function IntroText() {
   const { ref, inView } = useInView({
     threshold: 0.5,
-    triggerOnce: false,
+    triggerOnce: true,
   });
   return (
     <DIV_FULL>
