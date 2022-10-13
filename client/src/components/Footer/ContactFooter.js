@@ -120,7 +120,7 @@ export default class ContactFooter extends React.Component {
         <DIV_HEADER>
           <h2>Contact</h2>
           <p>
-            I invite you to contact me to see if my approach to care is
+            I invite you to contact me and see if my approach to care is
             something that would be of benefit to you.
           </p>
         </DIV_HEADER>
