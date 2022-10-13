@@ -126,8 +126,8 @@ const fees = (
       Health insurance.
     </p>
     <p>
-      Please contact your insurance company directly to ensure I am an
-      in-network provider for them.
+      Please contact your insurance company directly to ensure that I am an
+      in-network provider.
     </p>
   </>
 );
