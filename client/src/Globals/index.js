@@ -37,6 +37,10 @@ const GlobalCSS = createGlobalStyle`
 
   body {
     font-family: 'DM Sans', sans-serif;
+    &.frozen {
+      height: 100vh;
+      overflow: hidden;
+    }
   }
 
   a,a:visited {
@@ -46,12 +50,7 @@ const GlobalCSS = createGlobalStyle`
   .app {
     position: relative;
     width: 100%;
-    min-height: 100vh;
-    &.frozen {
-      height: 100vh;
-      overflow: hidden;
-    }
-    
+    min-height: 100vh;    
   }
 
   h1,h2,h3,h4,h5,h6 {

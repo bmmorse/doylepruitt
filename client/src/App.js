@@ -36,7 +36,7 @@ export default function App() {
       value={{ menuExpanded, setMenuExpanded, routes }}
     >
       <Globals />
-      <div className={menuExpanded ? 'app frozen' : 'app'}>
+      <div className='app'>
         <TransitionGroup>
           <CSSTransition timeout={600} classNames='fade' key={location.key}>
             <Switch location={location}>

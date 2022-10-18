@@ -94,7 +94,9 @@ export default class Menu extends React.Component {
     const { menuExpanded, setMenuExpanded } = this.context;
     if (menuExpanded) {
       setMenuExpanded(false);
+      document.querySelector('body').classList.remove('frozen');
     } else {
+      document.querySelector('body').classList.add('frozen');
       setMenuExpanded(true);
     }
   };

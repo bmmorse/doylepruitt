@@ -8,7 +8,7 @@ const DIV_FULL = styled.div`
   width: 100%;
   height: calc(100vh - 72px);
   background-color: red;
-  position: absolute;
+  position: fixed;
   top: 72px;
   z-index: 99;
   /* animation: changeBackground 500ms ease 0ms forwards; */
@@ -17,14 +17,14 @@ const DIV_FULL = styled.div`
   }
   &.my-node-enter-active {
     opacity: 1;
-    transition: opacity 300ms ease-in;
+    transition: opacity 300ms;
   }
   &.my-node-exit {
     opacity: 1;
   }
   &.my-node-exit-active {
     opacity: 0;
-    transition: opacity 300ms ease-in;
+    transition: opacity 300ms;
   }
 `;
 
@@ -38,6 +38,7 @@ export default class Menu extends React.Component {
   }
 
   handleClick = (e) => {
+    document.querySelector('body').classList.remove('frozen');
     const { menuExpanded, setMenuExpanded } = this.context;
     menuExpanded ? setMenuExpanded(false) : setMenuExpanded(true);
   };
