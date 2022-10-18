@@ -7,24 +7,35 @@ import { Link } from 'react-router-dom';
 const DIV_FULL = styled.div`
   width: 100%;
   height: calc(100vh - 72px);
-  background-color: red;
+  background-color: #ffffff;
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   top: 72px;
   z-index: 99;
+
+  a {
+    width: 100%;
+    text-align: center;
+    padding: 40px 0;
+  }
+
   /* animation: changeBackground 500ms ease 0ms forwards; */
   &.my-node-enter {
     opacity: 0;
   }
-  &.my-node-enter-active {
+  &.my-node-enter.my-node-enter-active {
+    transition: opacity 300ms ease-in;
     opacity: 1;
-    transition: opacity 300ms;
   }
   &.my-node-exit {
     opacity: 1;
   }
-  &.my-node-exit-active {
+  &.my-node-exit.my-node-exit-active {
+    transition: opacity 300ms ease-in 300ms;
     opacity: 0;
-    transition: opacity 300ms;
   }
 `;
 
@@ -50,7 +61,7 @@ export default class Menu extends React.Component {
       <CSSTransition
         in={menuExpanded}
         nodeRef={this.nodeRef}
-        timeout={300}
+        timeout={{ enter: 300, exit: 600 }}
         classNames='my-node'
         unmountOnExit
       >
