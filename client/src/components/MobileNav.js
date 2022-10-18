@@ -1,7 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
+import { MobileDropdownContext } from '../Globals/Context';
 
 function transition(name) {
   return `
@@ -124,8 +125,9 @@ const UL_MOBILE = styled.ul`
 export default class MobileMenu extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      dropdown_is_displayed: false,
+      dropdown_is_displayed: this.context.menuExpanded,
     };
   }
 
@@ -171,3 +173,5 @@ export default class MobileMenu extends React.Component {
     );
   }
 }
+
+MobileMenu.contextType = MobileDropdownContext;

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import phone from './phone.svg';
-import mail from './mail.svg';
-import address from './address.svg';
+import phone from '../Globals/svg/phone.svg';
+import mail from '../Globals/svg/mail.svg';
+import address from '../Globals/svg/address.svg';
 
 const DIV_FULL = styled.div`
   width: 100%;
@@ -16,7 +16,7 @@ const DIV_HEADER = styled.div`
   width: 100%;
 
   h2 {
-    color: #00284;
+    color: red;
     width: auto;
     margin: 0 0 4rem 0;
   }

@@ -3,14 +3,12 @@ import styled, { css, keyframes } from 'styled-components';
 
 const DIV_FULL = styled.div`
   align-items: center;
-  animation: ${(props) => (props.background_is_loaded ? keyframes_mixin : '')};
   background: white;
-  background: ${(props) =>
-    props.background_is_loaded
-      ? 'url("https://doylepruitt.s3.us-east-2.amazonaws.com/homeImage.jpg") no-repeat'
-      : ''};
+  background: url('https://doylepruitt.s3.us-east-2.amazonaws.com/lake-optimized.jpg');
   background-size: cover;
   color: hsla(168, 100%, 98%, 1);
+  background-color: #072a43;
+  background-position: bottom;
   display: flex;
   height: ${(props) => props.height || '100vh'};
   justify-content: center;
@@ -28,8 +26,13 @@ const KEYFRAMES_FADE = keyframes`
   }
 `;
 
+/** typescript plugin error
+ * need to double wrap css`` to avoid expected ts-styled-plugin(9999) missing }
+ */
 const keyframes_mixin = css`
-  ${KEYFRAMES_FADE} 1000ms ease
+  ${css`
+    ${KEYFRAMES_FADE} 1000ms ease
+  `}
 `;
 
 const DIV_TEXT = styled.div`
@@ -104,9 +107,18 @@ const DIV_DIVIDER_WRAPPER = styled.div`
 
 const DIV_DIVIDER = styled.div`
   background: white;
-  width: ${(props) => (props.slide ? '100%' : '0%')};
+  animation: animate 500ms ease 1000ms forwards;
   height: 100%;
-  transition: width 500ms ease 1000ms;
+  width: 0%;
+  @keyframes animate {
+    0% {
+      width: 0%;
+    }
+
+    100% {
+      width: 100%;
+    }
+  }
 `;
 
 /**
@@ -123,15 +135,15 @@ export default class Header extends React.Component {
     };
   }
 
-  componentDidMount() {
-    const img = new Image();
-    img.src = 'https://doylepruitt.s3.us-east-2.amazonaws.com/homeImage.jpg';
-    img.onload = () => {
-      document.fonts.ready.then(() => {
-        this.setState({ background_is_loaded: true });
-      });
-    };
-  }
+  // componentDidMount() {
+  //   const img = new Image();
+  //   img.src = 'https://doylepruitt.s3.us-east-2.amazonaws.com/homeImage.jpg';
+  //   img.onload = () => {
+  //     document.fonts.ready.then(() => {
+  //       this.setState({ background_is_loaded: true });
+  //     });
+  //   };
+  // }
 
   render() {
     return (
@@ -140,12 +152,11 @@ export default class Header extends React.Component {
         background_is_loaded={this.state.background_is_loaded}
       >
         <DIV_TEXT>
-          <h1>Dr. Doyle Pruitt</h1>
+          <h1>Hope. Growth. Resilience.</h1>
           <span className='lcsw'>LCSW-R</span>
           <DIV_DIVIDER_WRAPPER>
             <DIV_DIVIDER slide={this.state.background_is_loaded} />
           </DIV_DIVIDER_WRAPPER>
-          <p>Hope. Growth. Resilience.</p>
         </DIV_TEXT>
       </DIV_FULL>
     );

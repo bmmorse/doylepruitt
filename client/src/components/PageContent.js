@@ -1,12 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
-import data from './data';
+import styled from 'styled-components/macro';
+import data from './Page/data';
 
 const DIV_FULL = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  margin: 78px 0 0 0;
+  padding: 72px 0 0 0;
 `;
 
 const DIV_INNER = styled.div`
