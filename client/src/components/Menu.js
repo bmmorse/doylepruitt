@@ -17,9 +17,11 @@ const DIV_FULL = styled.div`
   z-index: 99;
 
   a {
+    font-size: 24px;
+    line-height: 32px;
     width: 100%;
     text-align: center;
-    padding: 40px 0;
+    padding: 32px 0;
   }
 
   /* animation: changeBackground 500ms ease 0ms forwards; */

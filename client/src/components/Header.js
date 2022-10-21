@@ -1,164 +1,114 @@
 import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
+import { BUTTON, DIV_FULL as full, DIV_MAXWIDTH as max } from './_baseStyles';
+import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 
-const DIV_FULL = styled.div`
+const DIV_FULL = styled(full)`
   align-items: center;
   background: white;
-  background: url('https://doylepruitt.s3.us-east-2.amazonaws.com/lake-optimized.jpg');
+  /* background: url('https://doylepruitt.s3.us-east-2.amazonaws.com/lake-optimized.jpg'); */
   background-size: cover;
-  color: hsla(168, 100%, 98%, 1);
   background-color: #072a43;
   background-position: bottom;
-  display: flex;
-  height: ${(props) => props.height || '100vh'};
-  justify-content: center;
-  position: relative;
-  width: 100%;
-`;
-
-const KEYFRAMES_FADE = keyframes`
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-`;
-
-/** typescript plugin error
- * need to double wrap css`` to avoid expected ts-styled-plugin(9999) missing }
- */
-const keyframes_mixin = css`
-  ${css`
-    ${KEYFRAMES_FADE} 1000ms ease
-  `}
+  height: 100vh;
 `;
 
 const DIV_TEXT = styled.div`
   align-items: center;
-  animation: fade 500ms ease forwards 500ms;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--white90);
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  z-index: 0;
-  opacity: 0;
   position: relative;
-  bottom: 5rem;
 
-  @media (min-width: 640px) {
-    bottom: 0rem;
-  }
-
-  @keyframes fade {
-    from {
-      opacity: 0;
-    }
-
-    to {
+  &.fade {
+    p {
+      transition: opacity 1000ms ease-out 300ms, bottom 1000ms ease-out 300ms;
       opacity: 1;
+      bottom: 0px;
     }
-  }
-
-  span.lcsw {
-    font-size: 1rem;
-    line-height: 1;
-    margin: 1rem 0 0 0;
-    color: inherit;
-
-    @media (min-width: 640px) {
-      font-size: 1.5rem;
-      margin: 20px 0 0 0;
+    h1 {
+      transition: opacity 1000ms ease-out 400ms, bottom 1000ms ease-out 400ms;
+      opacity: 1;
+      bottom: 0px;
+    }
+    a {
+      transition: opacity 1000ms ease-out 500ms, bottom 1000ms ease-out 500ms;
+      opacity: 1;
+      bottom: 0px;
     }
   }
 
   p {
     color: white;
     font-size: 16px;
-    line-height: 1;
-    font-family: 'NHRegular';
-
-    @media (min-width: 640px) {
-      font-size: 24px;
-    }
+    line-height: 24px;
+    position: relative;
+    opacity: 0;
+    bottom: -50px;
   }
 
   h1 {
     color: inherit;
-    font-size: 3rem;
+    font-size: 36px;
+    line-height: 48px;
+    margin: 40px 0;
+    opacity: 0;
+    bottom: -50px;
+    position: relative;
   }
 
-  @media (min-width: 640px) {
-    h1 {
-      font-size: 4rem;
-    }
-  }
-`;
-
-const DIV_DIVIDER_WRAPPER = styled.div`
-  background: none;
-  height: 1px;
-  margin: 21px 0 27px 0;
-  max-width: 12rem;
-  width: 100%;
-`;
-
-const DIV_DIVIDER = styled.div`
-  background: white;
-  animation: animate 500ms ease 1000ms forwards;
-  height: 100%;
-  width: 0%;
-  @keyframes animate {
-    0% {
-      width: 0%;
-    }
-
-    100% {
-      width: 100%;
-    }
+  a {
+    opacity: 0;
+    bottom: -50px;
+    position: relative;
   }
 `;
 
-/**
- * @prop {boolean} home_page
- *   sets <Header/> styles, true for home page, false for other
- * @props {}
- */
-export default class Header extends React.Component {
-  constructor(props) {
-    super(props);
+export default function Header() {
+  const { ref, inView } = useInView({
+    threshold: 0,
+    root: null,
+  });
 
-    this.state = {
-      background_is_loaded: false,
-    };
-  }
-
-  // componentDidMount() {
-  //   const img = new Image();
-  //   img.src = 'https://doylepruitt.s3.us-east-2.amazonaws.com/homeImage.jpg';
-  //   img.onload = () => {
-  //     document.fonts.ready.then(() => {
-  //       this.setState({ background_is_loaded: true });
-  //     });
-  //   };
-  // }
-
-  render() {
-    return (
-      <DIV_FULL
-        className='HEADER'
-        background_is_loaded={this.state.background_is_loaded}
-      >
-        <DIV_TEXT>
-          <h1>Hope. Growth. Resilience.</h1>
-          <span className='lcsw'>LCSW-R</span>
-          <DIV_DIVIDER_WRAPPER>
-            <DIV_DIVIDER slide={this.state.background_is_loaded} />
-          </DIV_DIVIDER_WRAPPER>
-        </DIV_TEXT>
-      </DIV_FULL>
-    );
-  }
+  return (
+    <DIV_FULL>
+      <DIV_TEXT ref={ref} className={inView ? 'fade' : ''}>
+        <p>Psychotherapy in the Finger Lakes</p>
+        <h1>Hope. Growth. Resilience.</h1>
+        <Link to='/contact' className='linkButton'>
+          Contact Me
+        </Link>
+      </DIV_TEXT>
+    </DIV_FULL>
+  );
 }
+
+// componentDidMount() {
+//   const img = new Image();
+//   img.src = 'https://doylepruitt.s3.us-east-2.amazonaws.com/homeImage.jpg';
+//   img.onload = () => {
+//     document.fonts.ready.then(() => {
+//       this.setState({ background_is_loaded: true });
+//     });
+//   };
+// }
+
+// const Image = (props) => {
+//   const { ref, inView } = useInView({
+//     threshold: 0.4,
+//     triggerOnce: true,
+//   });
+//   return (
+//     <ImageDiv>
+//       <img
+//         ref={ref}
+//         className={inView ? 'imagesAnimation' : ''}
+//         src={props.src}
+//         alt=''
+//       />
+//     </ImageDiv>
+//   );
+// };

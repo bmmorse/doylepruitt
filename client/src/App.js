@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import Globals from './Globals/index';
-import { Route, Switch, useLocation } from 'react-router-dom';
+import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import Home from './components/Home/index';
 import Page from './components/Page/index';
 import { MobileDropdownContext } from './Globals/Context';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import styled from 'styled-components/macro';
+import TopNav from './components/TopNav';
 
 const DIV_WRAPPER = styled.div`
   position: absolute;
@@ -60,6 +61,7 @@ export default function App() {
     >
       <Globals />
       <div className='app'>
+        <TopNav onHomepage={true} />
         <TransitionGroup>
           <CSSTransition
             timeout={{ enter: 700, exit: 300 }}
@@ -95,6 +97,9 @@ export default function App() {
                 <DIV_WRAPPER>
                   <Page path='/contact' />
                 </DIV_WRAPPER>
+              </Route>
+              <Route path='*'>
+                <Redirect to='/' />
               </Route>
             </Switch>
           </CSSTransition>

@@ -24,19 +24,30 @@ const GlobalCSS = createGlobalStyle`
     padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: 'Poppins', sans-serif;
+    color: var(--darkBlue);
   }
 
   :root {
-  --sans: 'DM Sans', sans-serif;
-  --serif: 'DM Serif Display', serif;
+  --blueGrey: #7A828B;
+  --darkBlue: #10457C;
   --grey20: #333333;
   --grey32: #515151;
   --grey64: #a3a3a3;
   --orange: #fab26f;
+  --white90: rgba(255, 255, 255, 0.9);;
+  }
+
+  *:focus {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
   }
 
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
     &.frozen {
       height: 100vh;
       overflow: hidden;
@@ -54,25 +65,34 @@ const GlobalCSS = createGlobalStyle`
   }
 
   h1,h2,h3,h4,h5,h6 {
-    font-family: var(--serif);
     font-weight: normal;
+    color:var(--darkBlue);
   }
 
-  h2 {
-    font-size:2rem;
-    line-height:1;
+  h3 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
   }
 
   p,span {
-    color: #242729;
-    line-height: 1.5;
-    font-size: 18px;
-    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 24px;
   }
 
   button {
     border: none;
     outline: none;
+  }
+
+  .linkButton {
+    font-size: 14px;
+    line-height: 24px;
+    padding: 7px 14px;
+    color: var(--white90);
+    border: solid 1px var(--white90);
+    border-radius: 2px;
+    background: transparent;
   }
 
 `;
