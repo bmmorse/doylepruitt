@@ -4,7 +4,6 @@ import Footer from '../Footer';
 import TopNav from '../TopNav';
 import Menu from '../Menu';
 import PageHeader from '../PageHeader';
-import BottomFooter from '../BottomFooter';
 import data from './data';
 
 import styled from 'styled-components/macro';
@@ -16,7 +15,6 @@ export default function Page() {
       <PageHeader />
       <Content />
       <Footer />
-      <BottomFooter />
       <Menu />
     </>
   );

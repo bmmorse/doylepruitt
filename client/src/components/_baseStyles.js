@@ -6,7 +6,7 @@ const DIV_FULL = styled.div`
   justify-content: center;
   display: flex;
   width: 100%;
-  padding: 80px 32px;
+  padding: 80px 80px;
 `;
 
 const DIV_MAXWIDTH = styled.div`

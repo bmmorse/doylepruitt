@@ -3,25 +3,21 @@ import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 import { MobileDropdownContext } from '../Globals/Context';
 import { Turn as Hamburger } from 'hamburger-react';
+import { DIV_FULL as full, DIV_MAXWIDTH as max } from './_baseStyles';
 
-const DIV_FULL = styled.div`
-  display: flex;
+const DIV_FULL = styled(full)`
   position: fixed;
-  justify-content: center;
   height: 72px;
-  width: 100%;
   z-index: 90;
-  transition: background 1s ease;
-  background: white;
+  background: var(--white);
   padding: 0 20px 0 32px;
 `;
 
-const DIV_MAXWIDTH = styled.div`
-  max-width: 1368px;
-  display: flex;
+const DIV_MAXWIDTH = styled(max)`
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  color: #eed2cc;
 `;
 
 const DIV_NAME = styled.div`
@@ -49,16 +45,15 @@ const DIV_NAV = styled.div`
   display: flex;
   a {
     display: none;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 24px;
     width: 100%;
     text-align: center;
     transition: color 300ms ease;
-    color: var(--grey20);
     padding: 24px;
 
     &:hover {
-      color: red;
+      color: white;
     }
   }
 
@@ -89,41 +84,39 @@ export default function Menu() {
     };
   };
   return (
-    <>
-      <DIV_FULL>
-        <DIV_MAXWIDTH>
-          <DIV_NAME>
-            <Link to='/'>Dr. Doyle Pruitt</Link>
-            {/* <span>Ph.D., LCSW-R</span> */}
-          </DIV_NAME>
-          <DIV_NAV>
-            <MobileDropdownContext.Consumer>
-              {(context) => {
-                let nav = context.routes.map((e) => {
-                  return (
-                    <Link key={e.path} to={e.path}>
-                      {e.name}
-                    </Link>
-                  );
-                });
+    <DIV_FULL>
+      <DIV_MAXWIDTH>
+        <DIV_NAME>
+          <Link to='/'>Dr. Doyle Pruitt</Link>
+          {/* <span>Ph.D., LCSW-R</span> */}
+        </DIV_NAME>
+        <DIV_NAV>
+          <MobileDropdownContext.Consumer>
+            {(context) => {
+              let nav = context.routes.map((e) => {
                 return (
-                  <>
-                    {nav}
-                    <Hamburger
-                      toggled={context.menuExpanded}
-                      toggle={handleClick(context)}
-                      size={24}
-                      rounded
-                      color='#10457C'
-                    />
-                  </>
+                  <Link key={e.path} to={e.path}>
+                    {e.name}
+                  </Link>
                 );
-              }}
-            </MobileDropdownContext.Consumer>
-          </DIV_NAV>
-        </DIV_MAXWIDTH>
-      </DIV_FULL>
-    </>
+              });
+              return (
+                <>
+                  {nav}
+                  <Hamburger
+                    toggled={context.menuExpanded}
+                    toggle={handleClick(context)}
+                    size={24}
+                    rounded
+                    color='#10457C'
+                  />
+                </>
+              );
+            }}
+          </MobileDropdownContext.Consumer>
+        </DIV_NAV>
+      </DIV_MAXWIDTH>
+    </DIV_FULL>
   );
 }
 

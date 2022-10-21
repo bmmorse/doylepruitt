@@ -5,8 +5,7 @@ import HelpClients from '../HelpClients';
 import ImageBar from '../ImageBar';
 import ContactFooter from '../Footer';
 import HomeCards from '../HomeCards';
-import Bottom from '../BottomFooter';
-
+import Bottom from '../Bottom';
 import TopNav from '../TopNav';
 import Menu from '../Menu';
 import styled from 'styled-components/macro';
@@ -20,7 +19,7 @@ export default function Home() {
       {/* <ImageBar /> */}
       {/* <HelpClients /> */}
       <ContactFooter />
-      <Bottom />
+      {/* <Bottom /> */}
       <Menu />
     </>
   );

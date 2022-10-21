@@ -4,7 +4,7 @@ import { BUTTON, DIV_FULL as full, DIV_MAXWIDTH as max } from './_baseStyles';
 
 const DIV_FULL = styled(full)`
   background: #fcfcfc;
-  padding: 40px 0;
+  padding: 120px 0;
   margin: 72px 0 0 0;
 `;
 

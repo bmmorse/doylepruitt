@@ -29,13 +29,11 @@ const GlobalCSS = createGlobalStyle`
   }
 
   :root {
-  --blueGrey: #7A828B;
-  --darkBlue: #10457C;
-  --grey20: #333333;
-  --grey32: #515151;
-  --grey64: #a3a3a3;
-  --orange: #fab26f;
-  --white90: rgba(255, 255, 255, 0.9);;
+  --blue: #507ABA;
+  --text: #1a1423;
+  --red: #de3c4b;
+  --white: #fbfbf2;
+  --green: #507ABA;
   }
 
   *:focus {
@@ -64,9 +62,9 @@ const GlobalCSS = createGlobalStyle`
     min-height: 100vh;    
   }
 
-  h1,h2,h3,h4,h5,h6 {
+  h1,h2,h3,h4,h5,h6,a,p {
     font-weight: normal;
-    color:var(--darkBlue);
+    color:var(--text);
   }
 
   h3 {
@@ -77,7 +75,7 @@ const GlobalCSS = createGlobalStyle`
 
   p,span {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 32px;
   }
 
   button {
@@ -85,12 +83,22 @@ const GlobalCSS = createGlobalStyle`
     outline: none;
   }
 
+  ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+  }
+
   .linkButton {
     font-size: 14px;
     line-height: 24px;
     padding: 7px 14px;
-    color: var(--white90);
-    border: solid 1px var(--white90);
+    color: var(--text);
+    border: solid 1px var(--text);
     border-radius: 2px;
     background: transparent;
   }

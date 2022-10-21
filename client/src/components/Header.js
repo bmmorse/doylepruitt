@@ -6,64 +6,96 @@ import { Link } from 'react-router-dom';
 
 const DIV_FULL = styled(full)`
   align-items: center;
-  background: white;
-  /* background: url('https://doylepruitt.s3.us-east-2.amazonaws.com/lake-optimized.jpg'); */
+  background: url('https://doylepruitt.s3.us-east-2.amazonaws.com/lake-optimized.jpg')
+    no-repeat;
   background-size: cover;
   background-color: #072a43;
-  background-position: bottom;
+  background-position: center center;
   height: 100vh;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    background: #1a1423d1;
+    /* z-index: 1000; */
+  }
 `;
 
 const DIV_TEXT = styled.div`
   align-items: center;
-  color: var(--white90);
+  color: var(--red);
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   position: relative;
+  z-index: 100;
 
   &.fade {
     p {
-      transition: opacity 1000ms ease-out 300ms, bottom 1000ms ease-out 300ms;
+      transition: opacity 600ms ease-out 600ms, top 800ms ease-out 600ms;
       opacity: 1;
-      bottom: 0px;
+      top: 0;
     }
     h1 {
-      transition: opacity 1000ms ease-out 400ms, bottom 1000ms ease-out 400ms;
-      opacity: 1;
-      bottom: 0px;
+      span:nth-child(1) {
+        transition: opacity 600ms ease-out 400ms, top 800ms ease-out 400ms;
+        opacity: 1;
+        top: 0;
+      }
+      span:nth-child(2) {
+        transition: opacity 600ms ease-out 600ms, top 800ms ease-out 600ms;
+        opacity: 1;
+        top: 0;
+      }
+      span:nth-child(3) {
+        transition: opacity 600ms ease-out 800ms, top 800ms ease-out 800ms;
+        top: 0;
+        opacity: 1;
+      }
     }
     a {
-      transition: opacity 1000ms ease-out 500ms, bottom 1000ms ease-out 500ms;
+      transition: opacity 600ms ease-out 800ms, top 800ms ease-out 800ms;
       opacity: 1;
-      bottom: 0px;
+      top: 0;
     }
   }
 
   p {
-    color: white;
+    color: inherit;
+
     font-size: 16px;
     line-height: 24px;
     position: relative;
     opacity: 0;
-    bottom: -50px;
+    top: 16px;
   }
 
   h1 {
     color: inherit;
-    font-size: 36px;
-    line-height: 48px;
-    margin: 40px 0;
-    opacity: 0;
-    bottom: -50px;
-    position: relative;
+    margin: 24px 0 32px 0;
+    span {
+      font-size: 64px;
+      line-height: 80px;
+      opacity: 0;
+      position: relative;
+      top: 16px;
+      color: var(--white);
+      &:nth-last-child(1) {
+        color: var(--red);
+      }
+    }
   }
 
   a {
     opacity: 0;
-    bottom: -50px;
+    top: 16px;
     position: relative;
+    color: var(--red);
+    border-color: var(--red);
   }
 `;
 
@@ -77,7 +109,11 @@ export default function Header() {
     <DIV_FULL>
       <DIV_TEXT ref={ref} className={inView ? 'fade' : ''}>
         <p>Psychotherapy in the Finger Lakes</p>
-        <h1>Hope. Growth. Resilience.</h1>
+        <h1>
+          <span>Hope. </span>
+          <span>Growth. </span>
+          <span>Resilience.</span>
+        </h1>
         <Link to='/contact' className='linkButton'>
           Contact Me
         </Link>
