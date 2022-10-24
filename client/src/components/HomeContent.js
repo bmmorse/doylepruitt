@@ -31,7 +31,7 @@ const DIV_INTRO = styled.div`
     text-align: center;
     font-weight: 500;
     color: var(--text);
-    transition: opacity 500ms ease, bottom 500ms ease;
+    transition: opacity 500ms ease 250ms, bottom 500ms ease 250ms;
   }
 
   p:nth-child(2) {
@@ -40,7 +40,7 @@ const DIV_INTRO = styled.div`
     text-align: center;
     margin: 40px 0 0 0;
     color: var(--red);
-    transition: opacity 500ms ease 250ms, bottom 500ms ease 250ms;
+    transition: opacity 500ms ease 500ms, bottom 500ms ease 500ms;
   }
 
   &.fade {
@@ -155,7 +155,7 @@ const DIV_CARD = styled.div`
 export default function HomeContent() {
   function Intro() {
     const { ref, inView, entry } = useInView({
-      threshold: 0.5,
+      threshold: [0, 0.5],
       root: null,
       rootMargin: '0% 0% 8% 0%',
     });
