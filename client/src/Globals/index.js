@@ -9,7 +9,7 @@ function ScrollToTop() {
   useEffect(() => {
     setTimeout(() => {
       window.scrollTo(0, 0);
-    }, 300);
+    }, 0);
   }, [pathname]);
 
   return null;
@@ -17,7 +17,7 @@ function ScrollToTop() {
 
 const GlobalCSS = createGlobalStyle`
   html {
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
   }
 
   :root {

@@ -55,7 +55,7 @@ export default class Menu extends React.Component {
     const { menuExpanded, setMenuExpanded } = this.context;
     setTimeout(() => {
       menuExpanded ? setMenuExpanded(false) : setMenuExpanded(true);
-    }, 300);
+    }, 0);
   };
 
   render() {

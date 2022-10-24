@@ -21,14 +21,14 @@ const DIV_TRANSITION_WRAPPER = styled.div`
     opacity: 0;
   }
   &.fade-enter.fade-enter-active {
-    transition: opacity 300ms ease-in;
+    transition: opacity 500ms ease-in;
     opacity: 1;
   }
   &.fade-exit {
     opacity: 1;
   }
   &.fade-exit.fade-exit-active {
-    transition: opacity 300ms ease-in;
+    transition: opacity 500ms ease-in;
     opacity: 0;
   }
 `;
@@ -88,7 +88,7 @@ export default function App() {
         <TopNav />
         <TransitionGroup>
           <CSSTransition
-            timeout={{ enter: 300, exit: 300 }}
+            timeout={{ enter: 500, exit: 500 }}
             classNames='fade'
             key={location.key}
           >
