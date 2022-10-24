@@ -80,10 +80,12 @@ export default function App() {
     );
   }
 
-  function ContactPage() {
+  function Contact() {
     return (
       <DIV_TRANSITION_WRAPPER>
-        <Contact />
+        <PageHeader />
+        <PageContent />
+        <Footer />
       </DIV_TRANSITION_WRAPPER>
     );
   }
@@ -119,7 +121,7 @@ export default function App() {
               </Route>
 
               <Route exact path='/contact'>
-                <ContactPage />
+                <Contact />
               </Route>
 
               <Route path='*'>

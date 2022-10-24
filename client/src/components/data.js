@@ -98,26 +98,20 @@ const services = (
 
 const fees = (
   <>
-    <div>
-      <h2>Individual / Family therapy</h2>
-      <p>$120/therapy hour</p>
-    </div>
-    <div>
-      <h2>Court appearances</h2>
-      <p>$400/hour minimum, two hours</p>
-    </div>
-    <div>
-      <h2>Clinical Supervision</h2>
-      <p>$100/hour</p>
-    </div>
-    <div>
-      <h2>Evaluations</h2>
-      <p>Contact me for pricing</p>
-    </div>
-    <div>
-      <h2>Group Therapy</h2>
-      <p>Contact me for pricing</p>
-    </div>
+    <h2>Individual / Family therapy</h2>
+    <p>$120/therapy hour</p>
+
+    <h2>Court appearances</h2>
+    <p>$400/hour minimum, two hours</p>
+
+    <h2>Clinical Supervision</h2>
+    <p>$100/hour</p>
+
+    <h2>Evaluations</h2>
+    <p>Contact me for pricing</p>
+
+    <h2>Group Therapy</h2>
+    <p>Contact me for pricing</p>
 
     <p>
       I accept Excellus Blue Cross Blue Shied, MVP, Fidelis, and Independent
@@ -127,10 +121,30 @@ const fees = (
   </>
 );
 
+const contact = (
+  <>
+    <h2>Phone</h2>
+    <p>585-314-0321</p>
+
+    <h2>Email</h2>
+    <p>dpruittlcsw@gmail.com</p>
+
+    <h2>Address</h2>
+    <p>243 Center St, Canandaigua, NY</p>
+
+    {/* <p>
+      I accept Excellus Blue Cross Blue Shied, MVP, Fidelis, and Independent
+      Health insurance. Please contact your insurance company directly to ensure
+      that I am an in-network provider.
+    </p> */}
+  </>
+);
+
 const data = {
   bio,
   services,
   fees,
+  contact,
 };
 
 export default data;

@@ -27,7 +27,7 @@ const DIV_FULL = styled(full)`
 
 const DIV_MAXWIDTH = styled(max)`
   align-items: center;
-  padding: 160px 0 0 0;
+  padding: 80px 0 0 0;
   .contactInfo {
     display: flex;
     flex-direction: column;
@@ -35,17 +35,17 @@ const DIV_MAXWIDTH = styled(max)`
     width: 100%;
   }
   h1 {
-    color: var(--white);
+    color: var(--red);
     text-align: center;
     margin: 40px 0;
-    font-size: 48px;
-    line-height: 80px;
+    font-size: 24px;
+    line-height: 32px;
   }
   p {
     font-size: 24px;
     line-height: 32px;
     margin: 0 0 40px 0;
-    color: var(--red);
+    color: var(--white);
     text-align: center;
     &:nth-last-child(1) {
       margin: 0;
