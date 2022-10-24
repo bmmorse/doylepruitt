@@ -151,7 +151,7 @@ export default function HomeContent() {
     const { ref, inView, entry } = useInView({
       threshold: 0.5,
       root: null,
-      rootMargin: '0% 0% -20% 0%',
+      rootMargin: '0% 0% 8% 0%',
       triggerOnce: true,
     });
 
