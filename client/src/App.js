@@ -11,7 +11,6 @@ import MobileMenu from './components/Menu';
 import Footer from './components/Footer';
 import PageHeader from './components/PageHeader';
 import PageContent from './components/PageContent';
-import Contact from './components/Contact';
 
 const DIV_TRANSITION_WRAPPER = styled.div`
   position: absolute;
@@ -80,16 +79,6 @@ export default function App() {
     );
   }
 
-  function Contact() {
-    return (
-      <DIV_TRANSITION_WRAPPER>
-        <PageHeader />
-        <PageContent />
-        <Footer />
-      </DIV_TRANSITION_WRAPPER>
-    );
-  }
-
   return (
     <MobileDropdownContext.Provider
       value={{ menuExpanded, setMenuExpanded, routes }}
@@ -121,7 +110,7 @@ export default function App() {
               </Route>
 
               <Route exact path='/contact'>
-                <Contact />
+                <Page />
               </Route>
 
               <Route path='*'>
