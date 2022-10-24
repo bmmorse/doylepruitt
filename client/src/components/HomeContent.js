@@ -25,7 +25,7 @@ const DIV_INTRO = styled.div`
   }
 
   p:nth-child(1) {
-    width: 80%;
+    width: 100%;
     font-size: 24px;
     line-height: 36px;
     text-align: center;
@@ -47,6 +47,12 @@ const DIV_INTRO = styled.div`
     p {
       opacity: 1;
       bottom: 0px;
+    }
+  }
+
+  @media (min-width: 720px) {
+    p:nth-child(1) {
+      width: 80%;
     }
   }
 `;
@@ -152,7 +158,6 @@ export default function HomeContent() {
       threshold: 0.5,
       root: null,
       rootMargin: '0% 0% 8% 0%',
-      triggerOnce: true,
     });
 
     return (
@@ -206,17 +211,20 @@ export default function HomeContent() {
 
   function Card(props) {
     const { ref, inView, entry } = useInView({
-      threshold: 0.5,
+      threshold: [0, 0.5],
       root: null,
-      rootMargin: '0% 0% -20% 0%',
-      triggerOnce: true,
+      rootMargin: '0%',
     });
+    function name() {
+      if (entry && entry.intersectionRatio > 0.5) {
+        return 'fade';
+      } else if (entry && entry.intersectionRatio === 0) {
+        return '';
+      }
+    }
 
     return (
-      <DIV_CARD
-        ref={ref}
-        className={entry && entry.intersectionRatio > 0.5 ? 'fade' : ''}
-      >
+      <DIV_CARD ref={ref} className={name()}>
         {props.content}
       </DIV_CARD>
     );
