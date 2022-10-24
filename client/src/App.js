@@ -14,14 +14,14 @@ import PageContent from './components/PageContent';
 
 const DIV_TRANSITION_WRAPPER = styled.div`
   position: absolute;
-  top: 0;
+  top: 0px;
   width: 100%;
-
+  height: 100%;
   &.fade-enter {
     opacity: 0;
   }
   &.fade-enter.fade-enter-active {
-    transition: opacity 300ms ease-in 400ms;
+    transition: opacity 300ms ease-in;
     opacity: 1;
   }
   &.fade-exit {
@@ -88,7 +88,7 @@ export default function App() {
         <TopNav />
         <TransitionGroup>
           <CSSTransition
-            timeout={{ enter: 700, exit: 300 }}
+            timeout={{ enter: 300, exit: 300 }}
             classNames='fade'
             key={location.key}
           >

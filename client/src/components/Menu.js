@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const DIV_FULL = styled.div`
   width: 100%;
-  height: calc(100vh - 72px);
+  height: 100vh;
   background-color: var(--white);
   position: fixed;
   display: flex;
@@ -36,7 +36,7 @@ const DIV_FULL = styled.div`
     opacity: 1;
   }
   &.my-node-exit.my-node-exit-active {
-    transition: opacity 300ms ease-in 300ms;
+    transition: opacity 300ms ease-in;
     opacity: 0;
   }
 `;
@@ -53,7 +53,9 @@ export default class Menu extends React.Component {
   handleClick = (e) => {
     document.querySelector('body').classList.remove('frozen');
     const { menuExpanded, setMenuExpanded } = this.context;
-    menuExpanded ? setMenuExpanded(false) : setMenuExpanded(true);
+    setTimeout(() => {
+      menuExpanded ? setMenuExpanded(false) : setMenuExpanded(true);
+    }, 300);
   };
 
   render() {
@@ -63,7 +65,7 @@ export default class Menu extends React.Component {
       <CSSTransition
         in={menuExpanded}
         nodeRef={this.nodeRef}
-        timeout={{ enter: 300, exit: 600 }}
+        timeout={300}
         classNames='my-node'
         unmountOnExit
       >
