@@ -110,7 +110,7 @@ const DIV_CARD = styled.div`
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    border-radius: 40px;
+    border-radius: 0px;
     bottom: 24px;
     position: relative;
     opacity: 0;
