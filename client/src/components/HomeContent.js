@@ -134,7 +134,9 @@ const DIV_CARD = styled.div`
   @media (min-width: 1156px) {
     flex-direction: row;
     gap: 80px;
-
+    .image {
+      max-width: 640px;
+    }
     .content {
       order: 0;
       p {
