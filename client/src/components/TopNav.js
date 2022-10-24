@@ -75,8 +75,8 @@ export default function Menu() {
   const handleClick = (context) => {
     return function toggle() {
       if (context.menuExpanded) {
-        context.setMenuExpanded(false);
         document.querySelector('body').classList.remove('frozen');
+        context.setMenuExpanded(false);
       } else {
         document.querySelector('body').classList.add('frozen');
         context.setMenuExpanded(true);

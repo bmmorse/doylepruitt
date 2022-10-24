@@ -17,7 +17,7 @@ function ScrollToTop() {
 
 const GlobalCSS = createGlobalStyle`
   html {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
   }
 
   :root {

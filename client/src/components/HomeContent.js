@@ -6,6 +6,8 @@ import { useInView } from 'react-intersection-observer';
 
 const DIV_FULL = styled(full)`
   background-color: var(--white);
+  padding-top: 160px;
+  padding-bottom: 160px;
 `;
 
 const DIV_MAXWIDTH = styled(max)`
