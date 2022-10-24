@@ -16,6 +16,19 @@ function ScrollToTop() {
 }
 
 const GlobalCSS = createGlobalStyle`
+  html {
+    scroll-behavior: smooth;
+  }
+
+  :root {
+    --blue: #5386e4;
+    --text: #1a1423;
+    --purple: #1a1423;
+    --red: #de3c4b;
+    --white: #fbfbf2;
+    --lavender: #f2f0f9;
+  }
+
   * {
     box-sizing: border-box;
     color: #242729;
@@ -26,54 +39,49 @@ const GlobalCSS = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     font-family: 'Poppins', sans-serif;
     color: var(--darkBlue);
-  }
-
-  :root {
-  --blue: #507ABA;
-  --text: #1a1423;
-  --red: #de3c4b;
-  --white: #fbfbf2;
-  --green: #507ABA;
-  }
-
-  *:focus {
+    z-index: 1;
     -webkit-tap-highlight-color: transparent;
-    outline: none;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
   }
 
   body {
     font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
     &.frozen {
       height: 100vh;
       overflow: hidden;
     }
   }
 
-  a,a:visited {
+  a,
+  a:visited {
     text-decoration: none;
   }
 
   .app {
     position: relative;
     width: 100%;
-    min-height: 100vh;    
+    min-height: 100vh;
   }
 
-  h1,h2,h3,h4,h5,h6,a,p {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a,
+  p {
     font-weight: normal;
-    color:var(--text);
+    color: var(--text);
   }
 
-  h3 {
+  h2 {
     font-size: 24px;
     line-height: 32px;
     font-weight: 500;
   }
 
-  p,span {
+  p,
+  span {
     font-size: 16px;
     line-height: 32px;
   }
@@ -96,13 +104,16 @@ const GlobalCSS = createGlobalStyle`
   .linkButton {
     font-size: 14px;
     line-height: 24px;
-    padding: 7px 14px;
-    color: var(--text);
+    padding: 7px 16px;
+    color: white;
     border: solid 1px var(--text);
-    border-radius: 2px;
+    border-radius: 100px;
     background: transparent;
+    &:hover {
+      transition: color 400ms ease-in;
+      color: var(--text);
+    }
   }
-
 `;
 
 export default class Globals extends React.Component {

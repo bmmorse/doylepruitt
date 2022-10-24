@@ -4,9 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { BUTTON, DIV_FULL as full, DIV_MAXWIDTH as max } from './_baseStyles';
 
 const DIV_FULL = styled(full)`
-  padding-top: 120px;
-  padding-bottom: 120px;
-  background: #f8fa90;
+  background: var(--lavender);
 `;
 const DIV_MAXWIDTH = styled(max)`
   p.large {
@@ -15,20 +13,19 @@ const DIV_MAXWIDTH = styled(max)`
     line-height: 36px;
     text-align: center;
     font-weight: 500;
-    color: var(--darkBlue);
+    color: var(--text);
     opacity: 0;
     bottom: -16px;
     position: relative;
 
     &.fade {
-      transition: 600ms opacity ease-out, 600ms bottom 200ms ease-out;
+      transition: 800ms opacity 400ms ease-out, 800ms bottom 400ms ease-out;
       opacity: 1;
       bottom: 0px;
     }
   }
 
   p.small {
-    color: var(--red);
     font-size: 14px;
     line-height: 24px;
     text-align: center;
@@ -36,8 +33,9 @@ const DIV_MAXWIDTH = styled(max)`
     opacity: 0;
     bottom: -16px;
     position: relative;
+    color: var(--red);
     &.fade {
-      transition: 600ms opacity 400ms ease-out, 600ms bottom 400ms ease-out;
+      transition: 800ms opacity 600ms ease-out, 800ms bottom 600ms ease-out;
       opacity: 1;
       bottom: 0px;
     }

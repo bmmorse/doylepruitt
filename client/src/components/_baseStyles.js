@@ -6,7 +6,11 @@ const DIV_FULL = styled.div`
   justify-content: center;
   display: flex;
   width: 100%;
-  padding: 80px 80px;
+  padding: 120px 40px;
+
+  @media (min-width: 800px) {
+    padding: 120px 80px;
+  }
 `;
 
 const DIV_MAXWIDTH = styled.div`

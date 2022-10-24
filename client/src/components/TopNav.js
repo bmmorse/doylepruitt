@@ -53,7 +53,7 @@ const DIV_NAV = styled.div`
     padding: 24px;
 
     &:hover {
-      color: white;
+      color: var(--red);
     }
   }
 
@@ -108,7 +108,7 @@ export default function Menu() {
                     toggle={handleClick(context)}
                     size={24}
                     rounded
-                    color='#10457C'
+                    color='#1a1423'
                   />
                 </>
               );

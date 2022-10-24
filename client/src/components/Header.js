@@ -35,6 +35,8 @@ const DIV_TEXT = styled.div`
   z-index: 100;
 
   &.fade {
+    & > * {
+    }
     p {
       transition: opacity 600ms ease-out 600ms, top 800ms ease-out 600ms;
       opacity: 1;
@@ -42,31 +44,35 @@ const DIV_TEXT = styled.div`
     }
     h1 {
       span:nth-child(1) {
-        transition: opacity 600ms ease-out 400ms, top 800ms ease-out 400ms;
+        transition: opacity 800ms ease-out 400ms, top 800ms ease-out 400ms;
         opacity: 1;
         top: 0;
       }
       span:nth-child(2) {
-        transition: opacity 600ms ease-out 600ms, top 800ms ease-out 600ms;
+        transition: opacity 800ms ease-out 700ms, top 800ms ease-out 700ms;
         opacity: 1;
         top: 0;
       }
       span:nth-child(3) {
-        transition: opacity 600ms ease-out 800ms, top 800ms ease-out 800ms;
+        transition: opacity 800ms ease-out 1000ms, top 800ms ease-out 1000ms;
         top: 0;
         opacity: 1;
       }
     }
     a {
-      transition: opacity 600ms ease-out 800ms, top 800ms ease-out 800ms;
+      transition: opacity 800ms ease-out 1000ms, top 800ms ease-out 1000ms,
+        border-color 400ms ease-out, color 400ms ease-out;
       opacity: 1;
       top: 0;
+      &:hover {
+        border-color: #fbfbf2;
+        color: #fbfbf2;
+      }
     }
   }
 
   p {
     color: inherit;
-
     font-size: 16px;
     line-height: 24px;
     position: relative;
@@ -78,11 +84,11 @@ const DIV_TEXT = styled.div`
     color: inherit;
     margin: 24px 0 32px 0;
     span {
-      font-size: 64px;
-      line-height: 80px;
+      font-size: 40px;
+      line-height: 56px;
       opacity: 0;
       position: relative;
-      top: 16px;
+      top: 40px;
       color: var(--white);
       &:nth-last-child(1) {
         color: var(--red);
@@ -92,10 +98,19 @@ const DIV_TEXT = styled.div`
 
   a {
     opacity: 0;
-    top: 16px;
+    top: 40px;
     position: relative;
     color: var(--red);
     border-color: var(--red);
+    transition: color 800ms ease;
+  }
+  @media (min-width: 540px) {
+    h1 {
+      span {
+        font-size: 64px;
+        line-height: 80px;
+      }
+    }
   }
 `;
 

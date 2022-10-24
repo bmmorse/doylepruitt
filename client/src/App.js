@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import Globals from './Globals/index';
 import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
-import Home from './components/Home/index';
-import Page from './components/Page/index';
 import { MobileDropdownContext } from './Globals/Context';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import styled from 'styled-components/macro';
 import TopNav from './components/TopNav';
+import Header from './components/Header';
+import HomeContent from './components/HomeContent';
+import MobileMenu from './components/Menu';
+import Footer from './components/Footer';
+import PageHeader from './components/PageHeader';
+import PageContent from './components/PageContent';
+import Contact from './components/Contact';
 
-const DIV_WRAPPER = styled.div`
+const DIV_TRANSITION_WRAPPER = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
@@ -55,13 +60,41 @@ export default function App() {
     },
   ];
 
+  function Home() {
+    return (
+      <DIV_TRANSITION_WRAPPER>
+        <Header />
+        <HomeContent />
+        <Footer />
+      </DIV_TRANSITION_WRAPPER>
+    );
+  }
+
+  function Page() {
+    return (
+      <DIV_TRANSITION_WRAPPER>
+        <PageHeader />
+        <PageContent />
+        <Footer />
+      </DIV_TRANSITION_WRAPPER>
+    );
+  }
+
+  function ContactPage() {
+    return (
+      <DIV_TRANSITION_WRAPPER>
+        <Contact />
+      </DIV_TRANSITION_WRAPPER>
+    );
+  }
+
   return (
     <MobileDropdownContext.Provider
       value={{ menuExpanded, setMenuExpanded, routes }}
     >
       <Globals />
       <div className='app'>
-        <TopNav onHomepage={true} />
+        <TopNav />
         <TransitionGroup>
           <CSSTransition
             timeout={{ enter: 700, exit: 300 }}
@@ -70,40 +103,32 @@ export default function App() {
           >
             <Switch location={location}>
               <Route exact path='/'>
-                <DIV_WRAPPER>
-                  <Home />
-                </DIV_WRAPPER>
+                <Home />
               </Route>
 
               <Route exact path='/bio'>
-                <DIV_WRAPPER>
-                  <Page path='/bio' />
-                </DIV_WRAPPER>
+                <Page />
               </Route>
 
               <Route exact path='/services'>
-                <DIV_WRAPPER>
-                  <Page path='/services' />
-                </DIV_WRAPPER>
+                <Page />
               </Route>
 
               <Route exact path='/fees'>
-                <DIV_WRAPPER>
-                  <Page path='/fees' />
-                </DIV_WRAPPER>
+                <Page />
               </Route>
 
               <Route exact path='/contact'>
-                <DIV_WRAPPER>
-                  <Page path='/contact' />
-                </DIV_WRAPPER>
+                <ContactPage />
               </Route>
+
               <Route path='*'>
                 <Redirect to='/' />
               </Route>
             </Switch>
           </CSSTransition>
         </TransitionGroup>
+        <MobileMenu />
       </div>
     </MobileDropdownContext.Provider>
   );

@@ -1,15 +1,30 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components/macro';
-import data from './Page/data';
+import data from './data';
 import { BUTTON, DIV_FULL as full, DIV_MAXWIDTH as max } from './_baseStyles';
 
 const DIV_FULL = styled(full)`
-  padding: 48px 80px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  background: var(--white);
 `;
 const DIV_MAXWIDTH = styled(max)`
+  & > * {
+    max-width: 640px;
+    width: 100%;
+  }
+
   p {
     margin: 0 0 32px 0;
-    max-width: 640px;
+  }
+
+  ul {
+    margin: 0 0 32px 0;
+    padding: 0 0 0 32px;
+
+    li {
+      line-height: 32px;
+    }
   }
 `;
 

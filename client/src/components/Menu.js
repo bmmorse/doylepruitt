@@ -7,21 +7,21 @@ import { Link } from 'react-router-dom';
 const DIV_FULL = styled.div`
   width: 100%;
   height: calc(100vh - 72px);
-  background-color: #ffffff;
+  background-color: var(--white);
   position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   top: 72px;
   z-index: 99;
-
+  padding-top: 80px;
   a {
     font-size: 24px;
     line-height: 32px;
     width: 100%;
     text-align: center;
-    padding: 32px 0;
+    padding: 16px 0;
   }
 
   /* animation: changeBackground 500ms ease 0ms forwards; */

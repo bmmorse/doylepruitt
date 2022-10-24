@@ -98,36 +98,31 @@ const services = (
 
 const fees = (
   <>
-    <ul>
-      <li>
-        <span>Individual / Family therapy</span>
-        <span>$120/therapy hour</span>
-      </li>
-      <li>
-        <span>Court appearances</span>
-        <span>$400/hour minimum, two hours</span>
-      </li>
-      <li>
-        <span>Clinical Supervision</span>
-        <span>$100/hour</span>
-      </li>
-      <li>
-        <span>Evaluations</span>
-        <span>Contact me for pricing</span>
-      </li>
-      <li>
-        <span>Group Therapy</span>
-        <span>Contact me for active groups and pricing</span>
-      </li>
-    </ul>
-    <h2>Insurance</h2>
+    <div>
+      <h2>Individual / Family therapy</h2>
+      <p>$120/therapy hour</p>
+    </div>
+    <div>
+      <h2>Court appearances</h2>
+      <p>$400/hour minimum, two hours</p>
+    </div>
+    <div>
+      <h2>Clinical Supervision</h2>
+      <p>$100/hour</p>
+    </div>
+    <div>
+      <h2>Evaluations</h2>
+      <p>Contact me for pricing</p>
+    </div>
+    <div>
+      <h2>Group Therapy</h2>
+      <p>Contact me for pricing</p>
+    </div>
+
     <p>
       I accept Excellus Blue Cross Blue Shied, MVP, Fidelis, and Independent
-      Health insurance.
-    </p>
-    <p>
-      Please contact your insurance company directly to ensure that I am an
-      in-network provider.
+      Health insurance. Please contact your insurance company directly to ensure
+      that I am an in-network provider.
     </p>
   </>
 );
