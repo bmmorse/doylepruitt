@@ -161,10 +161,7 @@ export default function HomeContent() {
     });
 
     return (
-      <DIV_INTRO
-        ref={ref}
-        className={entry && entry.intersectionRatio >= 0.5 ? 'fade' : ''}
-      >
+      <DIV_INTRO ref={ref} className={name(entry)}>
         <p>
           I believe my clients are the experts of their own lives, and my role
           is to partner with them to discover what it is they need to heal,
@@ -209,22 +206,27 @@ export default function HomeContent() {
     </>
   );
 
+  function name(entry) {
+    if (entry && entry.intersectionRatio >= 0.5) {
+      console.log(entry);
+      return 'fade';
+    } else if (entry && entry.intersectionRatio <= 0) {
+      return '';
+    } else if (entry && entry.target.classList.contains('fade')) {
+      return 'fade';
+    }
+  }
+  //entry && entry.target.classList.contains('fade')
+
   function Card(props) {
     const { ref, inView, entry } = useInView({
       threshold: [0, 0.5],
       root: null,
       rootMargin: '0%',
     });
-    function name() {
-      if (entry && entry.intersectionRatio > 0.5) {
-        return 'fade';
-      } else if (entry && entry.intersectionRatio === 0) {
-        return '';
-      }
-    }
 
     return (
-      <DIV_CARD ref={ref} className={name()}>
+      <DIV_CARD ref={ref} className={name(entry)}>
         {props.content}
       </DIV_CARD>
     );
