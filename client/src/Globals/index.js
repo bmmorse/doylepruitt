@@ -9,7 +9,7 @@ function ScrollToTop() {
   useEffect(() => {
     setTimeout(() => {
       window.scrollTo(0, 0);
-    }, 0);
+    }, 500);
   }, [pathname]);
 
   return null;
@@ -45,6 +45,7 @@ const GlobalCSS = createGlobalStyle`
 
   body {
     font-family: 'Poppins', sans-serif;
+    background-color: var(--text);
     &.frozen {
       height: 100vh;
       overflow: hidden;

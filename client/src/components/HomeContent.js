@@ -6,12 +6,12 @@ import { useInView } from 'react-intersection-observer';
 
 const DIV_FULL = styled(full)`
   background-color: var(--white);
-  padding-top: 160px;
-  padding-bottom: 160px;
+  padding-top: 240px;
+  padding-bottom: 240px;
 `;
 
 const DIV_MAXWIDTH = styled(max)`
-  gap: 120px;
+  gap: 240px;
 `;
 
 const DIV_INTRO = styled.div`
@@ -27,22 +27,23 @@ const DIV_INTRO = styled.div`
   }
 
   p:nth-child(1) {
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    color: var(--red);
+    transition: opacity 500ms ease 250ms, bottom 500ms ease 250ms;
+    margin: 0 0 24px 0;
+  }
+
+  p:nth-child(2) {
+    transition: opacity 500ms ease 500ms, bottom 500ms ease 500ms;
+    max-width: 800px;
     width: 100%;
     font-size: 24px;
     line-height: 36px;
     text-align: center;
     font-weight: 500;
     color: var(--text);
-    transition: opacity 500ms ease 250ms, bottom 500ms ease 250ms;
-  }
-
-  p:nth-child(2) {
-    font-size: 14px;
-    line-height: 24px;
-    text-align: center;
-    margin: 40px 0 0 0;
-    color: var(--red);
-    transition: opacity 500ms ease 500ms, bottom 500ms ease 500ms;
   }
 
   &.fade {
@@ -164,12 +165,13 @@ export default function HomeContent() {
 
     return (
       <DIV_INTRO ref={ref} className={name(entry)}>
+        <p>26 years of clinical experience</p>
+
         <p>
           I believe my clients are the experts of their own lives, and my role
           is to partner with them to discover what it is they need to heal,
           grow, and achieve the life they imagined.
         </p>
-        <p>26 years of clinical experience</p>
       </DIV_INTRO>
     );
   }

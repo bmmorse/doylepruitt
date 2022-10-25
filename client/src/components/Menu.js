@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import styled from 'styled-components/macro';
 import { MobileDropdownContext } from '../Globals/Context';
 import { CSSTransition } from 'react-transition-group';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const DIV_FULL = styled.div`
   width: 100%;
@@ -29,58 +29,60 @@ const DIV_FULL = styled.div`
     opacity: 0;
   }
   &.my-node-enter.my-node-enter-active {
-    transition: opacity 300ms ease-in;
+    transition: opacity 500ms ease-out;
     opacity: 1;
   }
   &.my-node-exit {
     opacity: 1;
   }
   &.my-node-exit.my-node-exit-active {
-    transition: opacity 300ms ease-in;
+    transition: opacity 500ms ease-out;
     opacity: 0;
   }
 `;
 
-export default class Menu extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      inProp: false,
-    };
-    this.nodeRef = React.createRef();
-  }
+export default function Menu() {
+  const [inProp, setInProp] = useState(false);
+  const context = useContext(MobileDropdownContext);
+  const nodeRef = useRef(null);
 
-  handleClick = (e) => {
-    document.querySelector('body').classList.remove('frozen');
-    const { menuExpanded, setMenuExpanded } = this.context;
-    setTimeout(() => {
-      menuExpanded ? setMenuExpanded(false) : setMenuExpanded(true);
-    }, 0);
+  const handleClick = (e) => {
+    e.preventDefault();
+    // document.querySelector('body').classList.remove('frozen');
   };
 
-  render() {
-    let menuExpanded = this.context.menuExpanded;
+  let menuExpanded = context.menuExpanded;
+  const history = useHistory();
 
-    return (
-      <CSSTransition
-        in={menuExpanded}
-        nodeRef={this.nodeRef}
-        timeout={300}
-        classNames='my-node'
-        unmountOnExit
-      >
-        <DIV_FULL ref={this.nodeRef}>
-          {this.context.routes.map((e) => {
-            return (
-              <Link onClick={this.handleClick} key={e.path} to={e.path}>
-                {e.name}
-              </Link>
-            );
-          })}
-        </DIV_FULL>
-      </CSSTransition>
-    );
-  }
+  return (
+    <CSSTransition
+      in={menuExpanded}
+      nodeRef={nodeRef}
+      timeout={500}
+      classNames='my-node'
+      unmountOnExit
+    >
+      <DIV_FULL ref={nodeRef}>
+        {context.routes.map((e) => {
+          return (
+            <Link
+              onClick={(event) => {
+                event.preventDefault();
+                document.querySelector('body').classList.remove('frozen');
+                const { menuExpanded, setMenuExpanded } = context;
+                menuExpanded ? setMenuExpanded(false) : setMenuExpanded(true);
+                history.push(e.path);
+              }}
+              key={e.path}
+              to={e.path}
+            >
+              {e.name}
+            </Link>
+          );
+        })}
+      </DIV_FULL>
+    </CSSTransition>
+  );
 }
 
 Menu.contextType = MobileDropdownContext;
