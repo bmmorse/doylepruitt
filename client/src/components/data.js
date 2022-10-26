@@ -98,20 +98,20 @@ const services = (
 
 const fees = (
   <>
-    <h2>Individual / Family therapy</h2>
-    <p>$120/therapy hour</p>
+    <h2 className='center'>Individual / Family therapy</h2>
+    <p className='center'>$120/therapy hour</p>
 
-    <h2>Court appearances</h2>
-    <p>$400/hour minimum, two hours</p>
+    <h2 className='center'>Court appearances</h2>
+    <p className='center'>$400/hour minimum, two hours</p>
 
-    <h2>Clinical Supervision</h2>
-    <p>$100/hour</p>
+    <h2 className='center'>Clinical Supervision</h2>
+    <p className='center'>$100/hour</p>
 
-    <h2>Evaluations</h2>
-    <p>Contact me for pricing</p>
+    <h2 className='center'>Evaluations</h2>
+    <p className='center'>Contact me for pricing</p>
 
-    <h2>Group Therapy</h2>
-    <p>Contact me for pricing</p>
+    <h2 className='center'>Group Therapy</h2>
+    <p className='center'>Contact me for pricing</p>
 
     <p>
       I accept Excellus Blue Cross Blue Shied, MVP, Fidelis, and Independent
