@@ -30,9 +30,9 @@ const DIV_INTRO = styled.div`
     font-size: 14px;
     line-height: 24px;
     text-align: center;
-    color: var(--red);
+    color: var(--text);
     transition: opacity 500ms ease 250ms, bottom 500ms ease 250ms;
-    margin: 0 0 24px 0;
+    margin: 0 0 120px 0;
   }
 
   p:nth-child(2) {
@@ -44,6 +44,12 @@ const DIV_INTRO = styled.div`
     text-align: center;
     font-weight: 500;
     color: var(--text);
+    span {
+      font-size: 24px;
+      line-height: 36px;
+      color: var(--red);
+      font-weight: 500;
+    }
   }
 
   &.fade {
@@ -91,13 +97,13 @@ const DIV_CARD = styled.div`
     }
 
     a.linkButton {
-      color: var(--red);
-      border-color: var(--red);
+      color: var(--text);
+      border-color: var(--text);
       transition: opacity 500ms ease 500ms, top 500ms ease 500ms,
         color 500ms ease, border-color 500ms ease;
       &:hover {
-        color: var(--text);
-        border-color: var(--text);
+        color: var(--red);
+        border-color: var(--red);
       }
     }
   }

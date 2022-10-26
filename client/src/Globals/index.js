@@ -23,7 +23,7 @@ const GlobalCSS = createGlobalStyle`
   :root {
     --blue: #5386e4;
     --text: #1a1423;
-    --purple: #1a1423;
+    --purple: #8789C0;
     --red: #de3c4b;
     --white: #fbfbf2;
     --lavender: #f2f0f9;

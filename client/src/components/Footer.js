@@ -4,7 +4,7 @@ import { BUTTON, DIV_FULL as full, DIV_MAXWIDTH as max } from './_baseStyles';
 
 const DIV_FULL = styled(full)`
   background: var(--text);
-  padding: 56px 24px 24px 24px;
+  padding: 120px 24px;
 `;
 
 const DIV_MAXWIDTH = styled(max)`
@@ -21,7 +21,7 @@ const DIV_MAXWIDTH = styled(max)`
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 0 0 80px 0;
+    margin: 0 0 40px 0;
 
     p {
       margin: 0 0 16px 0;
@@ -56,8 +56,6 @@ export default function Footer() {
   return (
     <DIV_FULL>
       <DIV_MAXWIDTH>
-        <h2>Contact</h2>
-
         <div className='contactInfo'>
           <p>dpruittlcsw@gmail.com</p>
           <p>585-314-0321</p>
