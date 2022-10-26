@@ -15,6 +15,10 @@ const DIV_MAXWIDTH = styled(max)`
     width: 100%;
   }
 
+  .center {
+    text-align: center;
+  }
+
   p {
     margin: 0 0 32px 0;
   }

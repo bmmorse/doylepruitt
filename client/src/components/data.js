@@ -123,14 +123,14 @@ const fees = (
 
 const contact = (
   <>
-    <h2>Phone</h2>
-    <p>585-314-0321</p>
+    <h2 className='center'>Phone</h2>
+    <p className='center'>585-314-0321</p>
 
-    <h2>Email</h2>
-    <p>dpruittlcsw@gmail.com</p>
+    <h2 className='center'>Email</h2>
+    <p className='center'>dpruittlcsw@gmail.com</p>
 
-    <h2>Address</h2>
-    <p>243 Center St, Canandaigua, NY</p>
+    <h2 className='center'>Address</h2>
+    <p className='center'>243 Center St, Canandaigua, NY</p>
 
     {/* <p>
       I accept Excellus Blue Cross Blue Shied, MVP, Fidelis, and Independent
