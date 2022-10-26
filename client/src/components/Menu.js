@@ -84,5 +84,3 @@ export default function Menu() {
     </CSSTransition>
   );
 }
-
-Menu.contextType = MobileDropdownContext;

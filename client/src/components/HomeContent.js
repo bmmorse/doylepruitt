@@ -33,6 +33,11 @@ const DIV_INTRO = styled.div`
     color: var(--text);
     transition: opacity 500ms ease 250ms, bottom 500ms ease 250ms;
     margin: 0 0 120px 0;
+    span {
+      font-size: 14px;
+      line-height: 24px;
+      color: var(--red);
+    }
   }
 
   p:nth-child(2) {
@@ -171,12 +176,14 @@ export default function HomeContent() {
 
     return (
       <DIV_INTRO ref={ref} className={name(entry)}>
-        <p>26 years of clinical experience</p>
+        <p>
+          <span>18 years</span> of clinical experience
+        </p>
 
         <p>
           I believe my clients are the experts of their own lives, and my role
           is to partner with them to discover what it is they need to heal,
-          grow, and achieve the life they imagined.
+          grow, and <span>achieve the life they imagined</span>.
         </p>
       </DIV_INTRO>
     );

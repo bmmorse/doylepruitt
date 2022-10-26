@@ -78,6 +78,12 @@ const DIV_TEXT = styled.div`
     position: relative;
     opacity: 0;
     top: 16px;
+    color: var(--white);
+    span {
+      font-size: 16px;
+      line-height: 24px;
+      color: var(--red);
+    }
   }
 
   h1 {
@@ -123,7 +129,9 @@ export default function Header() {
   return (
     <DIV_FULL>
       <DIV_TEXT ref={ref} className={inView ? 'fade' : ''}>
-        <p>Psychotherapy in the Finger Lakes</p>
+        <p>
+          <span>Psychotherapy</span> in the Finger Lakes
+        </p>
         <h1>
           <span>Hope. </span>
           <span>Growth. </span>
