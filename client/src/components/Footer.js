@@ -21,7 +21,7 @@ const DIV_MAXWIDTH = styled(max)`
 
     p {
       margin: 0 0 16px 0;
-      color: var(--sunset5);
+      color: var(--white);
       &:nth-last-child(1) {
         margin: 0;
       }

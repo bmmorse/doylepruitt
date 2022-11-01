@@ -88,7 +88,7 @@ const DIV_MOBILE = styled.div`
   position: absolute;
   z-index: 99;
   opacity: 0;
-  padding: 24% 0 0 0;
+  padding: 40px 0 0 0;
   margin: 0 -24px;
 
   a {
@@ -97,6 +97,38 @@ const DIV_MOBILE = styled.div`
     width: 100%;
     text-align: center;
     padding: 24px 0;
+    position: relative;
+    opacity: 0;
+    right: 40px;
+
+    &:nth-child(1) {
+      animation: fade 600ms ease-out forwards 200ms;
+    }
+    &:nth-child(2) {
+      animation: fade 600ms ease-out forwards 350ms;
+    }
+    &:nth-child(3) {
+      animation: fade 600ms ease-out forwards 500ms;
+    }
+    &:nth-child(4) {
+      animation: fade 600ms ease-out forwards 650ms;
+    }
+    &:nth-child(5) {
+      animation: fade 600ms ease-out forwards 800ms;
+    }
+    @keyframes fade {
+      0% {
+        opacity: 0;
+        right: 40px;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        right: 0px;
+        opacity: 1;
+      }
+    }
   }
 
   &.fade-enter {
