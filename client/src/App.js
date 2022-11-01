@@ -12,6 +12,8 @@ import Footer from './components/Footer';
 import PageHeader from './components/PageHeader';
 import PageContent from './components/PageContent';
 import Card from './components/Card';
+import Intro from './components/Intro';
+
 import Hamburger from './components/Hamburger';
 
 const DIV_TRANSITION_WRAPPER = styled.div`
@@ -44,7 +46,7 @@ export default function App() {
     return (
       <DIV_TRANSITION_WRAPPER>
         <Header />
-
+        <Intro />
         <Card content='myServices' alignImage='left' />
         <Card content='aboutMe' alignImage='right' />
 
