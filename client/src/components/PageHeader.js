@@ -32,7 +32,7 @@ const DIV_MAXWIDTH = styled(max)`
   h1 {
     font-size: 40px;
     line-height: 64px;
-    color: var(--red);
+    color: var(--sunset5);
   }
 `;
 

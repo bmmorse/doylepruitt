@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Globals from './Globals/index';
 import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import { MobileDropdownContext } from './Globals/Context';
@@ -11,6 +11,8 @@ import MobileMenu from './components/Menu';
 import Footer from './components/Footer';
 import PageHeader from './components/PageHeader';
 import PageContent from './components/PageContent';
+import Card from './components/Card';
+import Hamburger from './components/Hamburger';
 
 const DIV_TRANSITION_WRAPPER = styled.div`
   position: absolute;
@@ -36,34 +38,17 @@ const DIV_TRANSITION_WRAPPER = styled.div`
 export default function App() {
   const [menuExpanded, setMenuExpanded] = useState(false);
   const location = useLocation();
-  const routes = [
-    {
-      name: 'Home',
-      path: '/',
-    },
-    {
-      name: 'Bio',
-      path: '/bio',
-    },
-    {
-      name: 'Services',
-      path: '/services',
-    },
-    {
-      name: 'Fees',
-      path: '/fees',
-    },
-    {
-      name: 'Contact',
-      path: '/contact',
-    },
-  ];
+  const nodeRef = useRef(null);
 
   function Home() {
     return (
       <DIV_TRANSITION_WRAPPER>
         <Header />
-        <HomeContent />
+
+        <Card content='myServices' alignImage='left' />
+        <Card content='aboutMe' alignImage='right' />
+
+        {/* <HomeContent /> */}
         <Footer />
       </DIV_TRANSITION_WRAPPER>
     );
@@ -80,9 +65,7 @@ export default function App() {
   }
 
   return (
-    <MobileDropdownContext.Provider
-      value={{ menuExpanded, setMenuExpanded, routes }}
-    >
+    <>
       <Globals />
       <div className='app'>
         <TopNav />
@@ -91,6 +74,7 @@ export default function App() {
             timeout={{ enter: 1000, exit: 500 }}
             classNames='fade'
             key={location.key}
+            ref={nodeRef}
           >
             <Switch location={location}>
               <Route exact path='/'>
@@ -119,8 +103,7 @@ export default function App() {
             </Switch>
           </CSSTransition>
         </TransitionGroup>
-        <MobileMenu />
       </div>
-    </MobileDropdownContext.Provider>
+    </>
   );
 }

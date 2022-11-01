@@ -3,18 +3,14 @@ import styled from 'styled-components';
 import { BUTTON, DIV_FULL as full, DIV_MAXWIDTH as max } from './_baseStyles';
 
 const DIV_FULL = styled(full)`
-  background: var(--text);
-  padding: 120px 24px;
+  background: linear-gradient(180deg, #2b2e45 0%, #2d2f46 100%);
+  padding: 80px 24px;
 `;
 
 const DIV_MAXWIDTH = styled(max)`
   flex-wrap: wrap;
   justify-content: center;
 
-  h2 {
-    margin: 0 0 40px 0;
-    color: var(--red);
-  }
   .contactInfo {
     flex-direction: column;
     display: flex;
@@ -25,7 +21,7 @@ const DIV_MAXWIDTH = styled(max)`
 
     p {
       margin: 0 0 16px 0;
-      color: var(--white);
+      color: var(--sunset5);
       &:nth-last-child(1) {
         margin: 0;
       }
@@ -34,9 +30,9 @@ const DIV_MAXWIDTH = styled(max)`
   p.thanks {
     font-size: 14px;
     line-height: 16px;
-    color: var(--white);
+    color: var(--sunset5);
     span {
-      color: var(--red);
+      color: var(--sunset2);
       font-size: 14px;
       line-height: 16px;
     }
@@ -46,7 +42,7 @@ const DIV_MAXWIDTH = styled(max)`
     .contactInfo {
       flex-direction: row;
       p {
-        margin: 0 32px 0 0;
+        margin: 0 40px 0 0;
       }
     }
   }

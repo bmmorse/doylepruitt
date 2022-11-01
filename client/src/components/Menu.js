@@ -1,6 +1,5 @@
 import React, { useState, useContext, useRef } from 'react';
 import styled from 'styled-components/macro';
-import { MobileDropdownContext } from '../Globals/Context';
 import { CSSTransition } from 'react-transition-group';
 import { Link, useHistory } from 'react-router-dom';
 
@@ -43,34 +42,49 @@ const DIV_FULL = styled.div`
 
 export default function Menu() {
   const [inProp, setInProp] = useState(false);
-  const context = useContext(MobileDropdownContext);
   const nodeRef = useRef(null);
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    // document.querySelector('body').classList.remove('frozen');
-  };
-
-  let menuExpanded = context.menuExpanded;
   const history = useHistory();
+
+  const routes = [
+    {
+      name: 'Home',
+      path: '/',
+    },
+    {
+      name: 'Bio',
+      path: '/bio',
+    },
+    {
+      name: 'Services',
+      path: '/services',
+    },
+    {
+      name: 'Fees',
+      path: '/fees',
+    },
+    {
+      name: 'Contact',
+      path: '/contact',
+    },
+  ];
 
   return (
     <CSSTransition
-      in={menuExpanded}
+      // in={menuExpanded}
       nodeRef={nodeRef}
       timeout={500}
       classNames='my-node'
-      unmountOnExit
     >
       <DIV_FULL ref={nodeRef}>
-        {context.routes.map((e) => {
+        {routes.map((e) => {
           return (
             <Link
               onClick={(event) => {
                 event.preventDefault();
                 document.querySelector('body').classList.remove('frozen');
-                const { menuExpanded, setMenuExpanded } = context;
-                menuExpanded ? setMenuExpanded(false) : setMenuExpanded(true);
+                // const { menuExpanded, setMenuExpanded } = context;
+                // menuExpanded ? setMenuExpanded(false) : setMenuExpanded(true);
                 history.push(e.path);
               }}
               key={e.path}

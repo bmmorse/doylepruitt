@@ -27,6 +27,13 @@ const GlobalCSS = createGlobalStyle`
     --red: #de3c4b;
     --white: #fbfbf2;
     --lavender: #f2f0f9;
+
+    /* Sunset */
+    --sunset1: #6D6875;
+    --sunset2: #B5838D;
+    --sunset3: #E5989B;
+    --sunset4: #FFB4A2;
+    --sunset5: #FFCDB2;
   }
 
   * {
@@ -104,9 +111,9 @@ const GlobalCSS = createGlobalStyle`
 
   .linkButton {
     font-size: 14px;
-    line-height: 24px;
-    padding: 7px 16px;
-    color: white;
+    line-height: 16px;
+    padding: 16px 24px;
+    color: var(--text);
     border: solid 1px var(--text);
     border-radius: 100px;
     background: transparent;
