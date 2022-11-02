@@ -62,13 +62,9 @@ const DIV_TEXT = styled.div`
     }
     a {
       transition: opacity 800ms ease-out 1000ms, top 800ms ease-out 1000ms,
-        border-color 400ms ease-out, color 400ms ease-out;
+        background 400ms ease-out, color 400ms ease-out;
       opacity: 1;
       top: 0;
-      &:hover {
-        border-color: #fbfbf2;
-        color: #fbfbf2;
-      }
     }
   }
 
@@ -104,12 +100,21 @@ const DIV_TEXT = styled.div`
   }
 
   a {
+    font-size: 14px;
+    line-height: 16px;
+    padding: 12px 24px;
     opacity: 0;
     top: 40px;
     position: relative;
     color: var(--sunset5);
-    border-color: var(--sunset5);
+    border: solid 1px var(--sunset5);
+    border-radius: 40px;
+    &:hover {
+      background: var(--sunset5);
+      color: var(--text);
+    }
   }
+
   @media (min-width: 540px) {
     h1 {
       span {
@@ -137,9 +142,7 @@ export default function Header() {
           <span>Growth. </span>
           <span>Resilience.</span>
         </h1>
-        <Link to='/contact' className='linkButton'>
-          Contact Me
-        </Link>
+        <Link to='/contact'>Contact Me</Link>
       </DIV_TEXT>
     </DIV_FULL>
   );

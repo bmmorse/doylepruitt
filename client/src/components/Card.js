@@ -18,6 +18,7 @@ const DIV_GRID = styled.div`
       background-image: url('https://doylepruitt.s3.us-east-2.amazonaws.com/office.jpg');
     }
   }
+
   &.doyle {
     .image {
       background-image: url('https://doylepruitt.s3.us-east-2.amazonaws.com/doyle.jpg');
@@ -35,13 +36,15 @@ const DIV_GRID = styled.div`
     position: relative;
     top: 100px;
     transition: opacity 800ms ease-out, top 800ms ease-out;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 4px;
   }
 
   .color {
     position: relative;
     grid-area: 2 / 1 / 4 / -1;
     background: linear-gradient(
-      180deg,
+      40deg,
       rgba(252, 205, 180, 0.5) 0%,
       rgba(224, 153, 156, 0.5) 100%
     );
@@ -50,6 +53,7 @@ const DIV_GRID = styled.div`
     opacity: 0;
     bottom: 100px;
     transition: opacity 800ms ease-out 200ms, bottom 800ms ease-out 200ms;
+    border-radius: 8px;
   }
 
   .content {
@@ -69,25 +73,34 @@ const DIV_GRID = styled.div`
 
     p {
       position: relative;
-      margin: 24px 0 32px 0;
+      margin: 16px 0 24px 0;
       max-width: 510px;
       opacity: 0;
       top: 40px;
-      transition: opacity 800ms ease 600ms, top 800ms ease-out 600ms;
+      transition: opacity 800ms ease 700ms, top 800ms ease-out 700ms;
     }
 
     a {
+      font-size: 14px;
+      line-height: 16px;
       position: relative;
       top: 40px;
       opacity: 0;
+      padding: 8px 16px;
+      opacity: 0;
+      top: 40px;
+      position: relative;
       color: var(--text);
       border-color: var(--text);
-      transition: opacity 800ms ease 800ms, top 800ms ease-out 800ms,
-        color 400ms ease-out, border-color 400ms ease-out;
+      border: solid 1px var(--text);
+      border-radius: 40px;
+      transition: opacity 800ms ease-out 1000ms, top 800ms ease-out 1000ms,
+        color 400ms ease-out, background 400ms ease-out;
 
       &:hover {
-        color: var(--sunset3);
+        background: var(--sunset3);
         border-color: var(--sunset3);
+        color: white;
       }
     }
   }
@@ -97,7 +110,7 @@ const DIV_GRID = styled.div`
     gap: 0px;
 
     &.office {
-      padding: 160px max(calc((100vw - 1368px) / 2), 80px) 80px
+      padding: 80px max(calc((100vw - 1368px) / 2), 80px) 80px
         max(calc((100vw - 1368px) / 2), 80px);
 
       .image {

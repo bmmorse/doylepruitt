@@ -109,19 +109,8 @@ const GlobalCSS = createGlobalStyle`
     padding-inline-start: 0px;
   }
 
-  .linkButton {
-    font-size: 14px;
-    line-height: 16px;
-    padding: 16px 24px;
-    color: var(--text);
-    border: solid 1px var(--text);
-    border-radius: 100px;
-    background: transparent;
-    &:hover {
-      transition: color 400ms ease-in;
-      color: var(--text);
-    }
-  }
+  
+
 `;
 
 export default class Globals extends React.Component {

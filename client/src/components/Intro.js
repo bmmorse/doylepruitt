@@ -63,7 +63,7 @@ const DIV_INTRO = styled.div`
 
 export default function Intro() {
   const { ref, inView, entry } = useInView({
-    threshold: 0.75,
+    threshold: 0.5,
     root: null,
   });
 
