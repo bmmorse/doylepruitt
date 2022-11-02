@@ -86,7 +86,7 @@ const DIV_GRID = styled.div`
       position: relative;
       top: 40px;
       opacity: 0;
-      padding: 8px 16px;
+      padding: 12px 24px;
       opacity: 0;
       top: 40px;
       position: relative;
