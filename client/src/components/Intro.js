@@ -12,7 +12,7 @@ const DIV_INTRO = styled.div`
   background: var(--white);
   p {
     opacity: 0;
-    bottom: -16px;
+    bottom: -40px;
     position: relative;
   }
 
@@ -21,7 +21,7 @@ const DIV_INTRO = styled.div`
     line-height: 24px;
     text-align: center;
     color: var(--text);
-    transition: opacity 500ms ease 250ms, bottom 500ms ease 250ms;
+    transition: opacity 800ms ease, bottom 800ms ease;
     margin: 0 0 40px 0;
     span {
       font-size: 14px;
@@ -31,7 +31,7 @@ const DIV_INTRO = styled.div`
   }
 
   p:nth-child(2) {
-    transition: opacity 500ms ease 500ms, bottom 500ms ease 500ms;
+    transition: opacity 800ms ease 250ms, bottom 800ms ease 250ms;
     max-width: 800px;
     width: 100%;
     font-size: 24px;
@@ -63,9 +63,8 @@ const DIV_INTRO = styled.div`
 
 export default function Intro() {
   const { ref, inView, entry } = useInView({
-    threshold: 0.5,
+    threshold: 0.75,
     root: null,
-    rootMargin: '0% 0% 8% 0%',
   });
 
   return (

@@ -99,31 +99,45 @@ const DIV_GRID = styled.div`
     &.office {
       padding: 160px max(calc((100vw - 1368px) / 2), 80px) 80px
         max(calc((100vw - 1368px) / 2), 80px);
+
+      .image {
+        grid-area: 1 / 1 / 2 / 6;
+      }
+      .color {
+        grid-area: 1 / 4 / -1 / -1;
+      }
+
+      .content {
+        grid-area: 1 / 6 / -1 / -1;
+      }
     }
     &.doyle {
       padding: 80px max(calc((100vw - 1368px) / 2), 80px) 160px
         max(calc((100vw - 1368px) / 2), 80px);
+
+      .image {
+        grid-area: 1 / 8 / 2 / -1;
+      }
+
+      .color {
+        grid-area: 1 / 1 / 2 / -4;
+      }
+
+      .content {
+        grid-area: 1 / 2 / 2 / 7;
+      }
     }
     .image {
-      grid-area: 1 / 1 / 2 / 6;
-      grid-area: ${(props) =>
-        props.alignImage === 'left' ? '1 / 1 / 2 / 6' : '1 / 8 / 2 / -1'};
       margin: 80px 0;
     }
 
     .color {
-      grid-area: 1 / 4 / -1 / -1;
-      grid-area: ${(props) =>
-        props.alignImage === 'left' ? '1 / 4 / -1 / -1' : '1 / 1 / 2 / -4'};
       margin: 0;
     }
 
     .content {
-      grid-area: 1 / 6 / -1 / -1;
-      grid-area: ${(props) =>
-        props.alignImage === 'left' ? '1 / 7 / -1 / -2' : '1 / 2 / 2 / 7'};
       margin: 80px 0;
-      /* padding: 0 8%; */
+      padding: 0 8%;
     }
   }
 
