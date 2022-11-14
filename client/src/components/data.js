@@ -98,6 +98,12 @@ const services = (
 
 const fees = (
   <>
+    <p>
+      I accept Excellus Blue Cross Blue Shied, MVP, Fidelis, and Independent
+      Health insurance. Please contact your insurance company directly to ensure
+      that I am an in-network provider.
+    </p>
+
     <h5>Individual / Family therapy</h5>
     <p>$120/therapy hour</p>
 
@@ -112,12 +118,6 @@ const fees = (
 
     <h5>Group Therapy</h5>
     <p>Contact me for pricing</p>
-
-    <p>
-      I accept Excellus Blue Cross Blue Shied, MVP, Fidelis, and Independent
-      Health insurance. Please contact your insurance company directly to ensure
-      that I am an in-network provider.
-    </p>
   </>
 );
 
