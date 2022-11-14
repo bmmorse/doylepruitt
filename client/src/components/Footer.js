@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const DIV_FULL = styled.div`
-  background: #f3f4f9;
+  background: #eff5fb;
   padding: 160px 24px;
   display: flex;
   flex-direction: column;
