@@ -17,7 +17,7 @@ const GlobalCSS = createGlobalStyle`
     --red: #de3c4b;
     --white: #fbfbf2;
     --lavender: #f2f0f9;
-
+    --orange: #ffcdb2;
     /* Sunset */
     --sunset1: #6d6875;
     --sunset2: #b5838d;

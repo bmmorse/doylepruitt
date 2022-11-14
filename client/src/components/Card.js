@@ -14,7 +14,7 @@ const DIV_GRID = styled.div`
   padding: 120px max(calc((100vw - 480px) / 2), 24px);
 
   &.office {
-    background-color: #f3f4f9;
+    background-color: #eff5fb;
     .image {
       background-image: url('https://doylepruitt.s3.us-east-2.amazonaws.com/office.jpg');
     }
@@ -80,12 +80,12 @@ const DIV_GRID = styled.div`
       border: solid 1px var(--text);
       border-radius: 4px;
       transition: opacity 800ms ease-out 1000ms, top 800ms ease-out 1000ms,
-        color 400ms ease-out, background 400ms ease-out;
+        background 400ms ease-out, color 400ms ease-out;
 
       &:hover {
-        background: var(--sunset3);
-        border-color: var(--sunset3);
-        color: white;
+        background: var(--orange);
+        border-color: var(--orange);
+        color: var(--white);
       }
     }
   }
@@ -146,9 +146,7 @@ export default function Card(props) {
           coping with trauma, adversity, disturbance, and the stressors of daily
           life.
         </p>
-        <Link to='/services' className='linkButton'>
-          Learn More
-        </Link>
+        <Link to='/services'>Learn More</Link>
       </div>
     </DIV_GRID>
   );
@@ -162,9 +160,7 @@ export default function Card(props) {
           stabilization. Once this is achieved we can move towards exploring and
           understanding their trauma.
         </p>
-        <Link to='/bio' className='linkButton'>
-          Learn More
-        </Link>
+        <Link to='/bio'>Learn More</Link>
       </div>
       <div className='image'></div>
     </DIV_GRID>
