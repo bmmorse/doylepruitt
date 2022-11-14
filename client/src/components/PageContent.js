@@ -5,8 +5,8 @@ import data from './data';
 const DIV_FULL = styled.div`
   background: var(--white);
   min-height: calc(100vh - 80px - 232px);
-  padding: 48px max(calc((100vw - 1368px) / 2), 40px) 48px
-    max(calc((100vw - 1368px) / 2), 40px);
+  padding: 48px max(calc((100vw - 1368px) / 2), 24px) 48px
+    max(calc((100vw - 1368px) / 2), 24px);
   display: flex;
   flex-direction: column;
   align-items: center;
