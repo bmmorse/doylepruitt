@@ -5,15 +5,16 @@ import { useInView } from 'react-intersection-observer';
 
 const DIV_GRID = styled.div`
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 0px;
   background: var(--white);
   margin: 0;
   align-items: center;
-  padding: 80px max(calc((100vw - 480px) / 2), 24px);
+  padding: 120px max(calc((100vw - 480px) / 2), 24px);
 
   &.office {
+    background-color: #f3f4f9;
     .image {
       background-image: url('https://doylepruitt.s3.us-east-2.amazonaws.com/office.jpg');
     }
@@ -26,7 +27,7 @@ const DIV_GRID = styled.div`
   }
 
   .image {
-    grid-area: 1 / 1 / 3 / 6;
+    width: 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -40,31 +41,15 @@ const DIV_GRID = styled.div`
     border-radius: 4px;
   }
 
-  .color {
-    position: relative;
-    grid-area: 2 / 1 / 4 / -1;
-    background: linear-gradient(
-      40deg,
-      rgba(252, 205, 180, 0.5) 0%,
-      rgba(224, 153, 156, 0.5) 100%
-    );
-    height: 100%;
-    margin: 0 min(calc(-1 * (100vw - 480px) / 2), -24px);
-    opacity: 0;
-    bottom: 100px;
-    transition: opacity 800ms ease-out 200ms, bottom 800ms ease-out 200ms;
-    border-radius: 8px;
-  }
-
   .content {
     width: 100%;
-    grid-area: 3 / 1 / span 1 / -1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 40px 0 80px 0;
+    margin: 24px 0 0 0;
+    order: 2;
 
-    h2 {
+    h3 {
       position: relative;
       top: 40px;
       opacity: 0;
@@ -74,9 +59,9 @@ const DIV_GRID = styled.div`
     p {
       position: relative;
       margin: 16px 0 24px 0;
-      max-width: 510px;
       opacity: 0;
       top: 40px;
+      text-align: left;
       transition: opacity 800ms ease 700ms, top 800ms ease-out 700ms;
     }
 
@@ -86,14 +71,14 @@ const DIV_GRID = styled.div`
       position: relative;
       top: 40px;
       opacity: 0;
-      padding: 12px 24px;
+      padding: 15px 23px;
       opacity: 0;
       top: 40px;
       position: relative;
       color: var(--text);
       border-color: var(--text);
       border: solid 1px var(--text);
-      border-radius: 40px;
+      border-radius: 4px;
       transition: opacity 800ms ease-out 1000ms, top 800ms ease-out 1000ms,
         color 400ms ease-out, background 400ms ease-out;
 
@@ -106,51 +91,14 @@ const DIV_GRID = styled.div`
   }
 
   @media (min-width: 840px) {
-    grid-template-columns: repeat(12, 1fr);
-    gap: 0px;
-
-    &.office {
-      padding: 80px max(calc((100vw - 1368px) / 2), 80px) 80px
-        max(calc((100vw - 1368px) / 2), 80px);
-
-      .image {
-        grid-area: 1 / 1 / 2 / 6;
-      }
-      .color {
-        grid-area: 1 / 4 / -1 / -1;
-      }
-
-      .content {
-        grid-area: 1 / 6 / -1 / -1;
-      }
-    }
-    &.doyle {
-      padding: 80px max(calc((100vw - 1368px) / 2), 80px) 160px
-        max(calc((100vw - 1368px) / 2), 80px);
-
-      .image {
-        grid-area: 1 / 8 / 2 / -1;
-      }
-
-      .color {
-        grid-area: 1 / 1 / 2 / -4;
-      }
-
-      .content {
-        grid-area: 1 / 2 / 2 / 7;
-      }
-    }
-    .image {
-      margin: 80px 0;
-    }
-
-    .color {
-      margin: 0;
-    }
+    flex-direction: row;
+    gap: max(calc((100vw - 1368px) / 4), 40px);
+    padding: 80px max(calc((100vw - 1368px) / 2), 40px) 80px
+      max(calc((100vw - 1368px) / 2), 40px);
 
     .content {
-      margin: 80px 0;
-      padding: 0 8%;
+      order: initial;
+      width: 92%;
     }
   }
 
@@ -165,7 +113,7 @@ const DIV_GRID = styled.div`
     }
 
     .content {
-      h2 {
+      h3 {
         opacity: 1;
         top: 0px;
       }
@@ -191,9 +139,8 @@ export default function Card(props) {
   const myServices = (
     <DIV_GRID ref={ref} className={inView ? 'office fade' : 'office'}>
       <div className='image'></div>
-      <div className='color'></div>
       <div className='content'>
-        <h2>My Services</h2>
+        <h3>My Services</h3>
         <p>
           I have extensive experience working with individuals and families
           coping with trauma, adversity, disturbance, and the stressors of daily
@@ -208,10 +155,8 @@ export default function Card(props) {
 
   const aboutMe = (
     <DIV_GRID ref={ref} className={inView ? 'doyle fade' : 'doyle'}>
-      <div className='image'></div>
-      <div className='color'></div>
       <div className='content'>
-        <h2>About Me</h2>
+        <h3>About Me</h3>
         <p>
           My goal with the client is to first establish safety and
           stabilization. Once this is achieved we can move towards exploring and
@@ -221,6 +166,7 @@ export default function Card(props) {
           Learn More
         </Link>
       </div>
+      <div className='image'></div>
     </DIV_GRID>
   );
 

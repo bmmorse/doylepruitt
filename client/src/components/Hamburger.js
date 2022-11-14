@@ -6,9 +6,9 @@ const DIV_HAMBURGER = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 72px;
-  padding: 0 24px 0 32px;
-
+  height: 100%;
+  padding: 0 32px 0 32px;
+  margin: 0 -32px 0 0;
   .hamburger-lines {
     width: 24px;
     height: 16px;

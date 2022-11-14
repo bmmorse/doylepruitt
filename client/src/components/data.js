@@ -98,20 +98,20 @@ const services = (
 
 const fees = (
   <>
-    <h2 className='center'>Individual / Family therapy</h2>
-    <p className='center'>$120/therapy hour</p>
+    <h5>Individual / Family therapy</h5>
+    <p>$120/therapy hour</p>
 
-    <h2 className='center'>Court appearances</h2>
-    <p className='center'>$400/hour minimum, two hours</p>
+    <h5>Court appearances</h5>
+    <p>$400/hour minimum, two hours</p>
 
-    <h2 className='center'>Clinical Supervision</h2>
-    <p className='center'>$100/hour</p>
+    <h5>Clinical Supervision</h5>
+    <p>$100/hour</p>
 
-    <h2 className='center'>Evaluations</h2>
-    <p className='center'>Contact me for pricing</p>
+    <h5>Evaluations</h5>
+    <p>Contact me for pricing</p>
 
-    <h2 className='center'>Group Therapy</h2>
-    <p className='center'>Contact me for pricing</p>
+    <h5>Group Therapy</h5>
+    <p>Contact me for pricing</p>
 
     <p>
       I accept Excellus Blue Cross Blue Shied, MVP, Fidelis, and Independent
@@ -123,20 +123,19 @@ const fees = (
 
 const contact = (
   <>
-    <h2 className='center'>Phone</h2>
-    <p className='center'>585-314-0321</p>
+    <p>
+      I invite you to contact me and see if my approach to care is something
+      that would benefit you.
+    </p>
 
-    <h2 className='center'>Email</h2>
-    <p className='center'>dpruittlcsw@gmail.com</p>
+    <h5>Email</h5>
+    <p>dpruittlcsw@gmail.com</p>
 
-    <h2 className='center'>Address</h2>
-    <p className='center'>243 Center St, Canandaigua, NY</p>
+    <h5>Phone</h5>
+    <p>585-314-0321</p>
 
-    {/* <p>
-      I accept Excellus Blue Cross Blue Shied, MVP, Fidelis, and Independent
-      Health insurance. Please contact your insurance company directly to ensure
-      that I am an in-network provider.
-    </p> */}
+    <h5>Address</h5>
+    <p>243 Center St, Canandaigua, NY</p>
   </>
 );
 

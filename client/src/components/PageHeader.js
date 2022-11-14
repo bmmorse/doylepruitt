@@ -5,7 +5,7 @@ import { BUTTON, DIV_FULL as full, DIV_MAXWIDTH as max } from './_baseStyles';
 const DIV_FULL = styled(full)`
   background: #fcfcfc;
   padding: 80px 0;
-  margin: 72px 0 0 0;
+  margin: 80px 0 0 0;
   background: url('https://doylepruitt.s3.us-east-2.amazonaws.com/lake-optimized.jpg')
     no-repeat;
   background-size: cover;
@@ -29,9 +29,7 @@ const DIV_MAXWIDTH = styled(max)`
     line-height: 16px;
   }
 
-  h1 {
-    font-size: 40px;
-    line-height: 64px;
+  h2 {
     color: var(--sunset5);
   }
 `;
@@ -43,7 +41,7 @@ export default function PageHeader() {
   return (
     <DIV_FULL>
       <DIV_MAXWIDTH>
-        <h1>{route}</h1>
+        <h2>{route}</h2>
       </DIV_MAXWIDTH>
     </DIV_FULL>
   );

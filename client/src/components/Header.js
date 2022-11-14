@@ -1,40 +1,34 @@
 import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
-import { BUTTON, DIV_FULL as full, DIV_MAXWIDTH as max } from './_baseStyles';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 
-const DIV_FULL = styled(full)`
+const DIV_FULL = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   background: url('https://doylepruitt.s3.us-east-2.amazonaws.com/lake-optimized.jpg')
     no-repeat;
   background-size: cover;
   background-color: #072a43;
   background-position: center center;
-  height: 100vh;
+  padding: 0 24px;
   position: relative;
+  margin: 80px 0 0 0;
+  height: calc(100vh - 80px);
+
   &:after {
     content: '';
     position: absolute;
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
+    height: 100%;
     left: 0;
     background: linear-gradient(180deg, #1a1423 0%, #31273d 100%);
     opacity: 0.8;
     /* z-index: 1000; */
   }
-`;
-
-const DIV_TEXT = styled.div`
-  align-items: center;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  z-index: 100;
-
   &.fade {
     & > * {
     }
@@ -69,26 +63,24 @@ const DIV_TEXT = styled.div`
   }
 
   p {
-    color: inherit;
-    font-size: 16px;
-    line-height: 24px;
     position: relative;
     opacity: 0;
     top: 16px;
     color: var(--white);
+    text-align: center;
     span {
-      font-size: 16px;
-      line-height: 24px;
       color: var(--sunset5);
     }
   }
 
   h1 {
     color: inherit;
-    margin: 24px 0 32px 0;
+    margin: 16px 0 32px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
     span {
-      font-size: 40px;
-      line-height: 56px;
       opacity: 0;
       position: relative;
       top: 40px;
@@ -100,27 +92,17 @@ const DIV_TEXT = styled.div`
   }
 
   a {
-    font-size: 14px;
-    line-height: 16px;
-    padding: 12px 24px;
+    padding: 15px 23px;
     opacity: 0;
     top: 40px;
     position: relative;
     color: var(--sunset5);
     border: solid 1px var(--sunset5);
-    border-radius: 40px;
+    border-radius: 4px;
+    margin: 0 0 10vh 0;
     &:hover {
       background: var(--sunset5);
       color: var(--text);
-    }
-  }
-
-  @media (min-width: 540px) {
-    h1 {
-      span {
-        font-size: 64px;
-        line-height: 80px;
-      }
     }
   }
 `;
@@ -132,45 +114,16 @@ export default function Header() {
   });
 
   return (
-    <DIV_FULL>
-      <DIV_TEXT ref={ref} className={inView ? 'fade' : ''}>
-        <p>
-          <span>Psychotherapy</span> in the Finger Lakes
-        </p>
-        <h1>
-          <span>Hope. </span>
-          <span>Growth. </span>
-          <span>Resilience.</span>
-        </h1>
-        <Link to='/contact'>Contact Me</Link>
-      </DIV_TEXT>
+    <DIV_FULL ref={ref} className={inView ? 'fade' : ''}>
+      <p>
+        <span>Psychotherapy</span> in the Finger Lakes
+      </p>
+      <h1>
+        <span>Hope.</span>
+        <span>Growth.</span>
+        <span>Resilience.</span>
+      </h1>
+      <Link to='/contact'>Contact Me</Link>
     </DIV_FULL>
   );
 }
-
-// componentDidMount() {
-//   const img = new Image();
-//   img.src = 'https://doylepruitt.s3.us-east-2.amazonaws.com/homeImage.jpg';
-//   img.onload = () => {
-//     document.fonts.ready.then(() => {
-//       this.setState({ background_is_loaded: true });
-//     });
-//   };
-// }
-
-// const Image = (props) => {
-//   const { ref, inView } = useInView({
-//     threshold: 0.4,
-//     triggerOnce: true,
-//   });
-//   return (
-//     <ImageDiv>
-//       <img
-//         ref={ref}
-//         className={inView ? 'imagesAnimation' : ''}
-//         src={props.src}
-//         alt=''
-//       />
-//     </ImageDiv>
-//   );
-// };

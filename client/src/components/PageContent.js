@@ -1,15 +1,16 @@
 import React, { useEffect, useContext } from 'react';
 import styled from 'styled-components/macro';
 import data from './data';
-import { BUTTON, DIV_FULL as full, DIV_MAXWIDTH as max } from './_baseStyles';
-import { MobileDropdownContext } from '../Globals/Context';
 
-const DIV_FULL = styled(full)`
-  padding-top: 48px;
-  padding-bottom: 48px;
+const DIV_FULL = styled.div`
   background: var(--white);
-`;
-const DIV_MAXWIDTH = styled(max)`
+  min-height: calc(100vh - 80px - 232px);
+  padding: 48px max(calc((100vw - 1368px) / 2), 40px) 48px
+    max(calc((100vw - 1368px) / 2), 40px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   & > * {
     max-width: 640px;
     width: 100%;
@@ -20,7 +21,7 @@ const DIV_MAXWIDTH = styled(max)`
   }
 
   p {
-    margin: 0 0 32px 0;
+    margin: 0 0 20px 0;
   }
 
   ul {
@@ -36,9 +37,5 @@ const DIV_MAXWIDTH = styled(max)`
 export default function Content() {
   let route = window.location.pathname.substring(1);
 
-  return (
-    <DIV_FULL>
-      <DIV_MAXWIDTH>{data[route]}</DIV_MAXWIDTH>
-    </DIV_FULL>
-  );
+  return <DIV_FULL>{data[route]}</DIV_FULL>;
 }

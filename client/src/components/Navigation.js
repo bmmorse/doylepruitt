@@ -1,13 +1,12 @@
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components/macro';
-import { Link, useHistory } from 'react-router-dom';
-import { MobileDropdownContext } from '../Globals/Context';
+import { Link, useNavigate, redirect } from 'react-router-dom';
 import Hamburger from './Hamburger';
 import { CSSTransition } from 'react-transition-group';
 
 const DIV_FULL = styled.div`
   position: fixed;
-  height: 72px;
+  height: 80px;
   z-index: 900;
   background: var(--white);
   /* padding: 0 max(calc((100vw - 480px) / 2), 24px) 0
@@ -16,47 +15,45 @@ const DIV_FULL = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  backface-visibility: hidden;
   align-items: center;
 
   .name {
     a {
-      font-weight: 500;
-      font-size: 24px;
-      line-height: 32px;
       margin: 0 8px 0 0;
-    }
-    span:nth-child(2) {
+      font-family: 'Poppins';
+      font-style: normal;
       font-weight: 400;
-      font-size: 12px;
-      line-height: 16px;
-      display: none;
-
-      @media (min-width: 440px) {
-        font-size: 14px;
-        line-height: 16px;
-      }
+      font-size: 28px;
+      line-height: 32px;
+      letter-spacing: 0px;
+      text-transform: none;
     }
   }
 
   @media (min-width: 840px) {
+    padding: 0 max(calc((100vw - 1368px) / 2), 40px) 0
+      max(calc((100vw - 1368px) / 2), 40px);
+  }
+  /* @media (min-width: 1368px) {
     padding: 0 max(calc((100vw - 1368px) / 2), 80px) 0
       max(calc((100vw - 1368px) / 2), 80px);
-  }
+  } */
 `;
 
 const DIV_NAV = styled.div`
   justify-content: center;
   display: flex;
-  margin: 0 -24px 0 0;
+  height: 100%;
+  align-items: center;
 
   a {
     display: none;
-    font-size: 14px;
-    line-height: 24px;
     width: 100%;
     text-align: center;
     transition: color 300ms ease;
-    padding: 24px;
+    padding: 8px 20px 0 20px;
+    height: 100%;
 
     &:hover {
       color: var(--sunset3);
@@ -68,8 +65,11 @@ const DIV_NAV = styled.div`
   }
 
   @media (min-width: 840px) {
+    margin: 0 -20px 0 0;
     a {
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .hamburger {
       display: none;
@@ -78,52 +78,46 @@ const DIV_NAV = styled.div`
 `;
 
 const DIV_MOBILE = styled.div`
-  height: calc(100vh - 72px);
+  height: calc(100vh - 96px);
   width: 100%;
   display: flex;
   flex-direction: column;
   background: var(--white);
-  transition: opacity 500ms ease;
-  top: 72px;
+  top: 80px;
   position: absolute;
   z-index: 99;
-  opacity: 0;
   padding: 40px 0 0 0;
   margin: 0 -24px;
+  opacity: 1;
+  will-change: opacity;
+  perspective: 1000;
 
   a {
-    font-size: 24px;
-    line-height: 32px;
     width: 100%;
-    text-align: center;
     padding: 24px 0;
     position: relative;
     opacity: 0;
-    right: 40px;
-
     &:nth-child(1) {
-      animation: fade 600ms ease-out forwards 200ms;
+      animation: linkFade 600ms ease-out forwards 200ms;
     }
     &:nth-child(2) {
-      animation: fade 600ms ease-out forwards 350ms;
+      animation: linkFade 600ms ease-out forwards 350ms;
     }
     &:nth-child(3) {
-      animation: fade 600ms ease-out forwards 500ms;
+      animation: linkFade 600ms ease-out forwards 500ms;
     }
     &:nth-child(4) {
-      animation: fade 600ms ease-out forwards 650ms;
+      animation: linkFade 600ms ease-out forwards 650ms;
     }
     &:nth-child(5) {
-      animation: fade 600ms ease-out forwards 800ms;
+      animation: linkFade 600ms ease-out forwards 800ms;
     }
-    @keyframes fade {
+    @keyframes linkFade {
       0% {
         opacity: 0;
         right: 40px;
       }
-      80% {
-        opacity: 1;
-      }
+
       100% {
         right: 0px;
         opacity: 1;
@@ -134,25 +128,24 @@ const DIV_MOBILE = styled.div`
   &.fade-enter {
     opacity: 0;
   }
-  &.fade-enter.fade-enter-active {
+  &.fade-enter-active {
+    opacity: 1;
     transition: opacity 500ms ease-out;
-    opacity: 1;
-  }
-  &.fade-enter-done {
-    opacity: 1;
   }
   &.fade-exit {
     opacity: 1;
   }
-  &.fade-exit.fade-exit-active {
+  &.fade-exit-active {
+    transition: all 500ms ease-out;
     opacity: 0;
   }
 `;
 
-export default function Menu() {
+export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
   const nodeRef = useRef(null);
-  const history = useHistory();
+  const navigate = useNavigate();
+
   const routes = [
     {
       name: 'Home',
@@ -191,7 +184,9 @@ export default function Menu() {
     <>
       <DIV_FULL>
         <div className='name'>
-          <Link to='/'>Dr. Doyle Pruitt</Link>
+          <Link to='/' className='h4'>
+            Dr. Doyle Pruitt
+          </Link>
           {/* <span>Ph.D., LCSW-R</span> */}
         </div>
         <DIV_NAV>
@@ -220,8 +215,8 @@ export default function Menu() {
                   onClick={(event) => {
                     event.preventDefault();
                     document.querySelector('body').classList.remove('frozen');
+                    navigate(e.path);
                     menuOpen ? setMenuOpen(false) : setMenuOpen(true);
-                    history.push(e.path);
                   }}
                 >
                   {e.name}

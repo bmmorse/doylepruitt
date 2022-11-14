@@ -1,27 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BUTTON, DIV_FULL as full, DIV_MAXWIDTH as max } from './_baseStyles';
 
-const DIV_FULL = styled(full)`
-  background: linear-gradient(180deg, #2b2e45 0%, #2d2f46 100%);
-  padding: 80px 24px;
-`;
-
-const DIV_MAXWIDTH = styled(max)`
+const DIV_FULL = styled.div`
+  background: #f3f4f9;
+  padding: 160px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: center;
 
   .contactInfo {
-    flex-direction: column;
+    margin: 24px 0 0 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 100%;
-    margin: 0 0 40px 0;
 
     p {
-      margin: 0 0 16px 0;
-      color: var(--white);
+      margin: 0 0 8px 0;
+
       &:nth-last-child(1) {
         margin: 0;
       }
@@ -51,18 +50,12 @@ const DIV_MAXWIDTH = styled(max)`
 export default function Footer() {
   return (
     <DIV_FULL>
-      <DIV_MAXWIDTH>
-        <div className='contactInfo'>
-          <p>dpruittlcsw@gmail.com</p>
-          <p>585-314-0321</p>
-          <p>243 Center St, Canandaigua, NY</p>
-        </div>
-        <p className='thanks'>
-          <span>Thank you</span> for being here
-        </p>
-      </DIV_MAXWIDTH>
-      {/* <p>© 2021 Doyle Pruitt</p> */}
+      <h3>Contact Me</h3>
+      <div className='contactInfo'>
+        <p>dpruittlcsw@gmail.com</p>
+        <p>585-314-0321</p>
+        <p>243 Center St, Canandaigua, NY</p>
+      </div>
     </DIV_FULL>
-    // &#128522
   );
 }
