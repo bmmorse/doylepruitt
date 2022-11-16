@@ -23,10 +23,10 @@ const DIV_FULL = styled.div`
       margin: 0 8px 0 0;
       font-family: 'Poppins';
       font-style: normal;
-      font-weight: 400;
-      font-size: 28px;
+      font-weight: 300;
+      font-size: 26px;
       line-height: 32px;
-      letter-spacing: 0px;
+      letter-spacing: 0.25px;
       text-transform: none;
     }
   }
