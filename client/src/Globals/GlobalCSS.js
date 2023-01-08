@@ -11,12 +11,13 @@ const GlobalCSS = createGlobalStyle`
   }
 
   :root {
-    --text: #1a1423;
+    /* --text: #1a1423; */
+    --text: #153d71;
     --blue: #c3d7f6;
     --white: #ffffff;
     --orange: #ffcdb2;
     --grey: #fdfdfd;
-    --lightText: #757575;
+    --lightText: #5a7598;
     --skyblue: #233754;
   }
 
@@ -123,8 +124,8 @@ const GlobalCSS = createGlobalStyle`
     font-weight: 400;
     font-size: 20px;
     line-height: 36px;
-    letter-spacing: 0.25px;
-    color: #494949;
+    letter-spacing: -0.25px;
+    color: var(--lightText);
   }
 
   // Dr. Doyle Pruitt -- in the top navigation bar

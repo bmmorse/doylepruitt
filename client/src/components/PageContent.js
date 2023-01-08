@@ -12,7 +12,7 @@ const DIV_FULL = styled.div`
   align-items: center;
 
   & > * {
-    max-width: 640px;
+    max-width: 720px;
     width: 100%;
   }
 
@@ -22,6 +22,7 @@ const DIV_FULL = styled.div`
 
   p {
     margin: 0 0 28px 0;
+
     &:nth-last-child(1) {
       margin-bottom: 0;
     }
@@ -32,7 +33,7 @@ const DIV_FULL = styled.div`
     padding: 0 0 0 32px;
 
     li {
-      line-height: 32px;
+      margin-bottom: 16px;
     }
   }
 `;

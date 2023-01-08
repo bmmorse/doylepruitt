@@ -93,8 +93,7 @@ const DIV_GRID = styled.div`
       position: relative;
       top: 40px;
       opacity: 0;
-      top: 40px;
-      position: relative;
+
       color: var(--text);
       border-color: var(--text);
       border: solid 1px var(--text);

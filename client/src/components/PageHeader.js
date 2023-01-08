@@ -12,7 +12,7 @@ const DIV_FULL = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
-
+  border-bottom: solid 4px var(--blue);
   &:after {
     content: '';
     position: absolute;

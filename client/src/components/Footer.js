@@ -17,6 +17,7 @@ const DIV_FULL = styled.div`
   position: relative;
   background-attachment: fixed;
   gap: 24px;
+  border-bottom: solid 8px var(--text);
 
   svg {
     height: 48px;
