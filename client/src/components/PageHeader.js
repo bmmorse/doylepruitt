@@ -26,7 +26,7 @@ const DIV_FULL = styled.div`
   }
 
   h1 {
-    color: var(--orange);
+    color: var(--white);
   }
 `;
 

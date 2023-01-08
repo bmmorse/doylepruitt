@@ -25,7 +25,7 @@ const DIV_FULL = styled.div`
     transition: opacity 500ms ease 0ms;
 
     path {
-      fill: var(--blue);
+      fill: var(--orange);
     }
   }
 

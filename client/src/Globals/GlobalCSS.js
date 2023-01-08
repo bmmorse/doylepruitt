@@ -12,7 +12,7 @@ const GlobalCSS = createGlobalStyle`
 
   :root {
     --text: #1a1423;
-    --blue: #9bc0f7;
+    --blue: #c3d7f6;
     --white: #ffffff;
     --orange: #ffcdb2;
     --grey: #fdfdfd;
@@ -168,9 +168,13 @@ const GlobalCSS = createGlobalStyle`
     line-height: 96px;
     column-gap: 16px;
 
+    @media (max-width: 1000px) {
+      font-size: 64px;
+      letter-spacing: -0.5px;
+      line-height: 80px;
+      column-gap: 8px;
+    }
     @media (max-width: 600px) {
-      font-family: 'Poppins';
-      font-weight: 300;
       font-size: 48px;
       letter-spacing: -0.5px;
       line-height: 64px;
@@ -210,7 +214,7 @@ const GlobalCSS = createGlobalStyle`
   h4 {
     font-family: 'Poppins';
     font-weight: 500;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 32px;
     letter-spacing: 0px;
   }
