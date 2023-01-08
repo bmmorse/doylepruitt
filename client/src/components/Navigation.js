@@ -42,14 +42,18 @@ const DIV_FULL = styled.div`
       transition: color 300ms ease;
       padding: 6px 24px 0 24px;
       height: 100%;
-      color: var(--text);
+      color: var(--lightText);
 
       &:hover {
         color: var(--orange);
       }
 
       &.active {
-        color: var(--sky);
+        color: var(--text);
+        font-weight: 500;
+        &:hover {
+          color: var(--orange);
+        }
       }
     }
 
