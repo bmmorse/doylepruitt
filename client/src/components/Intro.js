@@ -16,6 +16,8 @@ const DIV_INTRO = styled.div`
   svg {
     opacity: 0;
     transition: opacity 500ms ease;
+    height: 24px;
+    width: auto;
   }
 
   h2 {

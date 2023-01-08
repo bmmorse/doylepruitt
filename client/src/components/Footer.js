@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { ReactComponent as Arrow } from '../Globals/svg/arrow.svg';
 
 const DIV_FULL = styled.div`
   background: #f7f2ff;
@@ -15,6 +16,14 @@ const DIV_FULL = styled.div`
   position: relative;
   background-attachment: fixed;
   gap: 24px;
+
+  svg {
+    height: 48px;
+    width: auto;
+    path {
+      fill: var(--blue);
+    }
+  }
 
   h2 {
     color: var(--text);
@@ -51,6 +60,7 @@ const DIV_FULL = styled.div`
 export default function Footer() {
   return (
     <DIV_FULL>
+      <Arrow />
       <h2>I welcome you to contact me.</h2>
       <div className='contactInfo'>
         <span>
