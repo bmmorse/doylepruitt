@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import { ReactComponent as Arrow } from '../Globals/svg/arrow.svg';
+import { useInView } from 'react-intersection-observer';
 
 const DIV_FULL = styled.div`
   background: #f7f2ff;
@@ -20,6 +21,9 @@ const DIV_FULL = styled.div`
   svg {
     height: 48px;
     width: auto;
+    opacity: 0;
+    transition: opacity 500ms ease 0ms;
+
     path {
       fill: var(--blue);
     }
@@ -28,7 +32,12 @@ const DIV_FULL = styled.div`
   h2 {
     color: var(--text);
     text-align: center;
+    position: relative;
+    top: 40px;
+    opacity: 0;
+    transition: opacity 500ms ease 150ms, top 500ms ease 150ms;
   }
+
   .contactInfo {
     display: flex;
     justify-content: center;
@@ -36,6 +45,10 @@ const DIV_FULL = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
     gap: 8px;
+    position: relative;
+    top: 40px;
+    opacity: 0;
+    transition: opacity 500ms ease 300ms, top 500ms ease 300ms;
 
     span {
       display: flex;
@@ -55,11 +68,33 @@ const DIV_FULL = styled.div`
       }
     }
   }
+
+  &.fade {
+    svg {
+      opacity: 1;
+    }
+
+    h2 {
+      top: 0px;
+      opacity: 1;
+    }
+
+    .contactInfo {
+      top: 0px;
+      opacity: 1;
+    }
+  }
 `;
 
 export default function Footer() {
+  const { ref, inView, entry } = useInView({
+    threshold: 0.5,
+    root: null,
+    rootMargin: '0% 0% 0% 0%',
+  });
+
   return (
-    <DIV_FULL>
+    <DIV_FULL ref={ref} className={inView ? 'fade' : ''}>
       <Arrow />
       <h2>I welcome you to contact me.</h2>
       <div className='contactInfo'>

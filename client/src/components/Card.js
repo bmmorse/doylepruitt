@@ -33,7 +33,7 @@ const DIV_GRID = styled.div`
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       /* border-radius: 16px; */
       z-index: 2;
-      transition: opacity 500ms ease-out, top 500ms ease-out;
+      transition: opacity 500ms ease-out 200ms, top 500ms ease-out 200ms;
 
       &.doyle {
         background-image: url('https://doylepruitt.s3.us-east-2.amazonaws.com/doyle2.jpg');
@@ -53,7 +53,7 @@ const DIV_GRID = styled.div`
       left: calc(-56px / 2);
       opacity: 0;
       fill: var(--orange);
-      transition: opacity 800ms ease-out 1s;
+      transition: opacity 500ms ease-out 800ms;
 
       &.blue {
         fill: var(--blue);
@@ -76,7 +76,7 @@ const DIV_GRID = styled.div`
       position: relative;
       top: 40px;
       opacity: 0;
-      transition: opacity 500ms ease-out 400ms, top 500ms ease-out 400ms;
+      transition: opacity 500ms ease-out 350ms, top 500ms ease-out 350ms;
     }
 
     p {
@@ -85,7 +85,7 @@ const DIV_GRID = styled.div`
       opacity: 0;
       top: 40px;
       text-align: left;
-      transition: opacity 500ms ease 550ms, top 500ms ease-out 550ms;
+      transition: opacity 500ms ease 500ms, top 500ms ease-out 500ms;
       color: var(--lightText);
     }
 
@@ -99,7 +99,7 @@ const DIV_GRID = styled.div`
       border-color: var(--text);
       border: solid 1px var(--text);
       border-radius: 4px;
-      transition: opacity 500ms ease-out 700ms, top 500ms ease-out 700ms,
+      transition: opacity 500ms ease-out 650ms, top 500ms ease-out 650ms,
         background 500ms ease-out, color 500ms ease-out;
 
       &:hover {

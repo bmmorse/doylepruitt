@@ -204,7 +204,7 @@ const GlobalCSS = createGlobalStyle`
     @media (max-width: 600px) {
       font-family: 'Poppins';
       font-weight: 400;
-      font-size: 24px;
+      font-size: 28px;
       line-height: 32px;
     }
   }

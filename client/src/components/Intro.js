@@ -15,7 +15,7 @@ const DIV_INTRO = styled.div`
 
   svg {
     opacity: 0;
-    transition: opacity 500ms ease;
+    transition: opacity 500ms ease 0ms;
     height: 24px;
     width: auto;
   }
@@ -23,7 +23,7 @@ const DIV_INTRO = styled.div`
   h2 {
     text-align: center;
     color: var(--text);
-    transition: opacity 500ms ease, bottom 500ms ease;
+    transition: opacity 500ms ease 150ms, bottom 500ms ease 150ms;
     margin: 40px 0 32px 0;
     opacity: 0;
     bottom: -40px;
@@ -40,7 +40,7 @@ const DIV_INTRO = styled.div`
   }
 
   p {
-    transition: opacity 500ms ease 150ms, bottom 500ms ease 150ms;
+    transition: opacity 500ms ease 300ms, bottom 500ms ease 300ms;
     max-width: 720px;
     width: 100%;
     text-align: center;
@@ -70,23 +70,11 @@ export default function Intro() {
   const { ref, inView, entry } = useInView({
     threshold: 0.5,
     root: null,
-    rootMargin: '0px 0px 0% 0px',
+    rootMargin: '0px 0px 0px 0px',
   });
 
-  function observerClassNames(entry) {
-    if (entry === undefined) {
-      return;
-    }
-
-    const { intersectionRatio, isIntersecting } = entry;
-
-    if (intersectionRatio >= 0.5 && isIntersecting) {
-      return 'fade';
-    }
-  }
-
   return (
-    <DIV_INTRO ref={ref} className={observerClassNames(entry)}>
+    <DIV_INTRO ref={ref} className={inView ? 'fade' : ''}>
       <Squiggle />
 
       <h2>
