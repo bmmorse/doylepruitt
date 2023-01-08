@@ -5,7 +5,7 @@ import data from './data';
 const DIV_FULL = styled.div`
   background: var(--white);
   /* min-height: calc(100vh - 80px - 232px); */
-  padding: 80px max(calc((100vw - 1368px) / 2), 24px);
+  padding: 40px max(calc((100vw - 1368px) / 2), 24px);
   padding-bottom: 0;
   display: flex;
   flex-direction: column;

@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BUTTON, DIV_FULL as full, DIV_MAXWIDTH as max } from './_baseStyles';
 
-const DIV_FULL = styled(full)`
+const DIV_FULL = styled.div`
   background: #fcfcfc;
   padding: 80px 0;
   margin: 64px 0 0 0;
@@ -11,25 +10,22 @@ const DIV_FULL = styled(full)`
   background-size: cover;
   background-position: center 70%;
   position: relative;
+  display: flex;
+  justify-content: center;
+
   &:after {
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
+    top: 0;
     left: 0;
     background: var(--skyblue);
     opacity: 0.6;
     z-index: 0;
   }
-`;
 
-const DIV_MAXWIDTH = styled(max)`
-  p {
-    font-size: 12px;
-    line-height: 16px;
-  }
-
-  h2 {
+  h1 {
     color: var(--orange);
   }
 `;
@@ -37,9 +33,7 @@ const DIV_MAXWIDTH = styled(max)`
 export default function PageHeader({ title }) {
   return (
     <DIV_FULL>
-      <DIV_MAXWIDTH>
-        <h2>{title}</h2>
-      </DIV_MAXWIDTH>
+      <h1>{title}</h1>
     </DIV_FULL>
   );
 }
