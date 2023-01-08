@@ -10,7 +10,7 @@ const DIV_GRID = styled.div`
   flex-direction: column;
   gap: 24px;
   background: var(--white);
-  padding: 0 max(calc((100vw - 576px) / 2), 40px);
+  padding: 0 max(calc((100vw - 576px) / 2), 32px);
   align-items: center;
 
   &.myServices {

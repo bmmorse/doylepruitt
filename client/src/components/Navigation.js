@@ -19,13 +19,6 @@ const DIV_FULL = styled.div`
   .name {
     a {
       margin: 0 8px 0 0;
-      font-family: 'Poppins';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 24px;
-      line-height: 32px;
-      letter-spacing: 0.25px;
-      text-transform: none;
     }
   }
 
@@ -76,7 +69,7 @@ const DIV_FULL = styled.div`
 `;
 
 const DIV_MOBILE = styled.div`
-  height: calc(100vh - 96px);
+  height: calc(100vh - 64px);
   width: 100%;
   display: flex;
   flex-direction: column;

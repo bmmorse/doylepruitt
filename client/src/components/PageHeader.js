@@ -9,7 +9,7 @@ const DIV_FULL = styled(full)`
   background: url('https://doylepruitt.s3.us-east-2.amazonaws.com/lake-optimized.jpg')
     no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: center 70%;
   position: relative;
   &:after {
     content: '';
@@ -18,7 +18,7 @@ const DIV_FULL = styled(full)`
     height: 100%;
     left: 0;
     background: var(--skyblue);
-    opacity: 0.94;
+    opacity: 0.6;
     z-index: 0;
   }
 `;
@@ -30,7 +30,7 @@ const DIV_MAXWIDTH = styled(max)`
   }
 
   h2 {
-    color: var(--white);
+    color: var(--orange);
   }
 `;
 

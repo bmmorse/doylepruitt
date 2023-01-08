@@ -128,21 +128,19 @@ const GlobalCSS = createGlobalStyle`
   }
 
   // Dr. Doyle Pruitt -- in the top navigation bar
-  .name a {
-    font-family: 'Open Sans';
+  .name > a {
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 0;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.25px;
     text-transform: none;
   }
 
-  .links a {
+  a {
     font-family: 'Open Sans';
     font-style: normal;
-    /* text-transform: uppercase; */
-    letter-spacing: 0.5px;
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
