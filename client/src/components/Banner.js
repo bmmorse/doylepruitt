@@ -25,7 +25,7 @@ const DIV_FULL = styled.div`
     /* height: 100vh; */
     height: 100%;
     left: 0;
-    background: #282828;
+    background: var(--skyblue);
     opacity: 0.6;
     /* z-index: 1000; */
   }

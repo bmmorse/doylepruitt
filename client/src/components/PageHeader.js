@@ -9,7 +9,6 @@ const DIV_FULL = styled(full)`
   background: url('https://doylepruitt.s3.us-east-2.amazonaws.com/lake-optimized.jpg')
     no-repeat;
   background-size: cover;
-  background-color: #072a43;
   background-position: center center;
   position: relative;
   &:after {
@@ -18,7 +17,7 @@ const DIV_FULL = styled(full)`
     width: 100%;
     height: 100%;
     left: 0;
-    background: #282828;
+    background: var(--skyblue);
     opacity: 0.6;
     z-index: 0;
   }

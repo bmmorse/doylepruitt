@@ -17,7 +17,7 @@ const GlobalCSS = createGlobalStyle`
     --orange: #ffcdb2;
     --grey: #fdfdfd;
     --lightText: #757575;
-    --sky: #55749d;
+    --skyblue: #031938;
   }
 
   * {
@@ -36,7 +36,7 @@ const GlobalCSS = createGlobalStyle`
   body {
     font-family: 'Open Sans', sans-serif;
     font-family: 'Poppins', sans-serif;
-    background-color: var(--text);
+    background-color: var(--skyblue);
     &.frozen {
       height: 105vh;
       overflow: hidden;
