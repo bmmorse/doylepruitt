@@ -4,9 +4,9 @@ import data from './data';
 
 const DIV_FULL = styled.div`
   background: var(--white);
-  min-height: calc(100vh - 80px - 232px);
-  padding: 48px max(calc((100vw - 1368px) / 2), 24px) 48px
-    max(calc((100vw - 1368px) / 2), 24px);
+  /* min-height: calc(100vh - 80px - 232px); */
+  padding: 80px max(calc((100vw - 1368px) / 2), 24px);
+  padding-bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +21,10 @@ const DIV_FULL = styled.div`
   }
 
   p {
-    margin: 0 0 20px 0;
+    margin: 0 0 28px 0;
+    &:nth-last-child(1) {
+      margin-bottom: 0;
+    }
   }
 
   ul {

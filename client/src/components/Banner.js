@@ -13,10 +13,10 @@ const DIV_FULL = styled.div`
   background-size: cover;
   background-color: #072a43;
   background-position: center center;
-  padding: 0 24px;
+  padding: 0 16px;
   position: relative;
-  margin: 80px 0 0 0;
-  height: calc(100vh - 80px);
+  margin: 64px 0 0 0;
+  height: calc(100vh - 64px);
 
   &:after {
     content: '';
@@ -25,37 +25,36 @@ const DIV_FULL = styled.div`
     /* height: 100vh; */
     height: 100%;
     left: 0;
-    background: linear-gradient(180deg, #1a1423 0%, #31273d 100%);
-    opacity: 0.8;
+    background: #282828;
+    opacity: 0.6;
     /* z-index: 1000; */
   }
+
   &.fade {
-    & > * {
-    }
     p {
-      transition: opacity 600ms ease-out 600ms, top 800ms ease-out 600ms;
+      transition: opacity 650ms ease-out 400ms, top 650ms ease-out 400ms;
       opacity: 1;
       top: 0;
     }
     h1 {
       span:nth-child(1) {
-        transition: opacity 800ms ease-out 400ms, top 800ms ease-out 400ms;
+        transition: opacity 650ms ease-out 550ms, top 650ms ease-out 550ms;
         opacity: 1;
         top: 0;
       }
       span:nth-child(2) {
-        transition: opacity 800ms ease-out 700ms, top 800ms ease-out 700ms;
+        transition: opacity 650ms ease-out 700ms, top 650ms ease-out 700ms;
         opacity: 1;
         top: 0;
       }
       span:nth-child(3) {
-        transition: opacity 800ms ease-out 1000ms, top 800ms ease-out 1000ms;
+        transition: opacity 650ms ease-out 850ms, top 650ms ease-out 850ms;
         top: 0;
         opacity: 1;
       }
     }
     a {
-      transition: opacity 800ms ease-out 1000ms, top 800ms ease-out 1000ms,
+      transition: opacity 650ms ease-out 1000ms, top 650ms ease-out 1000ms,
         background 400ms ease-out, color 400ms ease-out;
       opacity: 1;
       top: 0;
@@ -68,14 +67,20 @@ const DIV_FULL = styled.div`
     top: 16px;
     color: var(--white);
     text-align: center;
+    font-weight: 300;
     span {
-      color: var(--sunset5);
+      color: var(--orange);
+      font-weight: 400;
+    }
+
+    @media (min-width: 370px) {
+      max-width: none;
     }
   }
 
   h1 {
     color: inherit;
-    margin: 16px 0 32px 0;
+    margin: 24px 0 40px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -86,22 +91,22 @@ const DIV_FULL = styled.div`
       top: 40px;
       color: var(--white);
       &:nth-last-child(1) {
-        color: var(--sunset5);
+        color: var(--orange);
       }
+    }
+
+    @media (max-width: 600px) {
+      margin: 24px 0 32px 0;
     }
   }
 
   a {
-    padding: 15px 23px;
     opacity: 0;
     top: 40px;
     position: relative;
-    color: var(--sunset5);
-    border: solid 1px var(--sunset5);
-    border-radius: 4px;
     margin: 0 0 10vh 0;
     &:hover {
-      background: var(--sunset5);
+      background: var(--orange);
       color: var(--text);
     }
   }
@@ -123,7 +128,9 @@ export default function Header() {
         <span>Growth.</span>
         <span>Resilience.</span>
       </h1>
-      <Link to='/contact'>Contact Me</Link>
+      <Link className='linkButton' to='/contact'>
+        Contact Me
+      </Link>
     </DIV_FULL>
   );
 }

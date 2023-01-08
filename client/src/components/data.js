@@ -104,19 +104,19 @@ const fees = (
       that I am an in-network provider.
     </p>
 
-    <h5>Individual / Family therapy</h5>
+    <h4>Individual / Family therapy</h4>
     <p>$120/therapy hour</p>
 
-    <h5>Court appearances</h5>
+    <h4>Court appearances</h4>
     <p>$400/hour minimum, two hours</p>
 
-    <h5>Clinical Supervision</h5>
+    <h4>Clinical Supervision</h4>
     <p>$100/hour</p>
 
-    <h5>Evaluations</h5>
+    <h4>Evaluations</h4>
     <p>Contact me for pricing</p>
 
-    <h5>Group Therapy</h5>
+    <h4>Group Therapy</h4>
     <p>Contact me for pricing</p>
   </>
 );
@@ -128,13 +128,13 @@ const contact = (
       that would benefit you.
     </p>
 
-    <h5>Email</h5>
+    <h4>Email</h4>
     <p>dpruittlcsw@gmail.com</p>
 
-    <h5>Phone</h5>
+    <h4>Phone</h4>
     <p>585-314-0321</p>
 
-    <h5>Address</h5>
+    <h4>Address</h4>
     <p>243 Center St, Canandaigua, NY</p>
   </>
 );

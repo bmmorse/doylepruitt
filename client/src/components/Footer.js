@@ -1,47 +1,48 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 const DIV_FULL = styled.div`
-  background: #eff5fb;
+  background: #f7f2ff;
   padding: 160px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
+  background-size: cover;
+  background-color: var(--white);
+  background-position: bottom center;
+  position: relative;
+  background-attachment: fixed;
+  gap: 24px;
 
+  h2 {
+    color: var(--text);
+    text-align: center;
+  }
   .contactInfo {
-    margin: 24px 0 0 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100%;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    span {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
 
     p {
-      margin: 0 0 8px 0;
-
-      &:nth-last-child(1) {
-        margin: 0;
-      }
+      text-align: center;
+      color: var(--lightText);
     }
-  }
-  p.thanks {
-    font-size: 14px;
-    line-height: 16px;
-    color: var(--sunset5);
-    span {
-      color: var(--sunset2);
-      font-size: 14px;
-      line-height: 16px;
-    }
-  }
 
-  @media (min-width: 800px) {
-    .contactInfo {
-      flex-direction: row;
-      p {
-        margin: 0 40px 0 0;
+    @media (min-width: 480px) {
+      span {
+        flex-direction: row;
+        gap: 24px;
       }
     }
   }
@@ -50,10 +51,12 @@ const DIV_FULL = styled.div`
 export default function Footer() {
   return (
     <DIV_FULL>
-      <h3>Contact Me</h3>
+      <h2>I welcome you to contact me.</h2>
       <div className='contactInfo'>
-        <p>dpruittlcsw@gmail.com</p>
-        <p>585-314-0321</p>
+        <span>
+          <p>dpruittlcsw@gmail.com</p>
+          <p>585-314-0321</p>
+        </span>
         <p>243 Center St, Canandaigua, NY</p>
       </div>
     </DIV_FULL>

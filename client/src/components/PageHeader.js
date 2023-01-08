@@ -5,7 +5,7 @@ import { BUTTON, DIV_FULL as full, DIV_MAXWIDTH as max } from './_baseStyles';
 const DIV_FULL = styled(full)`
   background: #fcfcfc;
   padding: 80px 0;
-  margin: 80px 0 0 0;
+  margin: 64px 0 0 0;
   background: url('https://doylepruitt.s3.us-east-2.amazonaws.com/lake-optimized.jpg')
     no-repeat;
   background-size: cover;
@@ -18,7 +18,8 @@ const DIV_FULL = styled(full)`
     width: 100%;
     height: 100%;
     left: 0;
-    background: #1a1423d1;
+    background: #282828;
+    opacity: 0.6;
     z-index: 0;
   }
 `;
@@ -30,18 +31,15 @@ const DIV_MAXWIDTH = styled(max)`
   }
 
   h2 {
-    color: var(--sunset5);
+    color: var(--orange);
   }
 `;
 
-export default function PageHeader() {
-  let route = window.location.pathname.substring(1);
-  route = route.charAt(0).toUpperCase() + route.slice(1);
-
+export default function PageHeader({ title }) {
   return (
     <DIV_FULL>
       <DIV_MAXWIDTH>
-        <h2>{route}</h2>
+        <h2>{title}</h2>
       </DIV_MAXWIDTH>
     </DIV_FULL>
   );

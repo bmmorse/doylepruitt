@@ -5,7 +5,7 @@ import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import PageHeader from './components/PageHeader';
 import PageContent from './components/PageContent';
 import Footer from './components/Footer';
-import Header from './components/Header';
+import Header from './components/Banner';
 import Intro from './components/Intro';
 import Card from './components/Card';
 import Navigation from './components/Navigation';
@@ -28,64 +28,98 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    element: <Home />,
+    element: <RouteWrapper id='home' />,
     nodeRef: createRef(),
+    index: true,
   },
   {
     path: '/bio',
     name: 'Bio',
-    element: <Page />,
+    element: <RouteWrapper id='bio' />,
     nodeRef: createRef(),
+    index: false,
   },
   {
     path: '/services',
     name: 'Services',
-    element: <Page />,
+    element: <RouteWrapper id='services' />,
     nodeRef: createRef(),
+    index: false,
   },
   {
     path: '/fees',
     name: 'Fees',
-    element: <Page />,
+    element: <RouteWrapper id='fees' />,
     nodeRef: createRef(),
+    index: false,
   },
   {
     path: '/contact',
     name: 'Contact',
-    element: <Contact />,
+    element: <RouteWrapper id='contact' />,
     nodeRef: createRef(),
+    index: false,
   },
 ];
 
-function Home() {
-  return (
-    <>
-      <Header />
-      <Intro />
-      <Card content='myServices' alignImage='left' />
-      <Card content='aboutMe' alignImage='right' />
-      <Footer />
-    </>
-  );
-}
+function RouteWrapper(props) {
+  const DATA = [
+    {
+      id: 'home',
+      components: (
+        <>
+          <Header />
+          <Intro />
+          <Card content='myServices' className='myServices' alignImage='left' />
+          <Card content='aboutMe' alignImage='right' />
+          <Footer />
+        </>
+      ),
+    },
+    {
+      id: 'bio',
+      components: (
+        <>
+          <PageHeader title='Bio' />
+          <PageContent />
+          <Footer />
+        </>
+      ),
+    },
+    {
+      id: 'services',
+      components: (
+        <>
+          <PageHeader title='Services' />
+          <PageContent />
+          <Footer />
+        </>
+      ),
+    },
+    {
+      id: 'fees',
+      components: (
+        <>
+          <PageHeader title='Fees' />
+          <PageContent />
+          <Footer />
+        </>
+      ),
+    },
+    {
+      id: 'contact',
+      components: (
+        <>
+          <PageHeader title='Contact' />
+          <PageContent />
+          <Footer />
+        </>
+      ),
+    },
+  ];
 
-function Page() {
-  return (
-    <>
-      <PageHeader />
-      <PageContent />
-      <Footer />
-    </>
-  );
-}
-
-function Contact() {
-  return (
-    <>
-      <PageHeader />
-      <PageContent />
-    </>
-  );
+  const { components } = DATA.find((obj) => obj.id === props.id);
+  return <>{components}</>;
 }
 
 function App() {
@@ -102,11 +136,11 @@ function App() {
 
         <Navigation />
 
-        <SwitchTransition>
+        <SwitchTransition mode='out-in'>
           <CSSTransition
             key={location.pathname}
             nodeRef={nodeRef}
-            timeout={500}
+            timeout={300}
             classNames='page'
             unmountOnExit
           >
@@ -127,11 +161,7 @@ const router = createBrowserRouter([
     path: '/',
     element: <App />,
     errorElement: <h1>ERROR ERROR</h1>,
-    children: routes.map((route) => ({
-      index: route.path === '/',
-      path: route.path === '/' ? undefined : route.path,
-      element: route.element,
-    })),
+    children: routes,
   },
 ]);
 

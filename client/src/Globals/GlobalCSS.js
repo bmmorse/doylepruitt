@@ -7,23 +7,17 @@ import styled from 'styled-components';
 
 const GlobalCSS = createGlobalStyle`
   html {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
   }
 
   :root {
-    --blue: #5386e4;
     --text: #1a1423;
-    --purple: #8789c0;
-    --red: #de3c4b;
+    --blue: #9bc0f7;
     --white: #ffffff;
-    --lavender: #f2f0f9;
     --orange: #ffcdb2;
-    /* Sunset */
-    --sunset1: #6d6875;
-    --sunset2: #b5838d;
-    --sunset3: #e5989b;
-    --sunset4: #ffb4a2;
-    --sunset5: #ffcdb2;
+    --grey: #fdfdfd;
+    --lightText: #757575;
+    --sky: #55749d;
   }
 
   * {
@@ -108,7 +102,7 @@ const GlobalCSS = createGlobalStyle`
 
     &-enter-active {
       opacity: 1;
-      transition: opacity 500ms;
+      transition: opacity 300ms ease-in-out;
     }
 
     &-exit {
@@ -117,109 +111,110 @@ const GlobalCSS = createGlobalStyle`
 
     &-exit-active {
       opacity: 0;
-      transition: opacity 500ms;
+      transition: opacity 300ms ease-in-out;
     }
   }
 
-  /* Updated Typography */
+  /* Updated Typography *******************************************************/
   p,
   li {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 28px;
+    font-size: 20px;
+    line-height: 36px;
     letter-spacing: 0.25px;
+    color: #494949;
   }
 
-  button,
-  a {
+  // Dr. Doyle Pruitt -- in the top navigation bar
+  .name a {
     font-family: 'Open Sans';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 14px;
     line-height: 16px;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .links a {
+    font-family: 'Open Sans';
+    font-style: normal;
+    /* text-transform: uppercase; */
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
     text-align: center;
-    letter-spacing: 1.25px;
-    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  a.linkButton {
+    font-family: 'Open Sans';
+    padding: 15px 23px;
+    color: var(--orange);
+    border: solid 1px var(--orange);
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
   }
 
   h1 {
     font-family: 'Poppins';
     font-weight: 300;
-    font-size: 76px;
+    font-size: 80px;
     letter-spacing: -1.5px;
-    line-height: 88px;
+    line-height: 96px;
     column-gap: 16px;
 
-    @media (max-width: 480px) {
+    @media (max-width: 600px) {
       font-family: 'Poppins';
       font-weight: 300;
-      font-size: 46px;
+      font-size: 48px;
       letter-spacing: -0.5px;
-      line-height: 56px;
+      line-height: 64px;
       column-gap: 8px;
     }
   }
 
   h2 {
     font-family: 'Poppins';
-    font-weight: 300;
-    font-size: 58px;
+    font-weight: 500;
+    font-size: 48px;
     line-height: 72px;
-    letter-spacing: -0.5px;
 
-    @media (max-width: 480px) {
+    @media (max-width: 600px) {
       font-family: 'Poppins';
-      font-weight: 300;
-      font-size: 40px;
-      letter-spacing: -0.5px;
+      font-weight: 500;
+      font-size: 32px;
       line-height: 48px;
-      column-gap: 8px;
     }
   }
 
   h3 {
     font-family: 'Poppins';
     font-weight: 400;
-    font-size: 46px;
+    font-size: 36px;
     line-height: 56px;
     letter-spacing: 0px;
 
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
       font-family: 'Poppins';
       font-weight: 400;
-      font-size: 33px;
-      letter-spacing: 0px;
-      line-height: 40px;
-      column-gap: 8px;
+      font-size: 24px;
+      line-height: 32px;
     }
   }
 
   h4 {
     font-family: 'Poppins';
-    font-weight: 400;
-    font-size: 33px;
-    line-height: 40px;
-
-    letter-spacing: 0.25px;
-  }
-
-  h5 {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 23px;
-    line-height: 32px;
-
-    letter-spacing: 0px;
-  }
-
-  h6 {
-    font-family: 'Poppins';
     font-weight: 500;
-    font-size: 19px;
-    letter-spacing: 0.15px;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0px;
   }
 `;
 

@@ -6,12 +6,10 @@ import { CSSTransition } from 'react-transition-group';
 
 const DIV_FULL = styled.div`
   position: fixed;
-  height: 80px;
+  height: 64px;
   z-index: 900;
   background: var(--white);
-  /* padding: 0 max(calc((100vw - 480px) / 2), 24px) 0
-    max(calc((100vw - 480px) / 2), 24px); */
-  padding: 0 24px;
+  padding: 0 max(calc((100vw - 1280px) / 2), 24px);
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -23,56 +21,52 @@ const DIV_FULL = styled.div`
       margin: 0 8px 0 0;
       font-family: 'Poppins';
       font-style: normal;
-      font-weight: 300;
-      font-size: 26px;
+      font-weight: 400;
+      font-size: 24px;
       line-height: 32px;
       letter-spacing: 0.25px;
       text-transform: none;
     }
   }
 
-  @media (min-width: 840px) {
-    padding: 0 max(calc((100vw - 1368px) / 2), 40px) 0
-      max(calc((100vw - 1368px) / 2), 40px);
-  }
-  /* @media (min-width: 1368px) {
-    padding: 0 max(calc((100vw - 1368px) / 2), 80px) 0
-      max(calc((100vw - 1368px) / 2), 80px);
-  } */
-`;
-
-const DIV_NAV = styled.div`
-  justify-content: center;
-  display: flex;
-  height: 100%;
-  align-items: center;
-
-  a {
-    display: none;
-    width: 100%;
-    text-align: center;
-    transition: color 300ms ease;
-    padding: 8px 20px 0 20px;
-    height: 100%;
-
-    &:hover {
-      color: var(--sunset3);
-    }
-  }
-
-  .hamburger {
+  .links {
+    justify-content: center;
     display: flex;
-  }
+    height: 100%;
+    align-items: center;
 
-  @media (min-width: 840px) {
-    margin: 0 -20px 0 0;
     a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .hamburger {
       display: none;
+      width: 100%;
+      text-align: center;
+      transition: color 300ms ease;
+      padding: 6px 24px 0 24px;
+      height: 100%;
+      color: var(--text);
+
+      &:hover {
+        color: var(--orange);
+      }
+
+      &.active {
+        color: var(--sky);
+      }
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    @media (min-width: 800px) {
+      margin: 0 -24px 0 0;
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .hamburger {
+        display: none;
+      }
     }
   }
 `;
@@ -83,7 +77,7 @@ const DIV_MOBILE = styled.div`
   display: flex;
   flex-direction: column;
   background: var(--white);
-  top: 80px;
+  top: 64px;
   position: absolute;
   z-index: 99;
   padding: 40px 0 0 0;
@@ -97,6 +91,7 @@ const DIV_MOBILE = styled.div`
     padding: 24px 0;
     position: relative;
     opacity: 0;
+    text-align: center;
     &:nth-child(1) {
       animation: linkFade 600ms ease-out forwards 200ms;
     }
@@ -180,25 +175,30 @@ export default function Navigation() {
     }
   }
 
+  function isActive(link) {
+    if (window.location.pathname === link.path) {
+      return 'active';
+    }
+    return '';
+  }
+
   return (
     <>
       <DIV_FULL>
         <div className='name'>
-          <Link to='/' className='h4'>
-            Dr. Doyle Pruitt
-          </Link>
-          {/* <span>Ph.D., LCSW-R</span> */}
+          <Link to='/'>Dr. Doyle Pruitt</Link>
         </div>
-        <DIV_NAV>
+        <div className='links'>
           {routes.map((e) => {
             return (
-              <Link key={e.path} to={e.path}>
+              <Link key={e.path} to={e.path} className={isActive(e)}>
                 {e.name}
               </Link>
             );
           })}
           <Hamburger click={handleClick} active={menuOpen} />
-        </DIV_NAV>
+        </div>
+
         <CSSTransition
           in={menuOpen}
           nodeRef={nodeRef}

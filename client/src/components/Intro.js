@@ -2,37 +2,57 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
+import underline from '../Globals/svg/underline.svg';
+import { ReactComponent as Squiggle } from '../Globals/svg/squiggle.svg';
 
 const DIV_INTRO = styled.div`
-  padding: 160px 32px;
+  padding: 160px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   background: var(--white);
 
+  svg {
+    opacity: 0;
+    transition: opacity 500ms ease;
+  }
+
   h2 {
     text-align: center;
     color: var(--text);
-    transition: opacity 800ms ease, bottom 800ms ease;
-    margin: 0 0 24px 0;
+    transition: opacity 500ms ease, bottom 500ms ease;
+    margin: 40px 0 32px 0;
     opacity: 0;
     bottom: -40px;
     position: relative;
+
+    span {
+      background: url(${underline}) no-repeat;
+      background-position: bottom center;
+      z-index: 200;
+      background-size: 100%;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   p {
-    transition: opacity 800ms ease 250ms, bottom 800ms ease 250ms;
-    max-width: 800px;
+    transition: opacity 500ms ease 150ms, bottom 500ms ease 150ms;
+    max-width: 720px;
     width: 100%;
     text-align: center;
-    color: var(--text);
+    color: var(--lightText);
     opacity: 0;
     bottom: -40px;
     position: relative;
   }
 
   &.fade {
+    svg {
+      opacity: 1;
+    }
+
     h2 {
       opacity: 1;
       bottom: 0px;
@@ -48,11 +68,28 @@ export default function Intro() {
   const { ref, inView, entry } = useInView({
     threshold: 0.5,
     root: null,
+    rootMargin: '0px 0px 0% 0px',
   });
 
+  function observerClassNames(entry) {
+    if (entry === undefined) {
+      return;
+    }
+
+    const { intersectionRatio, isIntersecting } = entry;
+
+    if (intersectionRatio >= 0.5 && isIntersecting) {
+      return 'fade';
+    }
+  }
+
   return (
-    <DIV_INTRO ref={ref} className={inView ? 'fade' : ''}>
-      <h2>18 years of clinical experience</h2>
+    <DIV_INTRO ref={ref} className={observerClassNames(entry)}>
+      <Squiggle />
+
+      <h2>
+        <span>20+ years</span> of clinical experience
+      </h2>
 
       <p>
         I believe my clients are the experts of their own lives, and my role is

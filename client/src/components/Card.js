@@ -2,43 +2,68 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
+import { ReactComponent as Dots } from '../Globals/svg/dots.svg';
 
 const DIV_GRID = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0px;
+  gap: 24px;
   background: var(--white);
-  margin: 0;
+  padding: 0 max(calc((100vw - 576px) / 2), 40px);
   align-items: center;
-  padding: 120px max(calc((100vw - 480px) / 2), 24px);
 
-  &.office {
-    background-color: #eff5fb;
-    .image {
-      background-image: url('https://doylepruitt.s3.us-east-2.amazonaws.com/office.jpg');
-    }
+  &.myServices {
+    flex-direction: column-reverse;
+    padding-bottom: 160px;
   }
 
-  &.doyle {
-    .image {
-      background-image: url('https://doylepruitt.s3.us-east-2.amazonaws.com/doyle.jpg');
-    }
-  }
-
-  .image {
+  .imageWrapper {
     width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    aspect-ratio: 4/3;
-    z-index: 2;
-    opacity: 0;
     position: relative;
-    top: 100px;
-    transition: opacity 800ms ease-out, top 800ms ease-out;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border-radius: 4px;
+
+    .image {
+      width: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      aspect-ratio: 4/5;
+      opacity: 0;
+      top: 100px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      /* border-radius: 16px; */
+      z-index: 2;
+      transition: opacity 500ms ease-out, top 500ms ease-out;
+
+      &.doyle {
+        background-image: url('https://doylepruitt.s3.us-east-2.amazonaws.com/doyle2.jpg');
+      }
+
+      &.office {
+        background-image: url('https://doylepruitt.s3.us-east-2.amazonaws.com/office.jpg');
+      }
+    }
+
+    .dots {
+      width: 56px;
+      height: 316px;
+      position: absolute;
+      z-index: -1;
+      top: calc(50% - (316px / 2));
+      left: calc(-56px / 2);
+      opacity: 0;
+      fill: var(--orange);
+      transition: opacity 800ms ease-out 1s;
+
+      &.blue {
+        fill: var(--blue);
+      }
+
+      &.right {
+        left: auto;
+        right: calc(-56px / 2);
+      }
+    }
   }
 
   .content {
@@ -46,32 +71,27 @@ const DIV_GRID = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 24px 0 0 0;
-    order: 2;
 
     h3 {
       position: relative;
       top: 40px;
       opacity: 0;
-      transition: opacity 800ms ease-out 400ms, top 800ms ease-out 400ms;
+      transition: opacity 500ms ease-out 400ms, top 500ms ease-out 400ms;
     }
 
     p {
       position: relative;
-      margin: 16px 0 24px 0;
+      margin: 16px 0 32px 0;
       opacity: 0;
       top: 40px;
       text-align: left;
-      transition: opacity 800ms ease 700ms, top 800ms ease-out 700ms;
+      transition: opacity 500ms ease 550ms, top 500ms ease-out 550ms;
+      color: var(--lightText);
     }
 
     a {
-      font-size: 14px;
-      line-height: 16px;
       position: relative;
       top: 40px;
-      opacity: 0;
-      padding: 15px 23px;
       opacity: 0;
       top: 40px;
       position: relative;
@@ -79,8 +99,8 @@ const DIV_GRID = styled.div`
       border-color: var(--text);
       border: solid 1px var(--text);
       border-radius: 4px;
-      transition: opacity 800ms ease-out 1000ms, top 800ms ease-out 1000ms,
-        background 400ms ease-out, color 400ms ease-out;
+      transition: opacity 500ms ease-out 700ms, top 500ms ease-out 700ms,
+        background 500ms ease-out, color 500ms ease-out;
 
       &:hover {
         background: var(--orange);
@@ -90,26 +110,34 @@ const DIV_GRID = styled.div`
     }
   }
 
-  @media (min-width: 840px) {
-    flex-direction: row;
-    gap: max(calc((100vw - 1368px) / 4), 40px);
-    padding: 80px max(calc((100vw - 1368px) / 2), 40px) 80px
-      max(calc((100vw - 1368px) / 2), 40px);
+  @media (min-width: 600px) {
+    .imageWrapper {
+      .image {
+        aspect-ratio: 1/1;
+      }
+    }
+  }
 
-    .content {
-      order: initial;
-      width: 92%;
+  @media (min-width: 1000px) {
+    flex-direction: row;
+    gap: 64px;
+    padding: 0 max(calc((100vw - 1280px) / 2), 40px);
+
+    &.myServices {
+      flex-direction: row;
+      padding-bottom: 80px;
     }
   }
 
   &.fade {
-    .image {
-      opacity: 1;
-      top: 0px;
-    }
-    .color {
-      opacity: 1;
-      bottom: 0px;
+    .imageWrapper {
+      .image {
+        opacity: 1;
+        top: 0px;
+      }
+      .dots {
+        opacity: 1;
+      }
     }
 
     .content {
@@ -131,14 +159,13 @@ const DIV_GRID = styled.div`
 
 export default function Card(props) {
   const { ref, inView, entry } = useInView({
-    threshold: 0.5,
+    threshold: 0.2,
     root: null,
-    rootMargin: '0% 0% 8% 0%',
+    rootMargin: '0% 0% 0% 0%',
   });
 
   const myServices = (
-    <DIV_GRID ref={ref} className={inView ? 'office fade' : 'office'}>
-      <div className='image'></div>
+    <DIV_GRID ref={ref} className={inView ? 'fade myServices' : 'myServices'}>
       <div className='content'>
         <h3>My Services</h3>
         <p>
@@ -146,13 +173,24 @@ export default function Card(props) {
           coping with trauma, adversity, disturbance, and the stressors of daily
           life.
         </p>
-        <Link to='/services'>Learn More</Link>
+        <Link to='/services' className='linkButton'>
+          Learn More
+        </Link>
+      </div>
+      <div className='imageWrapper'>
+        <div className='image office'></div>
+        <Dots className='dots blue' />
       </div>
     </DIV_GRID>
   );
 
   const aboutMe = (
-    <DIV_GRID ref={ref} className={inView ? 'doyle fade' : 'doyle'}>
+    <DIV_GRID ref={ref} className={inView ? 'fade aboutMe' : 'aboutMe'}>
+      <div className='imageWrapper'>
+        <div className='image doyle'></div>
+        <Dots className='dots right' />
+      </div>
+
       <div className='content'>
         <h3>About Me</h3>
         <p>
@@ -160,9 +198,10 @@ export default function Card(props) {
           stabilization. Once this is achieved we can move towards exploring and
           understanding their trauma.
         </p>
-        <Link to='/bio'>Learn More</Link>
+        <Link to='/bio' className='linkButton'>
+          Learn More
+        </Link>
       </div>
-      <div className='image'></div>
     </DIV_GRID>
   );
 
