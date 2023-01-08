@@ -18,7 +18,7 @@ const DIV_FULL = styled(full)`
     height: 100%;
     left: 0;
     background: var(--skyblue);
-    opacity: 0.6;
+    opacity: 0.94;
     z-index: 0;
   }
 `;
@@ -30,7 +30,7 @@ const DIV_MAXWIDTH = styled(max)`
   }
 
   h2 {
-    color: var(--orange);
+    color: var(--white);
   }
 `;
 

@@ -125,7 +125,7 @@ const DIV_GRID = styled.div`
 
     &.myServices {
       flex-direction: row;
-      padding-bottom: 80px;
+      padding-bottom: 160px;
     }
   }
 

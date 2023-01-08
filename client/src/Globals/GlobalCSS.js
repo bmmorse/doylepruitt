@@ -17,7 +17,7 @@ const GlobalCSS = createGlobalStyle`
     --orange: #ffcdb2;
     --grey: #fdfdfd;
     --lightText: #757575;
-    --skyblue: #031938;
+    --skyblue: #233754;
   }
 
   * {
