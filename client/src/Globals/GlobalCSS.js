@@ -173,18 +173,33 @@ const GlobalCSS = createGlobalStyle`
     letter-spacing: -1.5px;
     line-height: 96px;
     column-gap: 16px;
-
+    
     @media (max-width: 1000px) {
       font-size: 64px;
       letter-spacing: -0.5px;
       line-height: 80px;
       column-gap: 8px;
     }
+
     @media (max-width: 600px) {
       font-size: 48px;
       letter-spacing: -0.5px;
       line-height: 64px;
       column-gap: 8px;
+    }
+
+    &.pageHeader {
+      font-size: 64px;
+      letter-spacing: -0.5px;
+      line-height: 80px;
+      column-gap: 8px;
+
+      @media (max-width: 600px) {
+        font-size: 48px;
+        letter-spacing: -0.5px;
+        line-height: 64px;
+        column-gap: 8px;
+      }
     }
   }
 

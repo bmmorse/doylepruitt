@@ -33,7 +33,7 @@ const DIV_FULL = styled.div`
 export default function PageHeader({ title }) {
   return (
     <DIV_FULL>
-      <h1>{title}</h1>
+      <h1 className='pageHeader'>{title}</h1>
     </DIV_FULL>
   );
 }
