@@ -12,13 +12,13 @@ const GlobalCSS = createGlobalStyle`
 
   :root {
     /* --text: #1a1423; */
-    --text: #153d71;
+    --text: #5285c7;
     --blue: #c3d7f6;
     --white: #ffffff;
     --orange: #ffcdb2;
     --grey: #fdfdfd;
-    --lightText: #5a7598;
-    --skyblue: #233754;
+    --lightText: #26436a;
+    --skyblue: #153a6f;
   }
 
   * {
