@@ -161,6 +161,11 @@ const GlobalCSS = createGlobalStyle`
     line-height: 24px;
   }
 
+  .mobile > a {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
   h1 {
     font-family: 'Poppins';
     font-weight: 300;

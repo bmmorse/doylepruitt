@@ -203,7 +203,7 @@ export default function Navigation() {
           classNames='fade'
           unmountOnExit
         >
-          <DIV_MOBILE ref={nodeRef}>
+          <DIV_MOBILE ref={nodeRef} className='mobile'>
             {routes.map((e) => {
               return (
                 <Link
