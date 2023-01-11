@@ -19,7 +19,7 @@ const DIV_FULL = styled.div`
   .name {
     a {
       margin: 0 8px 0 0;
-      color: var(--lightText);
+      color: var(--text);
     }
   }
 
