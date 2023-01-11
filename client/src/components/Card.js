@@ -94,8 +94,8 @@ const DIV_GRID = styled.div`
       top: 40px;
       opacity: 0;
 
-      color: var(--lightText);
-      border: solid 1px var(--lightText);
+      color: var(--text);
+      border: solid 1px var(--text);
       border-radius: 4px;
       transition: opacity 500ms ease-out 650ms, top 500ms ease-out 650ms,
         background 500ms ease-out, color 500ms ease-out;

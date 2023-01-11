@@ -18,6 +18,9 @@ const DIV_INTRO = styled.div`
     transition: opacity 500ms ease 0ms;
     height: 24px;
     width: auto;
+    path {
+      fill: var(--text);
+    }
   }
 
   h2 {
