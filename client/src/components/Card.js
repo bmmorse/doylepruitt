@@ -27,7 +27,7 @@ const DIV_GRID = styled.div`
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
-      aspect-ratio: 4/5;
+      aspect-ratio: 5/4;
       opacity: 0;
       top: 100px;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -108,18 +108,16 @@ const DIV_GRID = styled.div`
     }
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 1000px) {
+    flex-direction: row;
+    gap: 64px;
+    padding: 0 max(calc((100vw - 1280px) / 2), 40px);
+
     .imageWrapper {
       .image {
         aspect-ratio: 1/1;
       }
     }
-  }
-
-  @media (min-width: 1000px) {
-    flex-direction: row;
-    gap: 64px;
-    padding: 0 max(calc((100vw - 1280px) / 2), 40px);
 
     &.myServices {
       flex-direction: row;
