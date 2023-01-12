@@ -235,7 +235,7 @@ const GlobalCSS = createGlobalStyle`
   h4 {
     font-family: 'Poppins';
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 16px;
     letter-spacing: 2px;
     text-transform: uppercase;
