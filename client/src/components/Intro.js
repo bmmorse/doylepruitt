@@ -44,7 +44,7 @@ const DIV_INTRO = styled.div`
 
   p {
     transition: opacity 500ms ease 300ms, bottom 500ms ease 300ms;
-    max-width: 720px;
+    max-width: 600px;
     width: 100%;
     text-align: center;
     color: var(--lightText);

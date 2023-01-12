@@ -122,9 +122,9 @@ const GlobalCSS = createGlobalStyle`
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 36px;
-    letter-spacing: -0.25px;
+    font-size: 18px;
+    line-height: 32px;
+    letter-spacing: -.2px;
     color: var(--lightText);
   }
 
@@ -234,10 +234,11 @@ const GlobalCSS = createGlobalStyle`
 
   h4 {
     font-family: 'Poppins';
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 32px;
-    letter-spacing: 0px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
 `;
 
