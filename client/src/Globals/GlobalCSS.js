@@ -151,7 +151,7 @@ const GlobalCSS = createGlobalStyle`
 
   a.linkButton {
     font-family: 'Open Sans';
-    padding: 15px 23px;
+    padding: 12px 24px;
     color: var(--orange);
     border: solid 1px var(--orange);
     border-radius: 4px;
@@ -234,10 +234,10 @@ const GlobalCSS = createGlobalStyle`
 
   h4 {
     font-family: 'Poppins';
-    font-weight: 400;
+    font-weight: 500;
     font-size: 14px;
     line-height: 16px;
-    letter-spacing: 2px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
   }
 `;

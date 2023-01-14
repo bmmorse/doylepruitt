@@ -10,7 +10,7 @@ const DIV_GRID = styled.div`
   flex-direction: column;
   gap: 24px;
   background: var(--white);
-  padding: 0 max(calc((100vw - 576px) / 2), 32px);
+  padding: 0 max(calc((100vw - 480px) / 2), 32px);
   align-items: center;
 
   &.myServices {
@@ -81,7 +81,7 @@ const DIV_GRID = styled.div`
 
     p {
       position: relative;
-      margin: 16px 0 32px 0;
+      margin: 8px 0 32px 0;
       opacity: 0;
       top: 40px;
       text-align: left;
@@ -111,7 +111,7 @@ const DIV_GRID = styled.div`
   @media (min-width: 1000px) {
     flex-direction: row;
     gap: 64px;
-    padding: 0 max(calc((100vw - 1280px) / 2), 40px);
+    padding: 0 max(calc((100vw - 1080px) / 2), 40px);
 
     .imageWrapper {
       .image {
