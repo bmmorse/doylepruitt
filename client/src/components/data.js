@@ -99,16 +99,15 @@ const services = (
 const fees = (
   <>
     <p>
-      I accept Excellus Blue Cross Blue Shied, MVP, Fidelis, and Independent
-      Health insurance. Please contact your insurance company directly to ensure
-      that I am an in-network provider.
+      I am an out-of-network provider, and only accept self-payment in the form
+      of cheque or credit card.
     </p>
 
     <h4>Individual / Family therapy</h4>
-    <p>$150/therapy hour. Currently only accepting self-pay.</p>
+    <p>$150/therapy hour</p>
 
     <h4>Court appearances</h4>
-    <p>$400/hour. Two hour minimum.</p>
+    <p>$400/hour, two hour minimum</p>
 
     <h4>Clinical Supervision</h4>
     <p>$100/hour</p>
