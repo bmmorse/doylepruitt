@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components/macro';
-import { Link, useNavigate, redirect } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Hamburger from './Hamburger';
 import { CSSTransition } from 'react-transition-group';
 
