@@ -20,7 +20,7 @@ const DIV_HAMBURGER = styled.div`
     div {
       width: 100%;
       height: 2px;
-      background: var(--text);
+      background: var(--lightText);
       transition: transform 500ms ease, opacity 300ms ease;
       border-radius: 8px;
       &.top {

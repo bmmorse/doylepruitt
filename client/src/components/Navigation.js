@@ -89,6 +89,8 @@ const DIV_MOBILE = styled.div`
     padding: 24px 0;
     position: relative;
     opacity: 0;
+    color: var(--lightText);
+
     text-align: center;
     &:nth-child(1) {
       animation: linkFade 600ms ease-out forwards 200ms;

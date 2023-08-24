@@ -105,10 +105,10 @@ const fees = (
     </p>
 
     <h4>Individual / Family therapy</h4>
-    <p>$120/therapy hour</p>
+    <p>$150/therapy hour. Currently only accepting self-pay.</p>
 
     <h4>Court appearances</h4>
-    <p>$400/hour minimum, two hours</p>
+    <p>$400/hour. Two hour minimum.</p>
 
     <h4>Clinical Supervision</h4>
     <p>$100/hour</p>
